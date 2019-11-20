@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
-  description: This is a simple API
+  description: This is the Lydia API
   version: 1.0.0
-  title: Simple Inventory API
+  title: Lydia API
   # put the contact info for your development or API team
   contact:
-    email: you@your-company.com
+    email: gr-lydia@wpi.edu
 
   license:
     name: Apache 2.0
@@ -15,72 +15,25 @@ info:
 tags:
 - name: admins
   description: Secured Admin-only calls
-- name: developers
-  description: Operations available to regular developers
+- name: consumers
+  description: Operations available to regular consumers
 
 paths:
-  /inventory:
-    get:
-      tags:
-      - developers
-      summary: searches inventory
-      operationId: searchInventory
-      description: |
-        By passing in the appropriate options, you can search for
-        available inventory in the system
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: searchString
-        description: pass an optional search string for looking up inventory
-        required: false
-        type: string
-      - in: query
-        name: skip
-        description: number of records to skip for pagination
-        type: integer
-        format: int32
-        minimum: 0
-      - in: query
-        name: limit
-        description: maximum number of records to return
-        type: integer
-        format: int32
-        minimum: 0
-        maximum: 50
-      responses:
-        200:
-          description: search results matching criteria
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/InventoryItem'
-        400:
-          description: bad input parameter
-    post:
-      tags:
-      - admins
-      summary: adds an inventory item
-      operationId: addInventory
-      description: Adds an item to the system
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: body
-        name: inventoryItem
-        description: Inventory item to add
-        schema:
-          $ref: '#/definitions/InventoryItem'
-      responses:
-        201:
-          description: item created
-        400:
-          description: invalid input, object invalid
-        409:
-          description: an existing item already exists
+  /upload-segment:
+  /delete-segment:
+  /list-segments:
+  /search-segments:
+  /create-playlist:
+  /delete-playlist:
+  /list-playlist:
+  /remove-from-playlist:
+  /add-to-playlist:
+  /mark-unmark-local:
+  /register-site:
+  /unregister-site:
+  /list-sites:
+   
+      
 definitions:
   InventoryItem:
     type: object
