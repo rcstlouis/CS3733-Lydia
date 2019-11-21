@@ -53,10 +53,10 @@ paths:
       - application/json
       parameters:
       - in: body
-        name: DeleteVideoSegment
+        name: DeleteVideoSegmentRequest
         description: Delete a video segment
         schema:
-          $ref: '#/definitions/DeleteVideoSegment'
+          $ref: '#/definitions/DeleteVideoSegmentRequest'
       responses:
         200:
           description: video segment deleted
@@ -87,6 +87,13 @@ paths:
       description: Returns the found video segment
       produces:
       - application/json
+      parameteres:
+      - in: query
+        name: searchBy
+        type: string
+      - in: query
+        name: search
+        type: string
       responses:
         200:
           description: found video segment returned
@@ -109,16 +116,18 @@ paths:
   	    description: Create a playlist for segments to be added to
   	    required: false
   	    schema:
-  	      $ref: 
+  	      $ref: '#/definitions/CreatePlaylistRequest'
   	  responses: 
   	    200:
   	      description: playlist created
+        400:
+          description: playlist already exists
   /delete-playlist:
   	post:
   	  tags:
   	  - consumers
   	  summary: deletes a playlist
-  	  description: Requests to delete an existing playlist by ------
+  	  description: Requests to delete an existing playlist by name
   	  operationId: requestDeleteP
   	  consumes:
   	  - application/json
@@ -327,7 +336,7 @@ definitions:
       sentence:
         type: string
         example: That is illogical, captain.
-  DeleteVideoSegment:
+  DeleteVideoSegmentRequest:
     type: object
     required:
     - name
@@ -335,6 +344,15 @@ definitions:
       name:
         type: string
         example: the salt clip
+  CreatePlaylistRequest:
+    type: object
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        example: spockFlirting
+      
 
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
