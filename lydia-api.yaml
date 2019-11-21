@@ -35,7 +35,7 @@ paths:
         name: UploadVideoSegmentRequest
         description: Uploads a video segment
         schema:
-          $ref: '#/definitions/uploadVideoSegment'
+          $ref: '#/definitions/UploadVideoSegmentRequest'
       responses:
         200:
           description: video segment uploaded
@@ -310,6 +310,20 @@ definitions:
       phone:
         type: string
         example: 408-867-5309
+  UploadVideoSegmentRequest:
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        example: The salt clip
+      character:
+        type: string
+        example: Spock
+      sentence:
+        type: string
+        example: That is illogical, captain.
+
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
 basePath: /cs3733Lydia/Lydia/1.0.0
