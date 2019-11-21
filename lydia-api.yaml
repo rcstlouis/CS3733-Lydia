@@ -34,8 +34,9 @@ paths:
       - in: body
         name: UploadVideoSegmentRequest
         description: Uploads a video segment
+        required: true
         schema:
-          $ref: '#/definitions/uploadVideoSegment'
+          $ref: '#/definitions/UploadVideoSegmentRequest'
       responses:
         200:
           description: video segment uploaded
@@ -54,10 +55,11 @@ paths:
       - application/json
       parameters:
       - in: body
-        name: DeleteVideoSegment
+        name: DeleteVideoSegmentRequest
         description: Delete a video segment
+        required: true
         schema:
-          $ref: '#/definitions/deleteVideoSegment'
+          $ref: '#/definitions/DeleteVideoSegmentRequest'
       responses:
         200:
           description: video segment deleted
@@ -98,8 +100,8 @@ paths:
   	  tags:
   	  - consumers
   	  summary: creates a playlist
-  	  description: Requests to create a playlist of zero or more video segments
-  	  operationId: requestCreate
+  	  operationId: requestCreatePlaylist
+      description: Requests to create a playlist of zero or more video segments
   	  consumes:
   	  - application/json
   	  produces:
@@ -108,19 +110,21 @@ paths:
   	  - in: body
   	    name: CreatePlaylistRequest
   	    description: Create a playlist for segments to be added to
-  	    required: false
+        required: true
   	    schema:
-  	      $ref: 
+  	      $ref: '#/definitions/CreatePlaylistRequest'
   	  responses: 
   	    200:
   	      description: playlist created
+        400:
+          description: unable to create playlist
   /delete-playlist:
   	post:
   	  tags:
   	  - consumers
   	  summary: deletes a playlist
-  	  description: Requests to delete an existing playlist by ------
-  	  operationId: requestDeleteP
+  	  operationId: requestDeletePlaylist
+      description: Requests to delete an existing playlist by id
   	  consumes:
   	  - application/json
   	  produces:
@@ -129,149 +133,173 @@ paths:
   	  - in: body
   	    name: DeletePlaylistRequest
   	    description: Delete a playlist
-  	    required: false
+        required: true
   	    schema:
-  	      $ref: 
+  	      $ref: '#/definitions/DeletePlaylistRequest' 
   	  responses:
   	    200: 
   	      description: playlist deleted
   	    400:
   	      description: invalid playlist
-  /list-playlist:
+        409:
+          description: unable to delete playlist
+  /list-playlists:
   	get:
   	  tags:
   	  - consumers
   	  summary: request a list of all playlists
-  	  description: Returns a list of all playlists
-  	  operationId: getPlaylistList
+  	  operationId: getPlaylistsList
+      description: Returns a list of all playlists
   	  produces:
   	  - application/json
-  	  parameters: []
   	  responses:
   	    200:
   	      description: list of all playlists returned
+        400: 
+          description: unable to get list of all playlists
   /remove-from-playlist:
   	post:
   	  tags:
   	  - consumers
-  	  summary: request to remove a segment
-  	  description: Requests to remove a segment from a playlist by -----
-  	  operationId: requestRemove
+  	  summary: request to remove a video segment from a playlist
+  	  description: Requests to remove a video segment from a playlist by id
+  	  operationId: requestRemoveVideoSegmentFromPlaylist
   	  consumes:
   	  - application/json
   	  produces:
   	  - application/json
   	  parameters:
   	  - in: body
-  	    name: RemoveSegmentRequest
-  	    description: Remove a segment from a playlist
-  	    required: false
+  	    name: RemoveSegmentFromPlaylistRequest
+  	    description: Remove a video segment from a playlist
+        required: true
   	    schema:
-  	      $ref: 
+  	      $ref: '#/definitions/RemoveSegmentFromPlaylistRequest'
   	    responses:
   	      200: 
   	        description: segment removed
   	      400: 
   	        description: invalid segment
+          409:
+            description: unable to remove segment
   /add-to-playlist:
   	post:
   		tags:
   		- consumers
-      summary: request to add a segment
+      summary: request to add a segment to a playlist
       description: Requests to add a segment to the end of a playlist
-      operationId: requestAdd
+      operationId: requestAddSegmentToPlaylist
       consumes:
       - application/json
       produces:
       - application/json
       parameters:
       - in: body
-        name: AddSegmentRequest
+        name: AddSegmentToPlaylistRequest
         description: Add a segment to the end of a playlist
-        required: false
+        required: true
         schema:
-          $ref:
+          $ref: '#/definitions/AddSegmentToPlaylistRequest'
         responses:
           200:
             description: segment added
+          400: 
+  	        description: invalid request
+          409:
+            description: unable to add segment
   /mark-unmark-local:
      post:
         tags:
         - admins
         summary: marks/unmarks a local segment
-        description: Takes a local video segment and switches whether or not it's marked
-        operationId: markSegment
+        operationId: markUnmarkSegmentAsLocal
+        description: Takes a local video segment and sets it to be marked or unmarked as local
         consumes:
         - application/json
         produces:
         - application/json
         parameters:
-        - in: segment
-          name: changeMarkSegment
+        - in: body
+          name: ChangeMarkSegmentRequest
           description: Flip the value of marking the segment
           required: true
           schema:
-            $ref: '#/defintions/changeMarkSegment'
+            $ref: '#/defintions/ChangeMarkSegmentRequest'
         responses:
-           200:
-              description: value flipped
-           404:
-              description: segment not found
-           
+          200:
+            description: value updated successfully
+          400:
+            description: invalid request
+          404:
+            description: segment not found 
+          409:
+            description: unable to update         
   /register-site:
      post:
         tags:
         - admins
         summary: registers a remote site
         description: Registers a connection to a remote site
-        operationId: requestConnect
+        operationId: registerRemoteSite
         consumes:
-         - application/json
+        - application/json
         produces:
         - application/json
         parameters:
-         - in: url
-           name: RegisterSite
-           description: Registers a connection to a remote site
-           required: true
-           schema:
-             $ref: '#/definitions/RegisterSite'
+        - in: url
+          name: RegisterRemoteSite
+          description: Registers a connection to a remote site
+          required: true
+          schema:
+            $ref: '#/definitions/RegisterRemoteSite'
         responses:
-            200:
-               description: connection established
-            404:
-               description: invalid URL
+          200:
+            description: connection established
+          400:
+            description: invalid request
+          409:
+            description: invalid url, unable to register
   /unregister-site:
      post:
         tags:
         - admins
         summary: unregisters a remote site
         description: Unregisters a connection to a remote site
-        operationId: requestDisconnect
+        operationId: unregisterRemoteSite
         consumes:
         - application/json
         produces:
-        -application/json
+        - application/json
         parameters:
         - in: url
-          name: UnregisterSite
+          name: UnregisterRemoteSite
           description: Unregisters a connection to a remote site
           required: true
           schema:
-            $ref: '#/definitions/UnregisterSite'
+            $ref: '#/definitions/UnregisterRemoteSite'
+          responses:
+            200:
+              description: connection established
+            400:
+              description: invalid request
+            409:
+              description: invalid url, unable to register          
   /list-sites:
      get:
         tags:
         - admins
         summary: return a list of all registered sites
-        description: Returns a list of all registered sites
         operationId: getRegisteredSites
+        description: Returns a list of all registered sites
         produces:
         - application/json
-        parameters: []
         responses:
-           200:
-              description: list of registered sites returned
+          200:
+            description: list of registered sites returned
+          400:
+            description: invalid request
+          409:
+            description: unable to list sites
    
       
 definitions:
@@ -310,6 +338,7 @@ definitions:
       phone:
         type: string
         example: 408-867-5309
+
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
 basePath: /cs3733Lydia/Lydia/1.0.0
