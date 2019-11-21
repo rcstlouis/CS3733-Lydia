@@ -4,5 +4,6 @@ var base_url = "https://7i54qbuzk6.execute-api.us-east-2.amazonaws.com/Beta/";
 
 var add_url    = base_url + "calculator";   // POST
 var create_url = base_url + "constant";     // POST
-var delete_url = base_url + "delete";       // Can't send JSON to DELETE request. This is POST
+// var delete_url = base_url + "delete";       // Can't send JSON to DELETE request. This is POST
+var delete_url = base_url + "constants";
 var list_url   = base_url + "constants";    // GET
