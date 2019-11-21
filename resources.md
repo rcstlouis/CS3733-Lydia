@@ -30,6 +30,7 @@ this is a test
 ### Java
 * [UUID Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
   * String representations are exactly 36 characters long
+  * Snippet to generate: String testIDString = UUID.randomUUID().toString();
 
 ## Other
 
