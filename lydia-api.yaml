@@ -24,10 +24,89 @@ paths:
   /list-segments:
   /search-segments:
   /create-playlist:
+  	post:
+  	  tags:
+  	  - consumers
+  	  summary: creates a playlist
+  	  description: Requests to create a playlist of zero or more video segments
+  	  operationId: requestCreate
+  	  consumes:
+  	  - application/json
+  	  produces:
+  	  - application/json
+  	  parameters:
+  	  - in: body
+  	    name: CreatePlaylistRequest
+  	    description: Create a playlist for segments to be added to
+  	    required: false
+  	    schema:
+  	      $ref: 
+  	  responses: 
+  	    200:
+  	      description: playlist created
   /delete-playlist:
+  	post:
+  	  tags:
+  	  - consumers
+  	  summary: deletes a playlist
+  	  description: Requests to delete an existing playlist by ------
+  	  operationId: requestDeleteP
+  	  consumes:
+  	  - application/json
+  	  produces:
+  	  - application/json
+  	  parameters:
+  	  - in: body
+  	    name: DeletePlaylistRequest
+  	    description: Delete a playlist
+  	    required: false
+  	    schema:
+  	      $ref: 
+  	  responses:
+  	    200: 
+  	      description: playlist deleted
+  	    400:
+  	      description: invalid playlist
   /list-playlist:
+  	get:
+  	  tags:
+  	  - consumers
+  	  summary: request a list of all playlists
+  	  description: Returns a list of all playlists
+  	  operationId: getPlaylistList
+  	  produces:
+  	  - application/json
+  	  parameters: []
+  	  responses:
+  	    200:
+  	      description: list of all playlists returned
   /remove-from-playlist:
+  	post:
+  	  tags:
+  	  - consumers
+  	  summary: request to remove a segment
+  	  description: Requests to remove a segment from a playlist by -----
+  	  operationId: requestRemove
+  	  consumes:
+  	  - application/json
+  	  produces
+  	  - application/json
+  	  parameters:
+  	  - in: body
+  	    name: RemoveSegmentRequest
+  	    description: Remove a segment from a playlist
+  	    required: false
+  	    schema:
+  	      $ref: 
+  	    responses:
+  	      200: 
+  	        description: segment removed
+  	      400: 
+  	        description: invalid segment
   /add-to-playlist:
+  	post:
+  		tags:
+  		- consumers
   /mark-unmark-local:
   /register-site:
   /unregister-site:
