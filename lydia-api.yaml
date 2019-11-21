@@ -178,6 +178,29 @@ paths:
   		tags:
   		- consumers
   /mark-unmark-local:
+     post:
+        tags:
+        - admins
+        summary: marks/unmarks a local segment
+        description: Takes a local video segment and switches whether or not it's marked
+        operationId: markSegment
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        parameters:
+        - in: segment
+          name: changeMarkSegment
+          description: Flip the value of marking the segment
+          required: true
+          schema:
+            $ref: '#/defintions/changeMarkSegment'
+        responses:
+           200:
+              description: value flipped
+           404:
+              description: segment not found
+           
   /register-site:
      post:
         tags:
@@ -199,8 +222,39 @@ paths:
         responses:
             200:
                description: connection established
+            404:
+               description: invalid URL
   /unregister-site:
+     post:
+        tags:
+        - admins
+        summary: unregisters a remote site
+        description: Unregisters a connection to a remote site
+        operationId: requestDisconnect
+        consumes:
+        - application/json
+        produces:
+        -application/json
+        parameters:
+        - in: url
+          name: UnregisterSite
+          description: Unregisters a connection to a remote site
+          required: true
+          schema:
+            $ref: '#/definitions/UnregisterSite'
   /list-sites:
+     get:
+        tags:
+        - admins
+        summary: return a list of all registered sites
+        description: Returns a list of all registered sites
+        operationId: getRegisteredSites
+        produces:
+        - application/json
+        parameters: []
+        responses:
+           200:
+              description: list of registered sites returned
    
       
 definitions:
