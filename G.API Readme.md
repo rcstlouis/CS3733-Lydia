@@ -20,3 +20,6 @@ if the origin is remote
 * Eventually, when we're uploading .ogg files to our S3 bucket whenever
 the user wants to add a local video segment, will we send these files to
 the server in a JSON as a base64encoded string?
+* If we upload a video to the S3 bucket manually without entering the proper
+database information, should the webpage display it to the user as a segment
+without metadata, or should the webpage not display it at all?
