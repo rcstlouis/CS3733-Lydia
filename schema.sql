@@ -1,15 +1,37 @@
-CREATE TABLE `innodb`.`playlists` (
-  `name` VARCHAR(25) NOT NULL,
+CREATE TABLE `playlists` (
+  `name` varchar(25) NOT NULL,
   PRIMARY KEY (`name`),
-  UNIQUE INDEX `idplaylists_UNIQUE` (`name` ASC));
+  UNIQUE KEY `idplaylists_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
-CREATE TABLE `innodb`.`segments` (
-  `id` VARCHAR(36) NOT NULL,
-  `originFilePath` VARCHAR(300) NOT NULL,
-  `originSite` VARCHAR(300) NULL,
-  `remotelyAvailable` TINYINT NOT NULL,
-  `character` VARCHAR(20) NULL,
-  `sentence` VARCHAR(200) NULL,
+CREATE TABLE `segments` (
+  `id` varchar(36) NOT NULL,
+  `originFilePath` varchar(300) NOT NULL, 
+  --the exact file path for the particular segment
+  `originSite` varchar(300) DEFAULT NULL, 
+  --the registered site
+  `remotelyAvailable` tinyint(4) NOT NULL,
+  `character` varchar(20) DEFAULT NULL,
+  `sentence` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `originFilePath_UNIQUE` (`originFilePath` ASC));
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `originFilePath_UNIQUE` (`originFilePath`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `playlistEntries` (
+  `segmentID` varchar(36) NOT NULL,
+  `playlistName` varchar(25) NOT NULL,
+  `playlistEntryNumber` int(11) DEFAULT NULL,
+  PRIMARY KEY (`segmentID`,`playlistName`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `registeredSites` (
+  `url` varchar(300) NOT NULL,
+  PRIMARY KEY (`url`),
+  UNIQUE KEY `idregisteredSites_UNIQUE` (`url`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+-- The id from the segments table will correspond to the ids in the playlistEntry table
+-- This id will be generated using uuid
+-- The playlistName from playlistEntries will correspond to the name in playlists
+-- The url in registeredSites will correspond to the originSite in segments if the origin is remote

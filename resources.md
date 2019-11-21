@@ -4,9 +4,9 @@
 
 git commit -am "Your commit Message Here"  
 git pull  
-merge things there if necessary
-commit again if you resolved merge conflicts
-git push
+merge things there if necessary  
+commit again if you resolved merge conflicts  
+git push  
 
 this is a test
 
