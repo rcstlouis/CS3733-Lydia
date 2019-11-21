@@ -12,7 +12,9 @@ git push
 
 ## Project-related
 
-[Heineman's Storyboard](https://web.cs.wpi.edu/~heineman/cs3733/)
+* [Heineman's Storyboard](https://web.cs.wpi.edu/~heineman/cs3733/)
+* To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as its own project rather than as a subfolder in CS3733-Lydia.
+
 
 ## Other
 
