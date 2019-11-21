@@ -2,8 +2,8 @@
 
 ## Git Workflow
 
-git commit -am "Your commit Message Here"
-git pull
+git commit -am "Your commit Message Here"  
+git pull  
 git push
 
 ## When2Meet's
@@ -12,7 +12,20 @@ git push
 
 ## Project-related
 
-[Heineman's Storyboard](https://web.cs.wpi.edu/~heineman/cs3733/)
+### Webpages
+* [Heineman's Storyboard](https://web.cs.wpi.edu/~heineman/cs3733/)
+* [W3 Schools on the Video tag](https://www.w3schools.com/tags/tag_video.asp)
+* [Learn HTML](https://www.w3schools.com/html/default.asp)
+* [Learn CSS](https://www.w3schools.com/css/default.asp)
+* [Learn JavaScript](https://www.w3schools.com/js/default.asp)
+* [Have you ever wanted to do a small, particular thing in JS?](https://www.w3schools.com/howto/default.asp)
+
+### AWS
+* To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as its own project rather than as a subfolder in CS3733-Lydia.
+
+### Java
+* [UUID Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
+  * String representations are exactly 36 characters long
 
 ## Other
 
