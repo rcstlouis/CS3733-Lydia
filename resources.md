@@ -2,8 +2,8 @@
 
 ## Git Workflow
 
-git commit -am "Your commit Message Here"
-git pull
+git commit -am "Your commit Message Here"  
+git pull  
 git push
 
 ## When2Meet's
@@ -22,6 +22,10 @@ git push
 
 ### AWS
 * To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as its own project rather than as a subfolder in CS3733-Lydia.
+
+### Java
+* [UUID Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
+  * String representations are exactly 36 characters long
 
 ## Other
 
