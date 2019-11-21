@@ -1,9 +1,8 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
   description: This is the Lydia API
   version: 1.0.0
   title: Lydia API
-  # put the contact info for your development or API team
   contact:
     email: gr-lydia@wpi.edu
 
@@ -57,7 +56,7 @@ paths:
         name: DeleteVideoSegment
         description: Delete a video segment
         schema:
-          $ref: '#/definitions/deleteVideoSegment'
+          $ref: '#/definitions/DeleteVideoSegment'
       responses:
         200:
           description: video segment deleted
@@ -275,42 +274,47 @@ paths:
    
       
 definitions:
-  InventoryItem:
-    type: object
-    required:
-    - id
-    - name
-    - manufacturer
-    - releaseDate
-    properties:
-      id:
-        type: string
-        format: uuid
-        example: d290f1ee-6c54-4b01-90e6-d701748f0851
-      name:
-        type: string
-        example: Widget Adapter
-      releaseDate:
-        type: string
-        format: date-time
-        example: 2016-08-29T09:12:33.001Z
-      manufacturer:
-        $ref: '#/definitions/Manufacturer'
-  Manufacturer:
-    required:
-    - name
-    properties:
-      name:
-        type: string
-        example: ACME Corporation
-      homePage:
-        type: string
-        format: url
-        example:  https://www.acme-corp.com
-      phone:
-        type: string
-        example: 408-867-5309
+  ###################################################
+  ## These ones are examples and are commented out ##
+  ###################################################
+  # InventoryItem:
+  #   type: object
+  #   required:
+  #   - id
+  #   - name
+  #   - manufacturer
+  #   - releaseDate
+  #   properties:
+  #     id:
+  #       type: string
+  #       format: uuid
+  #       example: d290f1ee-6c54-4b01-90e6-d701748f0851
+  #     name:
+  #       type: string
+  #       example: Widget Adapter
+  #     releaseDate:
+  #       type: string
+  #       format: date-time
+  #       example: 2016-08-29T09:12:33.001Z
+  #     manufacturer:
+  #       $ref: '#/definitions/Manufacturer'
+  # Manufacturer:
+  #   type: object
+  #   required:
+  #   - name
+  #   properties:
+  #     name:
+  #       type: string
+  #       example: ACME Corporation
+  #     homePage:
+  #       type: string
+  #       format: url
+  #       example:  https://www.acme-corp.com
+  #     phone:
+  #       type: string
+  #       example: 408-867-5309
   UploadVideoSegmentRequest:
+    type: object
     required:
     - name
     properties:
@@ -323,6 +327,14 @@ definitions:
       sentence:
         type: string
         example: That is illogical, captain.
+  DeleteVideoSegment:
+    type: object
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        example: the salt clip
 
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
