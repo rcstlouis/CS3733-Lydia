@@ -11,6 +11,7 @@ CREATE TABLE `segments` (
   `originSite` varchar(300) DEFAULT NULL, 
   --the registered site
   `remotelyAvailable` tinyint(4) NOT NULL,
+  --tinyint is what it gave me for a boolean
   `character` varchar(20) DEFAULT NULL,
   `sentence` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),

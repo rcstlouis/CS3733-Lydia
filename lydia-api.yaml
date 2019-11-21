@@ -1,9 +1,8 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
   description: This is the Lydia API
   version: 1.0.0
   title: Lydia API
-  # put the contact info for your development or API team
   contact:
     email: gr-lydia@wpi.edu
 
@@ -90,6 +89,13 @@ paths:
       description: Returns the found video segment
       produces:
       - application/json
+      parameteres:
+      - in: query
+        name: searchBy
+        type: string
+      - in: query
+        name: search
+        type: string
       responses:
         200:
           description: found video segment returned
@@ -124,7 +130,7 @@ paths:
   	  - consumers
   	  summary: deletes a playlist
   	  operationId: requestDeletePlaylist
-      description: Requests to delete an existing playlist by id
+  	  description: Requests to delete an existing playlist by name
   	  consumes:
   	  - application/json
   	  produces:
@@ -303,41 +309,76 @@ paths:
    
       
 definitions:
-  InventoryItem:
+  ###################################################
+  ## These ones are examples and are commented out ##
+  ###################################################
+  # InventoryItem:
+  #   type: object
+  #   required:
+  #   - id
+  #   - name
+  #   - manufacturer
+  #   - releaseDate
+  #   properties:
+  #     id:
+  #       type: string
+  #       format: uuid
+  #       example: d290f1ee-6c54-4b01-90e6-d701748f0851
+  #     name:
+  #       type: string
+  #       example: Widget Adapter
+  #     releaseDate:
+  #       type: string
+  #       format: date-time
+  #       example: 2016-08-29T09:12:33.001Z
+  #     manufacturer:
+  #       $ref: '#/definitions/Manufacturer'
+  # Manufacturer:
+  #   type: object
+  #   required:
+  #   - name
+  #   properties:
+  #     name:
+  #       type: string
+  #       example: ACME Corporation
+  #     homePage:
+  #       type: string
+  #       format: url
+  #       example:  https://www.acme-corp.com
+  #     phone:
+  #       type: string
+  #       example: 408-867-5309
+  UploadVideoSegmentRequest:
     type: object
     required:
-    - id
     - name
-    - manufacturer
-    - releaseDate
     properties:
-      id:
-        type: string
-        format: uuid
-        example: d290f1ee-6c54-4b01-90e6-d701748f0851
       name:
         type: string
-        example: Widget Adapter
-      releaseDate:
+        example: The salt clip
+      character:
         type: string
-        format: date-time
-        example: 2016-08-29T09:12:33.001Z
-      manufacturer:
-        $ref: '#/definitions/Manufacturer'
-  Manufacturer:
+        example: Spock
+      sentence:
+        type: string
+        example: That is illogical, captain.
+  DeleteVideoSegmentRequest:
+    type: object
     required:
     - name
     properties:
       name:
         type: string
-        example: ACME Corporation
-      homePage:
+        example: the salt clip
+  CreatePlaylistRequest:
+    type: object
+    required:
+    - name
+    properties:
+      name:
         type: string
-        format: url
-        example:  https://www.acme-corp.com
-      phone:
-        type: string
-        example: 408-867-5309
+        example: spockFlirting
+      
 
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
