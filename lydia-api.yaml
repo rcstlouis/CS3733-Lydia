@@ -352,6 +352,8 @@ definitions:
     type: object
     required:
     - name
+    - character
+    - sentence
     properties:
       name:
         type: string
