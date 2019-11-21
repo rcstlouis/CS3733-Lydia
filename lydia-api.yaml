@@ -159,7 +159,7 @@ paths:
   	  operationId: requestRemove
   	  consumes:
   	  - application/json
-  	  produces
+  	  produces:
   	  - application/json
   	  parameters:
   	  - in: body
@@ -177,6 +177,23 @@ paths:
   	post:
   		tags:
   		- consumers
+      summary: request to add a segment
+      description: Requests to add a segment to the end of a playlist
+      operationId: requestAdd
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: AddSegmentRequest
+        description: Add a segment to the end of a playlist
+        required: false
+        schema:
+          $ref:
+        responses:
+          200:
+            description: segment added
   /mark-unmark-local:
   /register-site:
      post:
