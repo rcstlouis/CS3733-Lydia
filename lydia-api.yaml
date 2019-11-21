@@ -179,6 +179,26 @@ paths:
   		- consumers
   /mark-unmark-local:
   /register-site:
+     post:
+        tags:
+        - admins
+        summary: registers a remote site
+        description: Registers a connection to a remote site
+        operationId: requestConnect
+        consumes:
+         - application/json
+        produces:
+        - application/json
+        parameters:
+         - in: url
+           name: RegisterSite
+           description: Registers a connection to a remote site
+           required: true
+           schema:
+             $ref: '#/definitions/RegisterSite'
+        responses:
+            200:
+               description: connection established
   /unregister-site:
   /list-sites:
    
