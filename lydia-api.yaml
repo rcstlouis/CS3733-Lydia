@@ -139,13 +139,13 @@ paths:
   	    description: Delete a playlist
   	    required: false
   	    schema:
-  	      $ref: 
+  	      $ref: '#/definitions/DeletePlaylistRequest'
   	  responses:
   	    200: 
   	      description: playlist deleted
   	    400:
   	      description: invalid playlist
-  /list-playlist:
+  /list-playlists:
   	get:
   	  tags:
   	  - consumers
@@ -175,7 +175,7 @@ paths:
   	    description: Remove a segment from a playlist
   	    required: false
   	    schema:
-  	      $ref: 
+  	      $ref: '#/definitions/RemoveSegmentRequest'
   	    responses:
   	      200: 
   	        description: segment removed
@@ -198,7 +198,7 @@ paths:
         description: Add a segment to the end of a playlist
         required: false
         schema:
-          $ref:
+          $ref: '#/definitions/AddSegmentRequest'
         responses:
           200:
             description: segment added
@@ -352,6 +352,39 @@ definitions:
       name:
         type: string
         example: spockFlirting
+  DeletePlaylistRequest:
+    type: object
+    required:
+    - name
+    properties:
+      name:
+        type: string
+        example: spockFlirting
+  RemoveSegmentRequest:
+    type: object
+    required:
+    - segmentName
+    - playlistName
+    properties:
+      segmentName: 
+        type: string
+        example: The salt clip
+      playlistName:
+        type: string
+        example: spockFlirting
+  AddSegmentRequest:
+    type: object
+    required:
+    - segmentName
+    - playlistName
+    properties:
+      segmentName:
+        type: string
+        example: The salt clip
+      playlistName:
+        type: string
+        example: spockFlirting
+  ChangeMarkSegment:
       
 
 # Added by API Auto Mocking Plugin
