@@ -34,4 +34,5 @@ this is a test
 
 ## Other
 
-[How to not type your GitHub password every time](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+* [How to not type your GitHub password every time](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+* [Query Strings in an API file](https://swagger.io/docs/specification/describing-parameters/#query-parameters)
