@@ -36,3 +36,35 @@ this is a test
 
 * [How to not type your GitHub password every time](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 * [Query Strings in an API file](https://swagger.io/docs/specification/describing-parameters/#query-parameters)
+
+## Jobs
+
+### Java Objects
+* Make the entity objects
+* Make the request and response objects
+
+### Lambda Functions
+* Get all playlists
+* Get all segments
+
+### Javascript functions
+* Get all playlists
+* Display the playlists
+* Get all segments
+* Display the segments
+
+### API Jobs
+* Upload/debug the API
+* Enable CORS on all requests (easy)
+* Connect the API to the correct lambda functions
+
+### DB Jobs
+* Make the DB Java Objects
+* Populate the DB with dummy data (easy)
+
+### Video Jobs
+* Trim our segments to 5 seconds
+* Convert our segments to Theora Vorbis
+* Put the segments in our bucket
+* Get the URLs for our segments
+  * Probabaly make them public??
