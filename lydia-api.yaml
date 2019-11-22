@@ -89,7 +89,7 @@ paths:
       description: Returns the found video segment
       produces:
       - application/json
-      parameteres:
+      parameters:
       - in: query
         name: searchBy
         type: string
