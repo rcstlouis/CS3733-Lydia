@@ -111,3 +111,5 @@ Lambda functions in part depend on these
 * Put the segments in our bucket
 * Get the URLs for our segments
   * Probabaly make them public??
+[Canvas post on .ogg's](https://canvas.wpi.edu/courses/16593/discussion_topics/85976)
+[Website linked in post](http://www.activovision.com/pogg/doku.php?id=how_to_convert_a_video_to_ogg_with_vlc)
