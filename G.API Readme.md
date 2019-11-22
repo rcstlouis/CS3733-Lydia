@@ -2,7 +2,7 @@
 
 ## Comments & Notes
 
-### YAML
+### API
 
 * For uploading a segment, we required the user to have the clip's character and
 sentence ready at the time of uploading. We chose to do this to simplify the
@@ -37,8 +37,10 @@ the segment in question.
 criteria. If no segments fit the criteria, the request will return an empty list,
 and it is the browser's responsibility to inform the user that no results matched
 the search.
+* We realize that the hyphens in the names may present problems down the line. We
+plan to reformat this file in Swagger later.
 
-### Databases
+### Database
 These comments are reprinted from the SQL File
 
 * The id from the segments table will correspond to the ids in the 
