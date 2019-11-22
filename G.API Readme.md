@@ -19,6 +19,24 @@ clip will not have the same name as a remote clip, so we use the UUID stored in 
 database to identify the cips. We plan to store the UUID's in some collection using
 JavaScript on the browser-side. This lets the browser send the UUID in the post
 functions where it is needed.
+* The lambda functions will generate a UUID whenever they interact with a clip that 
+does not yet have a UUID in our database. This means that segments to upload and
+requests that need to get clips from other sites will not need to pass in the uuid
+in the JSON input.
+* As we understand it, consumers and admins cannot delete remote clips. If a user
+or admin wants a remote clip to stop showing up on their browser, the only way to
+completely remove it is if the admin unregisters its origin site.
+* Change mark segment will toggle whether or not a local clip is remotely available.
+We designed this assuming that the webpage will display to the admin whether or not
+the segment is already remotely available. We may include a warning message to 
+refresh the webpage before making the request so that the admin will refresh the
+webpage in the edge case where another admin has already changed the permission on
+the segment in question.
+* All resources tagged with consumer are available to both consumers and admins.
+* The search-segments API searches for video segments that fit the user's search 
+criteria. If no segments fit the criteria, the request will return an empty list,
+and it is the browser's responsibility to inform the user that no results matched
+the search.
 
 ### Databases
 These comments are reprinted from the SQL File
@@ -39,3 +57,9 @@ the server in a JSON as a base64encoded string?
 * If we upload a video to the S3 bucket manually without entering the proper
 database information, should the webpage display it to the user as a segment
 without metadata, or should the webpage not display it at all?
+* If we give our another group a URL to a clip in our S3 bucket, then
+our "admin" marks the segment as not remotely available, we can update the
+database without issue, but how do we actually prevent the other team from
+accessing the clip? We could potentially go through an API and lambda function
+to handle incoming requests for our clips, but as I understand it, this would
+only be feasible if every group had a standardized API for this.

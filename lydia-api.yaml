@@ -86,7 +86,7 @@ paths:
       - consumers
       summary: searches for a specific segment
       operationId: searchVideoSegments
-      description: Returns the found video segment
+      description: Returns video segments fitting the user's search criteria
       produces:
       - application/json
       parameters:
@@ -98,16 +98,16 @@ paths:
         type: string
       responses:
         200:
-          description: found video segment returned
+          description: found video segments returned
         409:
-          description: unable to find video segment
+          description: unable to access video segments
   /create-playlist:
   	post:
   	  tags:
   	  - consumers
   	  summary: creates a playlist
   	  operationId: requestCreatePlaylist
-      description: Requests to create a playlist of zero or more video segments
+      description: Requests to create a new empty playlist of video segments
   	  consumes:
   	  - application/json
   	  produces:
@@ -123,6 +123,8 @@ paths:
   	    200:
   	      description: playlist created
         400:
+          description: playlist already exists
+        409:
           description: unable to create playlist
   /delete-playlist:
   	post:
@@ -396,7 +398,8 @@ definitions:
     properties:
       segmentName: 
         type: string
-        example: The salt clip
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
       playlistName:
         type: string
         example: spockFlirting
@@ -408,7 +411,8 @@ definitions:
     properties:
       segmentName:
         type: string
-        example: The salt clip
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
       playlistName:
         type: string
         example: spockFlirting
