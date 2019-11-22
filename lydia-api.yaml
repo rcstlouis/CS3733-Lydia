@@ -226,11 +226,11 @@ paths:
         - application/json
         parameters:
         - in: body
-          name: ChangeMarkSegmentRequest
+          name: ChangeMarkSegment
           description: Flip the value of marking the segment
           required: true
           schema:
-            $ref: '#/defintions/ChangeMarkSegmentRequest'
+            $ref: '#/defintions/ChangeMarkSegment'
         responses:
           200:
             description: value updated successfully
@@ -413,6 +413,29 @@ definitions:
         type: string
         example: spockFlirting
   ChangeMarkSegment:
+     type: object
+     required:
+     - segmentName
+     properties:
+        segmentName:
+           type: string
+           example: The salt clip
+  RegisterRemoteSite:
+     type: object
+     required:
+     - url
+     properties:
+        url:
+           type: string
+           example: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+  UnregisterRemoteSite:
+     type: object
+     required:
+     - url
+     properties:
+        url:
+           type: string
+           example: https://www.youtube.com/watch?v=q6EoRBvdVPQ
       
 
 # Added by API Auto Mocking Plugin
