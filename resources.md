@@ -74,8 +74,8 @@ the Java objects.
 
 ### Javascript functions
 * Get all playlists [Matthew]
-* Display the playlists [Tyler]
-* Get all segments [Matthew]
+* Display the playlists [Matthew]
+* Get all segments [Tyler]
 * Display the segments [Tyler]
 
 ### HTML Jobs
