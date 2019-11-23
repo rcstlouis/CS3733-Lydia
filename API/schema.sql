@@ -6,17 +6,19 @@ CREATE TABLE `playlists` (
 
 CREATE TABLE `segments` (
   `id` varchar(36) NOT NULL,
+  `name` varchar(36) NOT NULL,
   `originFilePath` varchar(300) NOT NULL, 
-  --the exact file path for the particular segment
+  -- the exact file path for the particular segment
   `originSite` varchar(300) DEFAULT NULL, 
-  --the registered site
+  -- the registered site
   `remotelyAvailable` tinyint(4) NOT NULL,
-  --tinyint is what it gave me for a boolean
+  -- tinyint is what it gave me for a boolean
   `character` varchar(20) DEFAULT NULL,
   `sentence` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `originFilePath_UNIQUE` (`originFilePath`)
+  UNIQUE KEY `originFilePath_UNIQUE` (`originFilePath`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 CREATE TABLE `playlistEntries` (
