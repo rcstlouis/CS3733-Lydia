@@ -61,6 +61,10 @@ will depend.
 
 ### Java Objects
 DB Java Objects and Lambda functions depend on these, so please have them done soon
+If you want guidance on the entity objects, use the fields form the schema.md or
+schema.sql files. For guidance on the request or response objects, check the .yaml
+file. All of these are in the API folder. If you still have questions, feel free to
+ask!
 * Make the entity objects [Maggie]
 * Make the request objects [Maggie]
 * Make the response objects [Maggie]
