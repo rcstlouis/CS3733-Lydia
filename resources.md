@@ -25,7 +25,8 @@ this is a test
 * [Have you ever wanted to do a small, particular thing in JS?](https://www.w3schools.com/howto/default.asp)
 
 ### AWS
-* To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as its own project rather than as a subfolder in CS3733-Lydia.
+* To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as 
+  its own project rather than as a subfolder in CS3733-Lydia.
 
 ### Java
 * [UUID Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
@@ -37,6 +38,10 @@ this is a test
 
 * [How to not type your GitHub password every time](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 * [Query Strings in an API file](https://swagger.io/docs/specification/describing-parameters/#query-parameters)
+
+## Questions to discuss
+* Where should we check that a playlist exists before adding a playlist entry for it? 
+  Lambda function or DAO?
 
 -------------------------------
 ## A note on the AWS Project ##
