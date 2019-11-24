@@ -1,9 +1,11 @@
+-- Schema: (name)
 CREATE TABLE `playlists` (
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`name`),
   UNIQUE KEY `idplaylists_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
+-- Schema: (id, name, originFilePath, originSite, remotelyAvailable, character, sentence)
 CREATE TABLE `segments` (
   `id` varchar(36) NOT NULL,
   `name` varchar(36) NOT NULL,
@@ -21,6 +23,7 @@ CREATE TABLE `segments` (
   UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
+-- Schema: (segmentID, playlistName, playlistEntryNumber)
 CREATE TABLE `playlistEntries` (
   `segmentID` varchar(36) NOT NULL,
   `playlistName` varchar(25) NOT NULL,
@@ -28,6 +31,7 @@ CREATE TABLE `playlistEntries` (
   PRIMARY KEY (`segmentID`,`playlistName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
+-- Schema: (url)
 CREATE TABLE `registeredSites` (
   `url` varchar(300) NOT NULL,
   PRIMARY KEY (`url`),

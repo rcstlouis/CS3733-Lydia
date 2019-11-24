@@ -42,9 +42,9 @@ public class SegmentsDAO {
         }
     }
 	
-	public boolean addConstant(Segment segment) throws Exception {
+	public boolean addSegment(Segment segment) throws Exception {
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Constants WHERE id = ?;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE id = ?;");
             ps.setString(1, segment.getID());
             ResultSet resultSet = ps.executeQuery();
             
@@ -57,16 +57,17 @@ public class SegmentsDAO {
             
             ps = conn.prepareStatement("INSERT INTO segments values(?,?,?,?,?,?,?);");
             ps.setString(1,  segment.getID());
-            ps.setDouble(2,  segment.getName());
-            ps.execute(3, segment.getOriginFilePath());
-            ps.setDouble(4,  segment.getOriginSite());
-            ps.setDouble(5,  segment.getRemotelyAvailable());
-            ps.setDouble(6,  segment.getCharacter());
-            ps.setDouble(7,  segment.getSegment());
+            ps.setString(2,  segment.getName());
+            ps.setString(3, segment.getOriginFilePath());
+            ps.setString(4,  segment.getOriginSite());
+            ps.setBoolean(5,  segment.getRemotelyAvailable());
+            ps.setString(6,  segment.getCharacter());
+            ps.setString(7,  segment.getSentence());
+            ps.execute();
             return true;
 
         } catch (Exception e) {
-            throw new Exception("Failed to insert constant: " + e.getMessage());
+            throw new Exception("Failed to insert segment: " + e.getMessage());
         }
     }
 	
