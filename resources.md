@@ -79,8 +79,8 @@ ask!
 These are the ones that pretty much anyone should be able to do and that we may need
 help on if anyone is able. One of the difficult things is how dependent these are on
 the Java objects.
-* Get all playlists [Tyler] [And probably everyone]
-* Get all segments [Matthew] [And probably everyone]
+* Get all playlists [Matthew] [And probably everyone]
+* Get all segments [Tyler] [And probably everyone]
 
 ### Javascript functions
 * Get all playlists [Matthew]
