@@ -2,18 +2,38 @@
     <head>
         <title>iTrek</title>
         <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+        <script type='text/javascript' src='scripts/api.js'></script>
+        <script type='text/javascript' src='scripts/add-to-playlist.js'></script>
+        <script type='text/javascript' src='scripts/create-playlist.js'></script>
+        <script type='text/javascript' src='scripts/delete-playlist.js'></script>
+        <script type='text/javascript' src='scripts/delete-segment.js'></script>
+        <script type='text/javascript' src='scripts/list-playlist-segments.js'></script>
+        <script type='text/javascript' src='scripts/list-playlists.js'></script>
+        <script type='text/javascript' src='scripts/list-segments.js'></script>
+        <script type='text/javascript' src='scripts/list-sites.js'></script>
+        <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
+        <script type='text/javascript' src='scripts/register-site.js'></script>
+        <script type='text/javascript' src='scripts/remove-from-playlist.js'></script>
+        <script type='text/javascript' src='scripts/search-segments.js'></script>
+        <script type='text/javascript' src='scripts/unregister-site.js'></script>
+        <script type='text/javascript' src='scripts/upload-segment.js'></script>
     </head>
     <body>
         <h1>iTrek</h1>
         <form>
             <input type="search" value="Search Video Segments">
         </form>
+        <h2>Preformatted Content</h2>
         <div>
+<<<<<<< HEAD:webpages/public.html
             <h2>Playlists</h2>
             <form>
                 <input type="submit" value="Delete Selected Playlist">
                 <input type="submit" value="Create Playlist">
             </form>
+=======
+            <h3>Playlists</h3>
+>>>>>>> 67f24835e02cb63634d55d719317db8267dcb92f:webpages/publiclanding.html
             <table id="playlists">
                 <tr>
                     <th>Selected</th>
@@ -28,7 +48,12 @@
             </table>
         </div>
         <div>
+<<<<<<< HEAD:webpages/public.html
             <h2>Video Segments</h2>
+=======
+            <h3>Video Segments</h3>
+            <p>Video Segment 1</p>
+>>>>>>> 67f24835e02cb63634d55d719317db8267dcb92f:webpages/publiclanding.html
             <video id="allFull" width="320" height="240" controls>
                 <source src="../segments/emotion.ogg" type="video/ogg">
                 Your browser does not support the video tag.
@@ -42,5 +67,10 @@
                 Your browser does not support the video tag.
             </video>
         </div>
+        <h2>Server-Generated Content</h2>
+        <h3>Playlist List</h3>
+        <div id = "playlistList"></div>
+        <h3>Segment List</h3>
+        <div id = "segmentList"></div>
     </body>
 </html>
