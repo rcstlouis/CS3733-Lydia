@@ -79,7 +79,7 @@ public class PlaylistEntriesDAO {
                 PlaylistEntry pe = generatePlaylistEntry(resultSet);
                 resultSet.close();
                 return false;
-            }
+            }//!!! WORK IN PROGRESS !!!
 
             ps = conn.prepareStatement("INSERT INTO playlistEntries values(?,?,?);");
             ps.setString(1,  playlistEntry.getSegmentID());
