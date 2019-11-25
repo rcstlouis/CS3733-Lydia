@@ -6,13 +6,14 @@
     <body>
         <h1>iTrek</h1>
         <form>
-            <input type="text">
-            <input type="submit" value="Search Video Segments">
-            <input type="submit" value="Delete Selected Playlist">
-            <input type="submit" value="Create Playlist">
+            <input type="search" value="Search Video Segments">
         </form>
         <div>
             <h2>Playlists</h2>
+            <form>
+                <input type="submit" value="Delete Selected Playlist">
+                <input type="submit" value="Create Playlist">
+            </form>
             <table id="playlists">
                 <tr>
                     <th>Selected</th>
@@ -28,9 +29,16 @@
         </div>
         <div>
             <h2>Video Segments</h2>
-            <p>Video Segment 1</p>
             <video id="allFull" width="320" height="240" controls>
                 <source src="../segments/emotion.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <video id="allFull" width="320" height="240" controls>
+                <source src="../segments/salt.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <video id="allFull" width="320" height="240" controls>
+                <source src="../segments/shower.ogg" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
         </div>

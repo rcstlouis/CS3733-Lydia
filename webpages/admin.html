@@ -1,1 +1,54 @@
-Test file.
+<html>
+    <head>
+        <title>iTrek - Admin</title>
+        <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+    </head>
+    <body>
+        <h1>iTrek - Admin</h1>
+        <form>
+            <input type="search" value="Search Video Segments">
+        </form>
+        <form>
+            <input type="url" value="Remote Site URL">
+            <input type="submit" value="Register">
+        </form>
+        <div>
+            <h2>Playlists</h2>
+            <form>
+                <input type="submit" value="Delete Selected Playlist">
+                <input type="submit" value="Create Playlist">
+            </form>
+            <table id="playlists">
+                <tr>
+                    <th>Selected</th>
+                    <th>Playlist Name</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>Playlist 1</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Local Video Segments</h2>
+            <video id="allFull" width="320" height="240" controls>
+                <source src="../segments/emotion.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <video id="allFull" width="320" height="240" controls>
+                <source src="../segments/salt.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <video id="allFull" width="320" height="240" controls>
+                <source src="../segments/shower.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div>
+            <h2>All Video Segments</h2>
+
+        </div>
+    </body>
+</html>
