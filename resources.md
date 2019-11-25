@@ -82,7 +82,7 @@ These are the ones that pretty much anyone should be able to do and that we may 
 help on if anyone is able. One of the difficult things is how dependent these are on
 the Java objects.
 * Get all playlists [Matthew] [And probably everyone]
-* Get all segments [Tyler] [And probably everyone]
+* Get all segments [Tyler] [And probably everyone] [Theoretically done until Maggie finishes an entity then I'll test]
 
 ### Javascript functions
 * Get all playlists [Matthew] [Done as I can be until the HTML exists]
@@ -122,6 +122,6 @@ Lambda functions in part depend on these
 * Convert our segments to Theora Vorbis [Tyler]
 * Put the segments in our bucket
 * Get the URLs for our segments
-  * Probabaly make them public??
+  * Probably make them public??
 [Canvas post on .ogg's](https://canvas.wpi.edu/courses/16593/discussion_topics/85976)
 [Website linked in post](http://www.activovision.com/pogg/doku.php?id=how_to_convert_a_video_to_ogg_with_vlc)
