@@ -19,7 +19,7 @@ import com.amazonaws.lambda.demo.model.Segment;
 import com.amazonaws.lambda.demo.http.*;
 
 
-public class GetAllSegmentsHandler implements RequestHandler <Object, AllSegmentsResponse> {
+public class GetAllSegmentsHandler implements RequestHandler <Object, ListSegmentsResponse> {
 	
 	public LambdaLogger logger;
 	
@@ -89,11 +89,11 @@ public class GetAllSegmentsHandler implements RequestHandler <Object, AllSegment
 //	}
 	
 	@Override
-	public AllSegmentsResponse handleRequest(Object input, Context context) {
+	public ListSegmentsResponse handleRequest(Object input, Context context) {
 		logger = context.getLogger();
 		logger.log("Loading Java Lambda handler to list all segments");
 		
-		AllSegmentsResponse response;
+		ListSegmentsResponse response;
 		try {
 			// get all segments
 			List<Segment> list = getSegments();
@@ -102,9 +102,9 @@ public class GetAllSegmentsHandler implements RequestHandler <Object, AllSegment
 //					list.add(s);
 //				}
 //			}
-			response = new AllSegmentsResponse(list, 200);
+			response = new ListSegmentsResponse(list, 200);
 		} catch (Exception e) {
-			response = new AllSegmentsResponse(403, e.getMessage());
+			response = new ListSegmentsResponse(403, e.getMessage());
 		}
 		
 		return response;
