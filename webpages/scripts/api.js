@@ -10,6 +10,7 @@ var search_segments_url      = base_url + "search-segments";     //GET
 var create_playlist_url      = base_url + "create-playlist";     //POST
 var delete_playlist_url      = base_url + "delete-playlist";     //POST
 var list_playlists_url       = base_url + "list-playlists";      //POST
+var list_playlist_segments_url = base_url + "list-playlist-segments" //GET
 var remove_from_playlist_url = base_url + "remove-from-playlist";//POST
 var add_to_playlist_url      = base_url + "add-to-playlist";     //POST
 var mark_unmakr_local_url    = base_url + "mark-unmark-local";   //POST

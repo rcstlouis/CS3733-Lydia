@@ -23,9 +23,12 @@ this is a test
 * [Learn CSS](https://www.w3schools.com/css/default.asp)
 * [Learn JavaScript](https://www.w3schools.com/js/default.asp)
 * [Have you ever wanted to do a small, particular thing in JS?](https://www.w3schools.com/howto/default.asp)
+* [How exactly does JSON work?](https://www.w3schools.com/Js/js_json_intro.asp)
+* [Query Strings](https://www.w3schools.com/asp/coll_querystring.asp)
 
 ### AWS
-* To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as its own project rather than as a subfolder in CS3733-Lydia.
+* To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as 
+  its own project rather than as a subfolder in CS3733-Lydia.
 
 ### Java
 * [UUID Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
@@ -37,6 +40,10 @@ this is a test
 
 * [How to not type your GitHub password every time](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 * [Query Strings in an API file](https://swagger.io/docs/specification/describing-parameters/#query-parameters)
+
+## Questions to discuss
+* Where should we check that a playlist exists before adding a playlist entry for it? 
+  Lambda function or DAO?
 
 -------------------------------
 ## A note on the AWS Project ##
@@ -74,12 +81,12 @@ ask!
 These are the ones that pretty much anyone should be able to do and that we may need
 help on if anyone is able. One of the difficult things is how dependent these are on
 the Java objects.
-* Get all playlists [Tyler] [And probably everyone]
-* Get all segments [Matthew] [And probably everyone]
+* Get all playlists [Matthew] [And probably everyone]
+* Get all segments [Tyler] [And probably everyone]
 
 ### Javascript functions
-* Get all playlists [Matthew]
-* Display the playlists [Matthew]
+* Get all playlists [Matthew] [Done as I can be until the HTML exists]
+* Display the playlists [Matthew] [Done as I can be until the HTML exists]
 * Get all segments [Tyler]
 * Display the segments [Tyler]
 
@@ -106,7 +113,7 @@ Javascript in part depends on this
 
 ### DB Jobs
 Lambda functions in part depend on these
-* Make the DB Java Objects [Matthew]
+* Make the DB Java Objects [Matthew] [Done for this iteration until the java objects exist]
 * Populate the DB with dummy data (easy) [Matthew]
 * Screenshot the dummy data to hand in[Matthew]
 

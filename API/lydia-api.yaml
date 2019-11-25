@@ -165,6 +165,26 @@ paths:
   	      description: list of all playlists returned
         400: 
           description: unable to get list of all playlists
+  /list-playlist-segments:
+    get:
+      tags:
+      - consumers
+      summary: request the segments in a given playlist
+      operationID: listPlaylistSegments
+      description: request the list of segments that a given playlist contains
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: playlistName
+        type: string
+      responses:
+        200:
+          description: list of segments in playlist returned
+        400:
+          description: playlist does not exist
+        409:
+          description: unable to retrieve segments in playlist
   /remove-from-playlist:
   	post:
   	  tags:
