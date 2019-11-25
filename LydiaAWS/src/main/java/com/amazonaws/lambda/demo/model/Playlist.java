@@ -1,23 +1,19 @@
 package com.amazonaws.lambda.demo.model;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Playlist {
 	
-	String id;
 	String name;
 	ArrayList<PlaylistEntry> playlistEntries; 
 	
-	public Playlist(String n) {
-		setNewId();
-		name = n;
+	public Playlist(String name) {
+		this.name = name;
 		playlistEntries = new ArrayList<PlaylistEntry>();
 	}
 	
-	public String getID() { return id; }
 	public String getName() { return name; }
-	public String
+	public ArrayList<PlaylistEntry> getPlaylistEntries() { return playlistEntries; }
 	
 	//returns true if segment appended
 	public boolean appendSegmentToPlaylist(PlaylistEntry playlistEntry) {
@@ -25,7 +21,7 @@ public class Playlist {
 	}
 	//same as above
 	public boolean appendSegmentToPlaylist(Segment segment) {
-		return playlistEntries.add(new PlaylistEntry(segment));
+		return playlistEntries.add(new PlaylistEntry(segment, this.playlistEntries.size()+1));
 	}
 	
 	//returns true if segment found and deleted segment from playlist
@@ -61,9 +57,6 @@ public class Playlist {
 		}
 		return found;
 	}
-	
-	public void setNewId() {
-		this.id = UUID.randomUUID().toString();
-	}
+
 
 }
