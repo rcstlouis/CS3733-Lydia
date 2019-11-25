@@ -79,12 +79,12 @@ public class PlaylistEntriesDAO {
                 PlaylistEntry pe = generatePlaylistEntry(resultSet);
                 resultSet.close();
                 return false;
-            }//!!! WORK IN PROGRESS !!!
+            }
 
             ps = conn.prepareStatement("INSERT INTO playlistEntries values(?,?,?);");
             ps.setString(1,  playlistEntry.getSegmentID());
             ps.setString(2,  playlistEntry.getPlaylistName());
-            ps.setInt(3, getPlaylistLength(playlistLength.getPlaylistName())+1); 
+            ps.setInt(3, getPlaylistLength(playlistEntry.getPlaylistName())+1); 
             //This last one may take some tweaking depending on how we do things
             return true;
 
@@ -93,10 +93,10 @@ public class PlaylistEntriesDAO {
         }
     }
     
-    private PlaylistEntry generateConstant(ResultSet resultSet) throws Exception {
+    private PlaylistEntry generatePlaylistEntry(ResultSet resultSet) throws Exception {
         String segmentID = resultSet.getString("segmentID");
         String playlistName = resultSet.getString("playlistName");
         int playlistEntryNumber = resultSet.getInt("playlistEntryNumber");
-        return new PlaylistEntry
+        return new PlaylistEntry();
     }
 }
