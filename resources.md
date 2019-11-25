@@ -85,8 +85,8 @@ the Java objects.
 * Get all segments [Tyler] [And probably everyone]
 
 ### Javascript functions
-* Get all playlists [Matthew]
-* Display the playlists [Matthew]
+* Get all playlists [Matthew] [Done as I can be until the HTML exists]
+* Display the playlists [Matthew] [Done as I can be until the HTML exists]
 * Get all segments [Tyler]
 * Display the segments [Tyler]
 
@@ -113,7 +113,7 @@ Javascript in part depends on this
 
 ### DB Jobs
 Lambda functions in part depend on these
-* Make the DB Java Objects [Matthew]
+* Make the DB Java Objects [Matthew] [Done for this iteration until the java objects exist]
 * Populate the DB with dummy data (easy) [Matthew]
 * Screenshot the dummy data to hand in[Matthew]
 
