@@ -28,7 +28,7 @@ public class Segment {
 	public String getSentence() { return sentence; }
 	public String getOriginFilePath() { return originFilePath;} 
 	public String getOriginSite() { return originSite; }
-	public boolean isRemotelyAvailable() {return remotelyAvailable; }
+	public boolean isRemotelyAvailable() { return remotelyAvailable; }
 	
 	public void setNewId() {
 		this.id = UUID.randomUUID().toString();
