@@ -24,6 +24,7 @@ this is a test
 * [Learn JavaScript](https://www.w3schools.com/js/default.asp)
 * [Have you ever wanted to do a small, particular thing in JS?](https://www.w3schools.com/howto/default.asp)
 * [How exactly does JSON work?](https://www.w3schools.com/Js/js_json_intro.asp)
+* [Query Strings](https://www.w3schools.com/asp/coll_querystring.asp)
 
 ### AWS
 * To use the Amazon Project (Lydia AWS) in Eclipse, it's easier if you open it as 
