@@ -1,0 +1,32 @@
+!SESSION 2019-11-25 13:42:08.087 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-11-25 13:43:28.638
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Grace'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-11-25 13:43:32.216
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-11-25 13:43:33.388
+!MESSAGE No profile found: default
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-11-25 13:43:33.537
+!MESSAGE Monitoring content of C:\Users\Grace\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-11-25 13:43:35.326
+!MESSAGE AWS toolkit core plugin initialized after 3109 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-11-25 13:43:35.537
+!MESSAGE The current accountId is not found in the system. Switching to the default account.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2019-11-25 13:43:36.383
+!MESSAGE Initialized a new Cognito identity us-east-1:20ec03af-2497-4687-bbd4-ca43e14546f1
