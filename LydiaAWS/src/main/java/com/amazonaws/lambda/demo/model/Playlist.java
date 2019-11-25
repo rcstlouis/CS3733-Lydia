@@ -21,7 +21,7 @@ public class Playlist {
 	}
 	//same as above
 	public boolean appendSegmentToPlaylist(Segment segment) {
-		return playlistEntries.add(new PlaylistEntry(segment, this.playlistEntries.size()+1));
+		return playlistEntries.add(new PlaylistEntry(segment, this.playlistEntries.size()+1, name));
 	}
 	
 	//returns true if segment found and deleted segment from playlist
