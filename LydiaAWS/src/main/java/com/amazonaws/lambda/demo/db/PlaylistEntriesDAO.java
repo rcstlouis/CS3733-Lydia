@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.lambda.demo.model.Constant;
+import com.amazonaws.lambda.demo.model.PlaylistEntry;
 
 public class PlaylistEntriesDAO {
 
@@ -20,8 +21,8 @@ public class PlaylistEntriesDAO {
     	}
     }
     
-    public int getPlaylistLength(String playlistName) {
-    	return getAllPlaylistEntries(playlistName).length;
+    public int getPlaylistLength(String playlistName) throws Exception {
+    	return getAllPlaylistEntries(playlistName).size();
     }
     
     public PlaylistEntry getPlaylistEntry(String playlistName, String segmentID) throws Exception {
@@ -97,6 +98,6 @@ public class PlaylistEntriesDAO {
         String segmentID = resultSet.getString("segmentID");
         String playlistName = resultSet.getString("playlistName");
         int playlistEntryNumber = resultSet.getInt("playlistEntryNumber");
-        return new PlaylistEntry();
+        return new PlaylistEntry(segmentID, playlistEntryNumber, playlistName);
     }
 }

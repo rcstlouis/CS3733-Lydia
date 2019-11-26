@@ -1,5 +1,11 @@
 package com.amazonaws.lambda.demo.http;
 
+import java.util.List;
+
+import com.amazonaws.lambda.demo.model.Playlist;
+
+import java.util.ArrayList;
+
 public class ListPlaylistsResponse {
 	
 	public final List<Playlist> list;
@@ -13,7 +19,7 @@ public class ListPlaylistsResponse {
 	}
 	
 	public ListPlaylistsResponse(int code, String errMessage) {
-		this.list = new List<Playlist>();
+		this.list = new ArrayList<Playlist>();
 		this.statusCode = code;
 		this.error = errMessage;
 	}

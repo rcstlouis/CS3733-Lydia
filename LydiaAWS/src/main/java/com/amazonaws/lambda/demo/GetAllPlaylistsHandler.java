@@ -91,15 +91,15 @@ public class GetAllPlaylistsHandler implements RequestHandler<Object,ListPlaylis
 //	}
 	
 	@Override
-	public AllConstantsResponse handleRequest(Object input, Context context)  {
+	public ListPlaylistsResponse handleRequest(Object input, Context context)  {
 		logger = context.getLogger();
 		logger.log("Loading Java Lambda handler to list all constants");
 
-		AllConstantsResponse response;
+		ListPlaylistsResponse response;
 		try {
 			// get all user defined constants AND system-defined constants.
 			// Note that user defined constants override system-defined constants.
-			List<Playlists> list = getPlaylists();
+			List<Playlist> list = getPlaylists();
 			//Implement this later to retrieve constants from the bucket
 //			for (Playlist p : systemConstants()) {
 //				if (!list.contains(p)) {
