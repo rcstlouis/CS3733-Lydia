@@ -57,34 +57,35 @@ function processSegmentListResponse(result){
 		//Add a check to see if the origin site is our site at some point
 		output = output + 
 			// '<div id="segment:' + segmentID + '">'+
-			'<div class="segment" id="segment:' + name + 'entry:' + segmentID + '">'+
-				'<b>' + name + ':</b><br>' + 
-				'<video id="' + segmentID + '" width="320" height="240" controls>' +
-					'<source src="' + originFilePath + '" type="video/ogg">' +
-					'Your browser does not support the video tag.' +
-				'</video> <br>' + 
-				'<p> character: ' + character + '</p>' +
-				'<p> sentence: ' + sentence + '</p><br>'+
-				'<p> remotely available: ' + isRemotelyAvailable + ' </p>' +
-			'</div>';
+			`<div class="segment" id="segment:${name}:entry:${segmentID}">
+				<b>${name}:</b><br>
+				<video id="${segmentID}" width="320" height="240" controls>
+					<source src="${originFilePath}" type="video/ogg">
+					Your browser does not support the video tag.
+				</video> <br>
+				<p> character: ${character}</p>
+				<p> sentence: ${sentence}</p><br>
+				<p> remotely available: ${isRemotelyAvailable}</p>
+				Selected: <input type="checkbox">
+			</div>`;
+		if(table !== null){
+			// Create an empty <tr> element and add it to the ith position of the table:
+			var row = table.insertRow(i+1);
 
-		// Create an empty <tr> element and add it to the ith position of the table:
-		var row = table.insertRow(i+1);
+			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
 
-		// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-		var cell1 = row.insertCell(0);
-		var cell2 = row.insertCell(1);
-		var cell3 = row.insertCell(2);
-		var cell4 = row.insertCell(3);
-		var cell5 = row.insertCell(4);
-
-		// Add some text to the new cells:
-		cell1.innerHTML = "<input type='checkbox'>";
-		cell2.innerHTML = name;
-		cell3.innerHTML = character;
-		cell4.innerHTML = sentence;
-		cell5.innerHTML = "true";
-		
+			// Add some text to the new cells:
+			cell1.innerHTML = "<input type='checkbox'>";
+			cell2.innerHTML = name;
+			cell3.innerHTML = character;
+			cell4.innerHTML = sentence;
+			cell5.innerHTML = isRemotelyAvailable;
+		}
 	}
 
 	// Update computation result

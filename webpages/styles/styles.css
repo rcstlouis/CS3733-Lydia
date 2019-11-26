@@ -6,10 +6,11 @@ body{
 .segment{
     background-color: lightblue;
     width:50%;
+    margin: 1em;
 }
 
 .playlist{
     background-color: lightgreen;
-    margin: 0.2em;
+    margin: 1em;
     width:50%;
 }

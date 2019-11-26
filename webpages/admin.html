@@ -4,21 +4,21 @@
         <link rel="stylesheet" href="./styles/styles.css" type="text/css">
         <!-- Scripts -->
         <script type='text/javascript' src='scripts/api.js'></script>
-        <script type='text/javascript' src='scripts/add-to-playlist.js'></script>
-        <script type='text/javascript' src='scripts/create-playlist.js'></script>
-        <script type='text/javascript' src='scripts/delete-playlist.js'></script>
-        <script type='text/javascript' src='scripts/delete-segment.js'></script>
+        <!-- <script type='text/javascript' src='scripts/add-to-playlist.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/create-playlist.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/delete-playlist.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/delete-segment.js'></script> -->
         <script type='text/javascript' src='scripts/list-playlist-segments.js'></script>
         <script type='text/javascript' src='scripts/list-playlists.js'></script>
         <script type='text/javascript' src='scripts/list-segments.js'></script>
-        <script type='text/javascript' src='scripts/list-sites.js'></script>
-        <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
-        <script type='text/javascript' src='scripts/register-site.js'></script>
-        <script type='text/javascript' src='scripts/remove-from-playlist.js'></script>
-        <script type='text/javascript' src='scripts/search-segments.js'></script>
-        <script type='text/javascript' src='scripts/unregister-site.js'></script>
-        <script type='text/javascript' src='scripts/upload-segment.js'></script>
-        <!-- Scripts specific to the user page -->
+        <!-- <script type='text/javascript' src='scripts/list-sites.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/mark-unmark-local.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/register-site.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/search-segments.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/unregister-site.js'></script> -->
+        <!-- <script type='text/javascript' src='scripts/upload-segment.js'></script> -->
+        <!-- Scripts specific to the admin page -->
         <script type="text/javascript">
             function initialize() {
                 refreshPlaylistsList();
@@ -39,7 +39,7 @@
         </form>
         <h2>Preformatted Content</h2>
         <p>
-            This section contains hard-coded data to demonstrate
+            This section contains hard-coded data in case something in AWS breaks.
         </p>
         <div>
             <h3>Playlists</h3>
@@ -85,7 +85,7 @@
         <hr>
         <h2>Server-Generated Content</h2>
         <p>
-            This section contains information fetched from the server
+            This section contains information fetched from the server.
         </p>
         <h3>Playlist List</h3>
         <div id="playlistList">
@@ -95,6 +95,8 @@
         </div>
         <h3>Local Segment List</h3>
         <div id="segmentList"></div>
+        <h3>Remote Segment List</h3>
+        <div id="remoteSegmentList"></div>
         <h3>Mark Segments</h3>
         <form>
             <input type="submit" value="Mark Selected as Local">

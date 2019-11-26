@@ -60,16 +60,17 @@ function refreshPlaylistSegments(playlistName) {
 
     //Add a check to see if the origin site is our site at some point
     output = output + 
-        `<div id="playlist:${playlistName}:entry:${segmentID}" class="segment">`+
-          '<b>' + name + ':</b><br>' + 
-          `<video id="${playlistName}:${segmentID}:video" width="320" height="240" controls>` +
-            `<source src="${originFilePath}" type="video/ogg">` +
-            'Your browser does not support the video tag.' +
-          '</video> <br>' + 
-          '<p> character: ' + character + '</p>' +
-          '<p> sentence: ' + sentence + '</p><br>'+
-          '<p> remotely available: '+isRemotelyAvailable+' </p>' +
-        '</div>';
+        `<div id="playlist:${playlistName}:entry:${segmentID}" class="segment">
+          <b>${name}:</b><br>
+          <video id="${playlistName}:${segmentID}:video" width="320" height="240" controls>
+            <source src="${originFilePath}" type="video/ogg">
+            Your browser does not support the video tag.
+          </video> <br>
+          <p> character: ${character}</p>
+          <p> sentence: ${sentence}</p><br>
+          <p> remotely available: ${isRemotelyAvailable}</p>
+          Selected: <input type="checkbox">
+        </div>`;
    }
  
    // Update computation result
