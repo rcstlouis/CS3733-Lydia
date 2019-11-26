@@ -1,13 +1,18 @@
 package com.amazonaws.lambda.demo.http;
 
 public class RemoveSegmentFromPlaylistRequest {
-	public String name;
+	public String segmentName;
+	public String playlistName;
 	
-	public void setName(String name) {this.name = name;}
-	public String getName() {return name;}
+	public void setSegmentName(String name) {this.segmentName = name;}
+	public String getSegmentName() {return segmentName;}
 	
-	public RemoveSegmentFromPlaylistRequest(String n) {
-		this.name = n;
+	public void setPlaylistName(String name) {this.playlistName = name;}
+	public String getPlaylistName() {return playlistName;}
+	
+	public RemoveSegmentFromPlaylistRequest(String segName, String playName) {
+		this.segmentName = segName;
+		this.playlistName = playName;
 	}
 	
 	public RemoveSegmentFromPlaylistRequest() {
@@ -15,7 +20,7 @@ public class RemoveSegmentFromPlaylistRequest {
 	}
 	
 	public String toString() {
-		return "RemoveSegment(" + name + ")";
+		return "RemoveSegment(" + segmentName + "from" + playlistName + ")";
 	}
 
 }
