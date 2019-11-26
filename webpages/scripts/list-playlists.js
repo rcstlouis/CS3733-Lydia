@@ -4,7 +4,7 @@
  *    GET list_playlists_url
  *    RESPONSE  list of [name] playlists
  */
-function refreshPlaylistList() {
+function refreshPlaylistsList() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", list_playlists_url, true);
     xhr.send();

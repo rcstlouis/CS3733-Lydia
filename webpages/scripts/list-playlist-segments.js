@@ -45,7 +45,7 @@ function refreshConstantsList(playlistName) {
     //  We eventually will need to store all of this information in an object that the browser can access again
     //  for other requests like removals and such
 
-    var segmentID = playlistEntryJson["segmentID"];
+    var segmentID = playlistEntryJson["ID"];
     var name = playlistEntryJson["name"];
     var originFilePath = playlistEntryJson["originFilePath"];
     var originSite = playlistEntryJson["originSite"];
@@ -62,9 +62,9 @@ function refreshConstantsList(playlistName) {
                         '<source src="' + originFilePath + '" type="video/ogg">' +
                         'Your browser does not support the video tag.' +
                     '</video> <br>' + 
-                    '<p> character: ' + character + '</p>'
+                    '<p> character: ' + character + '</p>' +
                     '<p> sentence: ' + sentence + '</p><br>'+
-                    '<p> remotely available: true' + //currently the only line that differs
+                    '<p> remotely available: true </p>' + //currently the only line that differs
                 '</div>';
     } else {
         output = output + 
@@ -74,9 +74,9 @@ function refreshConstantsList(playlistName) {
                         '<source src="' + originFilePath + '" type="video/ogg">' +
                         'Your browser does not support the video tag.' +
                     '</video> <br>' + 
-                    '<p> character: ' + character + '</p>'
+                    '<p> character: ' + character + '</p>' +
                     '<p> sentence: ' + sentence + '</p><br>'+
-                    '<p> remotely available: false' + //currently the only line that differs
+                    '<p> remotely available: false </p>' + //currently the only line that differs
                 '</div>';
     }
    }
