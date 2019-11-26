@@ -1,6 +1,6 @@
 // all access driven through BASE. Must end with a SLASH
 // be sure you change to accommodate your specific API Gateway entry point
-var base_url = "https://c8o0v9nw17.execute-api.us-east-2.amazonaws.com/Beta"; 
+var base_url = "https://c8o0v9nw17.execute-api.us-east-2.amazonaws.com/Beta/"; 
 //This is our calculator API. I'll put in the real one when we have it
 
 var upload_segment_url         = base_url + "upload-segment";         //POST
