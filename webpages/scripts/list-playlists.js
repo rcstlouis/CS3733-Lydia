@@ -28,20 +28,29 @@ function refreshPlaylistsList() {
  * Replace the contents of 'playlistList' with a <br>-separated list of names.
  */
 function processPlaylistListResponse(result) {
-    console.log("res:" + result);
-    // Can grab any DIV or SPAN HTML element and can then manipulate its contents dynamically via javascript
-    var js = JSON.parse(result);
-    var playlistList = document.getElementById('playlistList');
+  console.log("res:" + result);
+  // Can grab any DIV or SPAN HTML element and can then manipulate its contents dynamically via javascript
+  var js = JSON.parse(result);
+  var playlistList = document.getElementById('playlistList');
 
-    var output = "";
-    for (var i = 0; i < js.list.length; i++) {
-        var playlistJson = js.list[i];
-        console.log(playlistJson);
-        
-        var name = playlistJson["name"];
-        output = output + '<div class="playlist" id="playlist' + name + '"><b>' + name + '</b><br></div>';
-    }
-
-    // Update computation result
-    playlistList.innerHTML = output;
+  var playlistNames = [];
+  var output = "";
+  for (var i = 0; i < js.list.length; i++) {
+    var playlistJson = js.list[i];
+    console.log(playlistJson);
+    
+    var name = playlistJson["name"];
+    output = output + 
+    `<div class="playlist" id="playlist:${name}">` +
+      '<b>' + name + '</b><br>' +
+    '</div>';
+    playlistNames.push(name);
   }
+  // Update computation result
+  playlistList.innerHTML = output;
+
+  //Fill each playlist with entries
+  for (let i = 0; i < playlistNames.length; i++){
+    refreshPlaylistSegments(playlistNames[i]);
+  }
+}
