@@ -39,7 +39,7 @@ function processPlaylistListResponse(result) {
         console.log(playlistJson);
         
         var name = playlistJson["name"];
-        output = output + "<div id=\"playlist" + name + "\"><b>" + name + "</b><br></div>";
+        output = output + '<div class="playlist" id="playlist' + name + '"><b>' + name + '</b><br></div>';
     }
 
     // Update computation result

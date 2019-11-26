@@ -2,3 +2,12 @@ body{
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     background-image: url('Untitled.png');
 }
+
+.segment{
+    background-color: lightblue;
+}
+
+.playlist{
+    background-color: lightgreen;
+    margin: 0.2em;
+}

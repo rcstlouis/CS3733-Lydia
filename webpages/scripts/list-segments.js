@@ -51,8 +51,8 @@ function processSegmentListResponse(result){
 		//Add a check to see if the origin site is our site at some point
 		if (remotelyAvailable) {
 			output = output + 
-			'<div id="segment:' + segmentID + '">'+
-			// '<div id="segment:' + name + 'entry:' + segmentID + '">'+
+			// '<div id="segment:' + segmentID + '">'+
+			'<div class="segment" id="segment:' + name + 'entry:' + segmentID + '">'+
 			'<b>' + name + ':</b><br>' + 
 			'<video id="' + segmentID + '" width="320" height="240">' +
 			'<source src="' + originFilePath + '" type="video/ogg">' +
@@ -64,7 +64,7 @@ function processSegmentListResponse(result){
 			'</div>';
 		} else {
 			output = output + 
-			'<div id="segment:' + name + 'entry:' + segmentID + '">'+
+			'<div class="segment" id="segment:' + name + 'entry:' + segmentID + '">'+
 			'<b>' + name + ':</b><br>' + 
 			'<video id="' + segmentID + '" width="320" height="240">' +
 			'<source src="' + originFilePath + '" type="video/ogg">' +
