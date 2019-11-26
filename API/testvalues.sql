@@ -20,7 +20,8 @@ select * from innodb.playlistEntries;
 
 -- registeredSites
 -- Schema: (url)
-insert into innodb.registeredSites values ("https://www.wpi.edu");
+insert into innodb.registeredSites values ("https://www.wpi.edu/");
+insert into innodb.registeredSites values ("https://web.cs.wpi.edu/~heineman/cs3733/");
 select * from innodb.registeredSites;
 
 -- Test Queries
