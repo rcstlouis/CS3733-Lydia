@@ -59,10 +59,10 @@ public class GetAllPlaylistsHandlerTest {
 
     @Test
     public void testGetAllPlaylistsHandler() {
-        GetAllPlaylistsHandler handler = new GetAllPlaylistsHandler(s3Client);
+        GetAllPlaylistsHandler handler = new GetAllPlaylistsHandler();
         Context ctx = createContext();
 
-        String output = handler.handleRequest(event, ctx);
+        String output = handler.handleRequest(event, ctx).toString();
 
         // TODO: validate output here if needed.
         Assert.assertEquals(CONTENT_TYPE, output);
