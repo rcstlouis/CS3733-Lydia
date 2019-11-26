@@ -17,8 +17,13 @@
         <script type='text/javascript' src='scripts/search-segments.js'></script>
         <script type='text/javascript' src='scripts/unregister-site.js'></script>
         <script type='text/javascript' src='scripts/upload-segment.js'></script>
+        <script type="text/javascript">
+            function initialize() {
+              refreshPlaylistList();
+            }
+          </script>
     </head>
-    <body>
+    <body onload="initialize()">
         <h1>iTrek</h1>
         <form>
             <input type="search" value="Search Video Segments">
@@ -27,7 +32,7 @@
         </form>
         <h2>Preformatted Content</h2>
         <div>
-            <h2>Playlists</h2>
+            <h3>Playlists</h3>
             <form>
                 <input type="submit" value="Delete Selected Playlist">
                 <input type="submit" value="Append Selected to Playlist">
@@ -50,7 +55,7 @@
             </table>
         </div>
         <div>
-            <h2>Video Segments</h2>
+            <h3>Video Segments</h3>
             <video id="allFull" width="320" height="240" controls>
                 <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/emotion.ogg" type="video/ogg">
                 <!-- <source src="../segments/emotion.ogg" type="video/ogg"> -->
@@ -69,8 +74,12 @@
         </div>
         <h2>Server-Generated Content</h2>
         <h3>Playlist List</h3>
-        <div id = "playlistList"></div>
+        <div id="playlistList">
+            <script>
+                document.getElementById("playlistList").addEventListener("onload", refreshPlaylistList);    
+            </script>
+        </div>
         <h3>Segment List</h3>
-        <div id = "segmentList"></div>
+        <div id="segmentList"></div>
     </body>
 </html>

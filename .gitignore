@@ -3,6 +3,9 @@ AWS.code-workspace
 lydia.code-workspace
 */MANIFEST.MF
 **/*.class
+./**/MANIFEST.MF
+LydiaAWS/target/classes/META-INF/MANIFEST.MF
+errors.md
 
 #LydiaAWS/.meta/.plugins/*
 
