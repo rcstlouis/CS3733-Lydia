@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.lambda.demo.model.Constant;
+import com.amazonaws.lambda.demo.model.Playlist;
 import com.amazonaws.lambda.demo.model.Segment;
 
 public class PlaylistsDAO {
@@ -66,6 +67,6 @@ public class PlaylistsDAO {
 	private Playlist generatePlaylist(ResultSet resultSet) throws Exception {
 		String name = resultSet.getString("name");
 	    //Construct a playlist
-	    return new Playlist ();
+	    return new Playlist (name);
 	}
 }

@@ -60,7 +60,7 @@ public class SegmentsDAO {
             ps.setString(2,  segment.getName());
             ps.setString(3, segment.getOriginFilePath());
             ps.setString(4,  segment.getOriginSite());
-            ps.setBoolean(5,  segment.getRemotelyAvailable());
+            ps.setBoolean(5,  segment.isRemotelyAvailable());
             ps.setString(6,  segment.getCharacter());
             ps.setString(7,  segment.getSentence());
             ps.execute();
@@ -101,6 +101,6 @@ public class SegmentsDAO {
 		String character = resultSet.getString("character");
 		String sentence = resultSet.getString("sentence");
 	    //Construct a segment
-	    return new Segment ();
+	    return new Segment(id, name, character, sentence, originFilePath, originSite, remotelyAvailable);
 	}
 }
