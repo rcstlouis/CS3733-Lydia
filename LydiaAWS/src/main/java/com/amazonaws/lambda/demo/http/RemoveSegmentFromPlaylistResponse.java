@@ -1,28 +1,31 @@
 package com.amazonaws.lambda.demo.http;
 
 public class RemoveSegmentFromPlaylistResponse {
-	public final String name;
+	public final String segmentName;
+	public final String playlistName;
 	public final int statusCode;
 	public final String error;
 	
-	public RemoveSegmentFromPlaylistResponse(String name, int code) {
-		this.name = name;
+	public RemoveSegmentFromPlaylistResponse(String segName, String playName, int code) {
+		this.segmentName = segName;
+		this.playlistName = playName;
 		this.statusCode = code;
 		this.error = "";
 	}
 	
-	public RemoveSegmentFromPlaylistResponse(String name, int code, String errMessage) {
+	public RemoveSegmentFromPlaylistResponse(String segName, String playName, int code, String errMessage) {
 		this.statusCode = code;
 		this.error = errMessage;
-		this.name = name;
+		this.segmentName = segName;
+		this.playlistName = playName;
 	}
 	
 	public String toString() {
 		if (statusCode / 100 == 2) {
-			return "RemoveSegment(" + name + ")";
+			return "RemoveSegment(" + segmentName + "from" + playlistName + ")";
 		}
 		else {
-			return "Error(" + name + ", statusCode=" + statusCode + ", err=" + error + ")";
+			return "Error(" + segmentName + "from" + playlistName + ", statusCode=" + statusCode + ", err=" + error + ")";
 		}
 	}
 
