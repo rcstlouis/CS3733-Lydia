@@ -33,7 +33,7 @@ paths:
       - in: body
         name: UploadVideoSegmentRequest
         description: Uploads a video segment
-        required: true
+        required: false
         schema:
           $ref: '#/definitions/UploadVideoSegmentRequest'
       responses:
@@ -56,7 +56,7 @@ paths:
       - in: body
         name: DeleteVideoSegmentRequest
         description: Delete a video segment
-        required: true
+        required: false
         schema:
           $ref: '#/definitions/DeleteVideoSegmentRequest'
       responses:
@@ -116,7 +116,7 @@ paths:
       - in: body
         name: CreatePlaylistRequest
         description: Create a playlist for segments to be added to
-        required: true
+        required: false
         schema:
           $ref: '#/definitions/CreatePlaylistRequest'
       responses: 
@@ -141,7 +141,7 @@ paths:
       - in: body
         name: DeletePlaylistRequest
         description: Delete a playlist
-        required: true
+        required: false
         schema:
           $ref: '#/definitions/DeletePlaylistRequest'
       responses:
@@ -200,7 +200,7 @@ paths:
       - in: body
         name: RemoveSegmentFromPlaylistRequest
         description: Remove a video segment from a playlist
-        required: true
+        required: false
         schema:
           $ref: '#/definitions/RemoveSegmentFromPlaylistRequest'
       responses:
@@ -225,7 +225,7 @@ paths:
       - in: body
         name: AddSegmentToPlaylistRequest
         description: Add a segment to the end of a playlist
-        required: true
+        required: false
         schema:
           $ref: '#/definitions/AddSegmentToPlaylistRequest'
       responses:
@@ -250,7 +250,7 @@ paths:
         - in: body
           name: ChangeMarkSegment
           description: Flip the value of marking the segment
-          required: true
+          required: false
           schema:
             $ref: '#/definitions/ChangeMarkSegment'
         responses:
@@ -277,7 +277,7 @@ paths:
         - in: body
           name: RegisterRemoteSite
           description: Registers a connection to a remote site
-          required: true
+          required: false
           schema:
             $ref: '#/definitions/RegisterRemoteSite'
         responses:
@@ -302,7 +302,7 @@ paths:
         - in: body
           name: UnregisterRemoteSite
           description: Unregisters a connection to a remote site
-          required: true
+          required: false
           schema:
             $ref: '#/definitions/UnregisterRemoteSite'
         responses:
@@ -340,13 +340,10 @@ definitions:
     properties:
       name:
         type: string
-        example: The salt clip
       character:
         type: string
-        example: Spock
       sentence:
         type: string
-        example: That is illogical, captain.
   DeleteVideoSegmentRequest:
     type: object
     required:
@@ -354,7 +351,6 @@ definitions:
     properties:
       name:
         type: string
-        example: the salt clip
   CreatePlaylistRequest:
     type: object
     required:
@@ -362,7 +358,6 @@ definitions:
     properties:
       name:
         type: string
-        example: spockFlirting
   DeletePlaylistRequest:
     type: object
     required:
@@ -370,7 +365,6 @@ definitions:
     properties:
       name:
         type: string
-        example: spockFlirting
   RemoveSegmentFromPlaylistRequest:
     type: object
     required:
@@ -380,10 +374,8 @@ definitions:
       segmentName: 
         type: string
         format: uuid
-        example: d290f1ee-6c54-4b01-90e6-d701748f0851
       playlistName:
         type: string
-        example: spockFlirting
   AddSegmentToPlaylistRequest:
     type: object
     required:
@@ -393,10 +385,8 @@ definitions:
       segmentName:
         type: string
         format: uuid
-        example: d290f1ee-6c54-4b01-90e6-d701748f0851
       playlistName:
         type: string
-        example: spockFlirting
   ChangeMarkSegment:
      type: object
      required:
@@ -404,7 +394,6 @@ definitions:
      properties:
         segmentName:
            type: string
-           example: The salt clip
   RegisterRemoteSite:
      type: object
      required:
@@ -412,7 +401,6 @@ definitions:
      properties:
         url:
            type: string
-           example: https://www.youtube.com/watch?v=dQw4w9WgXcQ
   UnregisterRemoteSite:
      type: object
      required:
@@ -420,7 +408,6 @@ definitions:
      properties:
         url:
            type: string
-           example: https://www.youtube.com/watch?v=q6EoRBvdVPQ
       
 
 # Added by API Auto Mocking Plugin
