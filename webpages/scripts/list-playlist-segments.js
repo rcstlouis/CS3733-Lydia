@@ -4,7 +4,7 @@
  *    GET list_playlist_segments_url
  *    RESPONSE  list of [SegmentID, name, originFilePath, originSite, remotelyAvailable, character, sentence] segments
  */
-function refreshConstantsList(playlistName) {
+function refreshPlaylistSegments(playlistName) {
 
     //Sanitize playlistName so that an arbitrary query string can't be appended to the url
 
@@ -62,7 +62,7 @@ function refreshConstantsList(playlistName) {
     output = output + 
         '<div id="playlist:' + playlistName + 'entry:' + segmentID + '">'+
           '<b>' + name + ':</b><br>' + 
-          '<video id="' + playlistName + ':' + segmentID + ':video' + '" width="320" height="240">' +
+          '<video id="' + playlistName + ':' + segmentID + ':video' + '" width="320" height="240" controls>' +
             '<source src="' + originFilePath + '" type="video/ogg">' +
             'Your browser does not support the video tag.' +
           '</video> <br>' + 
