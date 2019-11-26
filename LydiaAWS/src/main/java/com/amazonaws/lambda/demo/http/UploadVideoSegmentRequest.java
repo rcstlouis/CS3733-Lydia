@@ -20,6 +20,10 @@ public class UploadVideoSegmentRequest {
 		this.sentence = sentence;
 	}
 	
+	public String toString() {
+		return "UploadSegment(" + name + "," + character + "," + sentence + ")";
+	}
+	
 	public UploadVideoSegmentRequest() {
 		
 	}
