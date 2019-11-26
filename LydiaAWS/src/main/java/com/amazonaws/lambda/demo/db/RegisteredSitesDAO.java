@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.lambda.demo.model.Constant;
+import com.amazonaws.lambda.demo.model.RegisteredSite;
 
 public class RegisteredSitesDAO {
 	java.sql.Connection conn;
@@ -22,7 +23,7 @@ public class RegisteredSitesDAO {
     public boolean addRegisteredSite(RegisteredSite registeredSite) throws Exception {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM registeredSites WHERE name = ?;");
-            ps.setString(1, registeredSite.getUrl());
+            ps.setString(1, registeredSite.getURL());
             ResultSet resultSet = ps.executeQuery();
             
             // already present?
@@ -51,7 +52,7 @@ public class RegisteredSitesDAO {
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-                Constant c = generateRegisteredSite(resultSet);
+                RegisteredSite c = generateRegisteredSite(resultSet);
                 allRegisteredSites.add(c);
             }
             resultSet.close();
@@ -66,7 +67,7 @@ public class RegisteredSitesDAO {
     private RegisteredSite generateRegisteredSite(ResultSet resultSet) throws Exception {
 		String url = resultSet.getString("url");
 	    //Construct a playlist
-	    return new RegisteredSite ();
+	    return new RegisteredSite (url);
 	}
     
 }
