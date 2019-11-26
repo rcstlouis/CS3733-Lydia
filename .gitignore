@@ -1,7 +1,8 @@
 Signed URLs.md
 AWS.code-workspace
 lydia.code-workspace
-*/MANIFEST.MF
+./**/MANIFEST.MF
+LydiaAWS/target/classes/META-INF/MANIFEST.MF
 
 #LydiaAWS/.meta/.plugins/*
 
