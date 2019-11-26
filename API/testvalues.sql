@@ -14,10 +14,18 @@ select * from innodb.segments;
 
 -- playlistEntries
 -- Schema: (segmentID, playlistName, playlistEntryNumber)
-insert into innodb.playlistEntries values ("3", "spockFlirting", "1");
+insert into innodb.playlistEntries values ("4", "spockFlirting", "1");
+insert into innodb.playlistEntries values ("5", "spockFlirting", "2");
 select * from innodb.playlistEntries;
 
 -- registeredSites
 -- Schema: (url)
 insert into innodb.registeredSites values ("https://www.wpi.edu");
 select * from innodb.registeredSites;
+
+-- Test Queries
+
+-- Getting all the segments in a playlist
+SELECT * FROM innodb.segments WHERE id in (
+    SELECT segmentID FROM innodb.playlistEntries WHERE playlistName="spockFlirting"
+);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="1" name="com.amazonaws.lambda.demo.db.DBTest" time="0" errors="0" skipped="0">
+<testsuite tests="1" failures="1" name="com.amazonaws.lambda.demo.ListPlaylistSegmentsHandlerTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre/lib"/>
@@ -62,10 +62,13 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.amazonaws.lambda.demo.db.DBTest" name="testCreate" time="0">
-    <failure message="didn&apos;t work:Failed in getting playlists: null" type="java.lang.AssertionError">java.lang.AssertionError: didn&apos;t work:Failed in getting playlists: null
+  <testcase classname="com.amazonaws.lambda.demo.ListPlaylistSegmentsHandlerTest" name="testCreateSystemConstant" time="0">
+    <failure message="expected:&lt;200&gt; but was:&lt;403&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;200&gt; but was:&lt;403&gt;
 	at org.junit.Assert.fail(Assert.java:88)
-	at com.amazonaws.lambda.demo.db.DBTest.testCreate(DBTest.java:33)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at com.amazonaws.lambda.demo.ListPlaylistSegmentsHandlerTest.testCreateSystemConstant(ListPlaylistSegmentsHandlerTest.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -96,5 +99,8 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
+    <system-err>Loading Java Lambda handler to list all segments
+in getSegments
+</system-err>
   </testcase>
 </testsuite>

@@ -92,6 +92,27 @@ public class SegmentsDAO {
         }
     }
 	
+public List<Segment> getAllSegmentsFromPlaylist(String playlistName) throws Exception {
+        
+        List<Segment> allSegments = new ArrayList<>();
+        try {
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM innodb.segments WHERE id in "
+            		+ "(SELECT segmentID FROM innodb.playlistEntries WHERE playlistName=?)");
+        	ps.setString(1, playlistName);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting books: " + e.getMessage());
+        }
+    }
+	
 	private Segment generateSegment(ResultSet resultSet) throws Exception {
 		String id = resultSet.getString("id");
 		String name = resultSet.getString("name");

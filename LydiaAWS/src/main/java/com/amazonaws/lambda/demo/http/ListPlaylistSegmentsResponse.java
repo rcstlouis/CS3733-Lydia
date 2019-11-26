@@ -25,5 +25,9 @@ public class ListPlaylistSegmentsResponse {
 		if(list == null) { return "NoSegments"; }
 		return "AllSegments(" + this.list.size() + ")";
 	}
+	
+	public int getStatusCode() {
+		return this.statusCode;
+	}
 
 }

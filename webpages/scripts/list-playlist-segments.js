@@ -53,32 +53,23 @@ function refreshConstantsList(playlistName) {
     var character = playlistEntryJson["character"];
     var sentence = playlistEntryJson["sentence"];
 
-    //Add a check to see if the origin site is our site at some point
-    if (remotelyAvailable) {
-        output = output + 
-                '<div id="playlist:' + playlistName + 'entry:' + segmentID + '">'+
-                    '<b>' + name + ':</b><br>' + 
-                    '<video id="' + playlistName + ':' + segmentID + ':video' + '" width="320" height="240">' +
-                        '<source src="' + originFilePath + '" type="video/ogg">' +
-                        'Your browser does not support the video tag.' +
-                    '</video> <br>' + 
-                    '<p> character: ' + character + '</p>' +
-                    '<p> sentence: ' + sentence + '</p><br>'+
-                    '<p> remotely available: true </p>' + //currently the only line that differs
-                '</div>';
-    } else {
-        output = output + 
-                '<div id="playlist:' + playlistName + 'entry:' + segmentID + '">'+
-                    '<b>' + name + ':</b><br>' + 
-                    '<video id="' + playlistName + ':' + segmentID + ':video' + '" width="320" height="240">' +
-                        '<source src="' + originFilePath + '" type="video/ogg">' +
-                        'Your browser does not support the video tag.' +
-                    '</video> <br>' + 
-                    '<p> character: ' + character + '</p>' +
-                    '<p> sentence: ' + sentence + '</p><br>'+
-                    '<p> remotely available: false </p>' + //currently the only line that differs
-                '</div>';
+    var isRemotelyAvailable = "false";
+    if(remotelyAvailable){
+      isRemotelyAvailable = "true";
     }
+
+    //Add a check to see if the origin site is our site at some point
+    output = output + 
+        '<div id="playlist:' + playlistName + 'entry:' + segmentID + '">'+
+          '<b>' + name + ':</b><br>' + 
+          '<video id="' + playlistName + ':' + segmentID + ':video' + '" width="320" height="240">' +
+            '<source src="' + originFilePath + '" type="video/ogg">' +
+            'Your browser does not support the video tag.' +
+          '</video> <br>' + 
+          '<p> character: ' + character + '</p>' +
+          '<p> sentence: ' + sentence + '</p><br>'+
+          '<p> remotely available: '+isRemotelyAvailable+' </p>' +
+        '</div>';
    }
  
    // Update computation result

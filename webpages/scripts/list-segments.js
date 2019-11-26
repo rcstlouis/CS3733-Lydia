@@ -48,33 +48,24 @@ function processSegmentListResponse(result){
 		var character = segmentJSON["character"];
 		var sentence = segmentJSON["sentence"];
 
+		var isRemotelyAvailable = "false";
+		if(remotelyAvailable){
+			isRemotelyAvailable = "true";
+		}
+
 		//Add a check to see if the origin site is our site at some point
-		if (remotelyAvailable) {
-			output = output + 
+		output = output + 
 			// '<div id="segment:' + segmentID + '">'+
 			'<div class="segment" id="segment:' + name + 'entry:' + segmentID + '">'+
-			'<b>' + name + ':</b><br>' + 
-			'<video id="' + segmentID + '" width="320" height="240">' +
-			'<source src="' + originFilePath + '" type="video/ogg">' +
-			'Your browser does not support the video tag.' +
-			'</video> <br>' + 
-			'<p> character: ' + character + '</p>' +
-			'<p> sentence: ' + sentence + '</p><br>'+
-			'<p> remotely available: true </p>' + //currently the only line that differs
+				'<b>' + name + ':</b><br>' + 
+				'<video id="' + segmentID + '" width="320" height="240" controls>' +
+					'<source src="' + originFilePath + '" type="video/ogg">' +
+					'Your browser does not support the video tag.' +
+				'</video> <br>' + 
+				'<p> character: ' + character + '</p>' +
+				'<p> sentence: ' + sentence + '</p><br>'+
+				'<p> remotely available: ' + isRemotelyAvailable + ' </p>' +
 			'</div>';
-		} else {
-			output = output + 
-			'<div class="segment" id="segment:' + name + 'entry:' + segmentID + '">'+
-			'<b>' + name + ':</b><br>' + 
-			'<video id="' + segmentID + '" width="320" height="240">' +
-			'<source src="' + originFilePath + '" type="video/ogg">' +
-			'Your browser does not support the video tag.' +
-			'</video> <br>' + 
-			'<p> character: ' + character + '</p>' +
-			'<p> sentence: ' + sentence + '</p><br>'+
-			'<p> remotely available: false </p>' + //currently the only line that differs
-			'</div>';
-		}
 	}
 
 	// Update computation result

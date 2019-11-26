@@ -5,9 +5,11 @@ body{
 
 .segment{
     background-color: lightblue;
+    width:50%;
 }
 
 .playlist{
     background-color: lightgreen;
     margin: 0.2em;
+    width:50%;
 }

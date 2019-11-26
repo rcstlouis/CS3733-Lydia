@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.amazonaws.lambda.demo.LambdaFunctionHandlerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.352 sec <<< FAILURE!
-testLambdaFunctionHandler(com.amazonaws.lambda.demo.LambdaFunctionHandlerTest)  Time elapsed: 2.547 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.138 sec <<< FAILURE!
+testLambdaFunctionHandler(com.amazonaws.lambda.demo.LambdaFunctionHandlerTest)  Time elapsed: 8.423 sec  <<< ERROR!
 com.amazonaws.SdkClientException: Unable to find a region via the region provider chain. Must provide an explicit region in the builder or setup environment to supply a region.
 	at com.amazonaws.client.builder.AwsClientBuilder.setRegion(AwsClientBuilder.java:371)
 	at com.amazonaws.client.builder.AwsClientBuilder.configureMutableProperties(AwsClientBuilder.java:337)
