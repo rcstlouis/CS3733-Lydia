@@ -34,6 +34,7 @@ function processSegmentListResponse(result){
 
 	var js = JSON.parse(result);
 	var segmentList = document.getElementById('segmentList');
+	var table = document.getElementById("markTable");
 
 	var output = segmentList.innerHTML;
 	for (var i = 0; i < js.list.length; i++){
@@ -66,6 +67,28 @@ function processSegmentListResponse(result){
 				'<p> sentence: ' + sentence + '</p><br>'+
 				'<p> remotely available: ' + isRemotelyAvailable + ' </p>' +
 			'</div>';
+
+		// Create an empty <tr> element and add it to the ith position of the table:
+		var row = table.insertRow(i+1);
+
+		// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+
+		// Add some text to the new cells:
+		cell1.innerHTML = "<input type='checkbox'>";
+		cell2.innerHTML = name;
+		cell3.innerHTML = character;
+		cell4.innerHTML = sentence;
+		if(isRemotelyAvailable){
+			cell5.innerHTML = "false";
+		} else {
+			cell5.innerHTML = "true";
+		}
+		
 	}
 
 	// Update computation result

@@ -2,8 +2,31 @@
     <head>
         <title>iTrek - Admin</title>
         <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+        <!-- Scripts -->
+        <script type='text/javascript' src='scripts/api.js'></script>
+        <script type='text/javascript' src='scripts/add-to-playlist.js'></script>
+        <script type='text/javascript' src='scripts/create-playlist.js'></script>
+        <script type='text/javascript' src='scripts/delete-playlist.js'></script>
+        <script type='text/javascript' src='scripts/delete-segment.js'></script>
+        <script type='text/javascript' src='scripts/list-playlist-segments.js'></script>
+        <script type='text/javascript' src='scripts/list-playlists.js'></script>
+        <script type='text/javascript' src='scripts/list-segments.js'></script>
+        <script type='text/javascript' src='scripts/list-sites.js'></script>
+        <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
+        <script type='text/javascript' src='scripts/register-site.js'></script>
+        <script type='text/javascript' src='scripts/remove-from-playlist.js'></script>
+        <script type='text/javascript' src='scripts/search-segments.js'></script>
+        <script type='text/javascript' src='scripts/unregister-site.js'></script>
+        <script type='text/javascript' src='scripts/upload-segment.js'></script>
+        <!-- Scripts specific to the user page -->
+        <script type="text/javascript">
+            function initialize() {
+                refreshPlaylistsList();
+                refreshSegmentsList();
+            }
+        </script>
     </head>
-    <body>
+    <body onload="JavaScript:initialize()">
         <h1>iTrek - Admin</h1>
         <form>
             <input type="search" value="Search Video Segments">
@@ -14,8 +37,12 @@
             <input type="url" value="Remote Site URL">
             <input type="submit" value="Register">
         </form>
+        <h2>Preformatted Content</h2>
+        <p>
+            This section contains hard-coded data to demonstrate
+        </p>
         <div>
-            <h2>Playlists</h2>
+            <h3>Playlists</h3>
             <form>
                 <input type="submit" value="Delete Selected Playlist">
                 <input type="submit" value="Append Selected to Playlist">
@@ -38,23 +65,49 @@
             </table>
         </div>
         <div>
-            <h2>Local Video Segments</h2>
+            <h3>Video Segments</h3>
             <video id="allFull" width="320" height="240" controls>
-                <source src="../segments/emotion.ogg" type="video/ogg">
+                <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/emotion.ogg" type="video/ogg">
+                <!-- <source src="../segments/emotion.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
             </video>
-            <video id="allFull" width="320" height="240" controls>
-                <source src="../segments/salt.ogg" type="video/ogg">
+            <video id="allFull2" width="320" height="240" controls>
+                <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/salt.ogg" type="video/ogg">
+                <!-- <source src="../segments/salt.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
             </video>
-            <video id="allFull" width="320" height="240" controls>
-                <source src="../segments/shower.ogg" type="video/ogg">
+            <video id="allFull3" width="320" height="240" controls>
+                <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/shower.ogg" type="video/ogg">
+                <!-- <source src="../segments/shower.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div>
-            <h2>All Video Segments</h2>
-
+        <hr>
+        <h2>Server-Generated Content</h2>
+        <p>
+            This section contains information fetched from the server
+        </p>
+        <h3>Playlist List</h3>
+        <div id="playlistList">
+            <!-- <script>
+                document.getElementById("playlistList").addEventListener("onload", refreshPlaylistList);    
+            </script> -->
         </div>
+        <h3>Local Segment List</h3>
+        <div id="segmentList"></div>
+        <h3>Mark Segments</h3>
+        <form>
+            <input type="submit" value="Mark Selected as Local">
+            <input type="submit" value="Unmark Selected as Local">
+        </form>
+        <table id="markTable">
+            <tr>
+                <th>Selected</th>
+                <th>Name</th>
+                <th>Character</th>
+                <th>Sentence</th>
+                <th>Local</th>
+            </tr>
+        </table>
     </body>
 </html>
