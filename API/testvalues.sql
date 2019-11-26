@@ -5,7 +5,10 @@ select * from innodb.playlists;
 
 -- Segments
 -- Schema: (id, name, originFilePath, originSite, remotelyAvailable, character, sentence)
-insert into innodb.segments values ("3", "salt", "salt.ogg", "oursiteurl", true, "McCoy", "This needs love as much as it needs salt.");
+insert into innodb.segments values ("3", "salt", "salt.ogg", "oursiteurl", true, "Crater", "It needs love as much as it needs salt.");
+select * from innodb.segments;
+
+insert into innodb.segments values ("1", "emotion", "emotion.ogg", "oursiteurl", true, "Spock", "Ah, yes. One of your Earth emotions.");
 select * from innodb.segments;
 
 -- playlistEntries
