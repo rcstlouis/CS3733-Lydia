@@ -14,11 +14,12 @@ function refreshSegmentsList(){
 	console.log("sent");
 
 	xhr.onloadend = function () {
-		console.log ("XHR:" + xhr.responseText) {
-			processListResponse(xhr.responseText, segmentName);
+		console.log ("XHR:" + xhr.responseText) 
+		if(xhr.readyState == XMLHttpRequest.DONE){
+			processSegmentListResponse(xhr.responseText);
 		}
 		else{
-			processListResponse("N/A");
+			processSegmentListResponse("N/A");
 		}
 	};
 }
@@ -28,7 +29,7 @@ function refreshSegmentsList(){
  *
  * Replace the contents of 'segmentList' with a <br>-separated list of names
  */
-function processListResponse(result){
+function processSegmentListResponse(result){
 	console.log("res:" + result);
 
 	var js = JSON.parse(result);

@@ -15,9 +15,9 @@ function refreshPlaylistList() {
    xhr.onloadend = function () {
      if (xhr.readyState == XMLHttpRequest.DONE) {
        console.log ("XHR:" + xhr.responseText);
-       processListResponse(xhr.responseText);
+       processPlaylistListResponse(xhr.responseText);
      } else {
-       processListResponse("N/A");
+       processPlaylistListResponse("N/A");
      }
    };
  }
@@ -27,7 +27,7 @@ function refreshPlaylistList() {
  *
  * Replace the contents of 'playlistList' with a <br>-separated list of names.
  */
-function processListResponse(result) {
+function processPlaylistListResponse(result) {
     console.log("res:" + result);
     // Can grab any DIV or SPAN HTML element and can then manipulate its contents dynamically via javascript
     var js = JSON.parse(result);
