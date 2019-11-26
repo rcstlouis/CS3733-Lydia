@@ -5,10 +5,10 @@ select * from innodb.playlists;
 
 -- Segments
 -- Schema: (id, name, originFilePath, originSite, remotelyAvailable, character, sentence)
-insert into innodb.segments values ("3", "salt", "salt.ogg", "oursiteurl", true, "Crater", "It needs love as much as it needs salt.");
-select * from innodb.segments;
-
-insert into innodb.segments values ("1", "emotion", "emotion.ogg", "oursiteurl", true, "Spock", "Ah, yes. One of your Earth emotions.");
+delete from innodb.segments;
+insert into innodb.segments values ("3", "salt", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/salt.ogg", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/", true, "Crater", "It needs love as much as it needs salt.");
+insert into innodb.segments values ("4", "emotion", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/emotion.ogg", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/", true, "Spock", "Ah, yes. One of your Earth emotions.");
+insert into innodb.segments values ("5", "shower", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/shower.ogg", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/", false, "Tormolen", "One man was taking a shower fully clothed.");
 select * from innodb.segments;
 
 -- playlistEntries
