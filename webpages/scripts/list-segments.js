@@ -83,11 +83,7 @@ function processSegmentListResponse(result){
 		cell2.innerHTML = name;
 		cell3.innerHTML = character;
 		cell4.innerHTML = sentence;
-		if(isRemotelyAvailable){
-			cell5.innerHTML = "false";
-		} else {
-			cell5.innerHTML = "true";
-		}
+		cell5.innerHTML = "true";
 		
 	}
 
