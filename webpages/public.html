@@ -17,8 +17,13 @@
         <script type='text/javascript' src='scripts/search-segments.js'></script>
         <script type='text/javascript' src='scripts/unregister-site.js'></script>
         <script type='text/javascript' src='scripts/upload-segment.js'></script>
+        <script type="text/javascript">
+            function initialize() {
+              refreshPlaylistList();
+            }
+          </script>
     </head>
-    <body>
+    <body onload="initialize()">
         <h1>iTrek</h1>
         <form>
             <input type="search" value="Search Video Segments">
@@ -69,8 +74,12 @@
         </div>
         <h2>Server-Generated Content</h2>
         <h3>Playlist List</h3>
-        <div id = "playlistList"></div>
+        <div id="playlistList">
+            <script>
+                document.getElementById("playlistList").addEventListener("onload", refreshPlaylistList);    
+            </script>
+        </div>
         <h3>Segment List</h3>
-        <div id = "segmentList"></div>
+        <div id="segmentList"></div>
     </body>
 </html>
