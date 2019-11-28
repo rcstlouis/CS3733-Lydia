@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu&display=swap');
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #c3d1e0;
+    color: #000000;
+    font-size: 1em;
+}
+
+h1, h2, h3{
+    font-family: 'Raleway', 'Ubuntu', sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 2.8em;
+}
+
+.segment{
+    background-color: #89b7dd;
+    margin: 1em;
+    padding: 1em;
+}
+
+.playlist{
+    background-color: #a5d6a5;
+    margin: 1em;
+    padding: 1em;
+}
+
+button{
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+video{
+    margin: auto;
+}
+
+.centerable{
+    width: 100%;
+}
+
+button, input[type=button], input[type=submit], input[type=reset] {
+    background-color: #ebbebe;
+    border: none;
+    color: black;
+    padding: 0.3em 0.6em;
+    text-decoration: none;
+    margin: 0.4em 0.2em;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+}
+
+a{
+    text-decoration: none;
+}

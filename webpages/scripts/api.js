@@ -17,3 +17,16 @@ var mark_unmakr_local_url      = base_url + "mark-unmark-local";      //POST
 var register_site_url          = base_url + "register-site";          //POST
 var unregister_site_url        = base_url + "unregister-site";        //POST
 var list_sites_url             = base_url + "list-sites";             //GET
+
+toggletheme = function(){
+    themecss = document.getElementById("theme");
+    themebutton = document.getElementById("themebutton");
+    if(themebutton.innerHTML === "Memes"){
+        themecss.href = "./styles/memes.css";
+        themebutton.innerHTML = "No Memes";
+    }
+    else{
+        themecss.href = "./styles/light.css";
+        themebutton.innerHTML = "Memes";
+    }
+}

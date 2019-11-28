@@ -59,10 +59,12 @@ function processSegmentListResponse(result){
 			// '<div id="segment:' + segmentID + '">'+
 			`<div class="segment" id="segment:${name}:entry:${segmentID}">
 				<b>${name}:</b><br>
-				<video id="${segmentID}" width="320" height="240" controls>
-					<source src="${originFilePath}" type="video/ogg">
-					Your browser does not support the video tag.
-				</video> <br>
+				<div class="centerable">
+					<video id="${segmentID}" width="320" height="240" controls>
+						<source src="${originFilePath}" type="video/ogg">
+						Your browser does not support the video tag.
+					</video> <br>
+				</div>
 				<p> character: ${character}</p>
 				<p> sentence: ${sentence}</p><br>
 				<p> remotely available: ${isRemotelyAvailable}</p>
