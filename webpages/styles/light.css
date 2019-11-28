@@ -83,3 +83,7 @@ input[type=text], input[type=search] {
     border-color: #5a5a5a;
     border-width: 0.1em;
 }
+
+hr{
+    border: 0.05em solid #2e2e2e;
+}
