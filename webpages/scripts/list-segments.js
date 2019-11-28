@@ -58,7 +58,7 @@ function processSegmentListResponse(result){
 		output = output + 
 			// '<div id="segment:' + segmentID + '">'+
 			`<div class="segment" id="segment:${name}:entry:${segmentID}">
-				<b>${name}:</b><br>
+				<span class="playlistEntry">${name}</span><br>
 				<div class="centerable">
 					<video id="${segmentID}" width="320" height="240" controls>
 						<source src="${originFilePath}" type="video/ogg">

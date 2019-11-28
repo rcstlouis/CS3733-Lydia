@@ -42,7 +42,7 @@ function processPlaylistListResponse(result) {
     var name = playlistJson["name"];
     output = output + 
     `<div class="playlist" id="playlist:${name}">
-      <b>${name}</b><br>
+      <span class="playlistName">${name}</span><br>
       <form>
         <input type="submit" value="Delete Playlist">
         <input type="submit" value="Append Selected to this Playlist">

@@ -61,7 +61,7 @@ function refreshPlaylistSegments(playlistName) {
     //Add a check to see if the origin site is our site at some point
     output = output + 
         `<div id="playlist:${playlistName}:entry:${segmentID}" class="segment">
-          <b>${name}:</b><br>
+          <span class="playlistEntry">${name}</span><br>
           <video id="${playlistName}:${segmentID}:video" width="320" height="240" controls>
             <source src="${originFilePath}" type="video/ogg">
             Your browser does not support the video tag.
