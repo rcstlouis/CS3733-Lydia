@@ -70,3 +70,16 @@ a{
     font-family: 'Raleway', sans-serif;
     padding: 0.2em;
 }
+
+input[type=text], input[type=search] {
+    /* width: 100%; */
+    background-color: rgb(184, 129, 181);
+    color: white;
+    font-size: 0.9em;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0.2em;
+    width: 20em;
+    border-style: solid;
+    border-color: #5a5a5a;
+    border-width: 0.1em;
+}
