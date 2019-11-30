@@ -29,13 +29,15 @@
     </head>
     <body onload="JavaScript:initialize()">
         <h1>iTrek - Admin</h1>
+        <h3>Search Video Segments</h3>
         <form>
-            <input type="search" value="Search Video Segments">
-            <input type="checkbox"> Search by Character
-            <input type="checkbox"> Search by Sentence
+            <input type="text" placeholder="Search by Character">
+            <input type="text" placeholder="Search by Sentence">
+            <input type="submit" value="Boldly Go">
         </form>
+        <h3>Register Remote Site</h3>
         <form>
-            <input type="url" value="Remote Site URL">
+            <input type="url" placeholder="Remote Site URL">
             <input type="submit" value="Register">
         </form>
         <h2>Preformatted Content</h2>
@@ -49,7 +51,7 @@
                 <input type="submit" value="Append Selected to Playlist">
             </form>
             <form>
-                <input type="text" value="Playlist Name">
+                <input type="text" placeholder="Playlist Name">
                 <input type="submit" value="Create Playlist">
             </form>
             <table id="playlists">
