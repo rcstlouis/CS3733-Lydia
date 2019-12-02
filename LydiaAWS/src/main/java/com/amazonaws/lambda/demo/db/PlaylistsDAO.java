@@ -39,7 +39,21 @@ public class PlaylistsDAO {
             return true;
 
         } catch (Exception e) {
-            throw new Exception("Failed to insert segment: " + e.getMessage());
+            throw new Exception("Failed to insert playlist: " + e.getMessage());
+        }
+    }
+	
+	public boolean deletePlaylist(Playlist playlist) throws Exception {
+        try {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM playlists WHERE name = ?;");
+            ps.setString(1, playlist.getName());
+            int numAffected = ps.executeUpdate();
+            ps.close();
+            
+            return (numAffected == 1);
+
+        } catch (Exception e) {
+            throw new Exception("Failed to delete playlist: " + e.getMessage());
         }
     }
 	

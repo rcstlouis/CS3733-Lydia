@@ -71,6 +71,20 @@ public class SegmentsDAO {
         }
     }
 	
+	public boolean deleteSegment(Segment segment) throws Exception {
+        try {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM segments WHERE id = ?;");
+            ps.setString(1, segment.getID());
+            int numAffected = ps.executeUpdate();
+            ps.close();
+            
+            return (numAffected == 1);
+
+        } catch (Exception e) {
+            throw new Exception("Failed to delete segment: " + e.getMessage());
+        }
+    }
+	
 	public List<Segment> getAllSegments() throws Exception {
         
         List<Segment> allSegments = new ArrayList<>();
