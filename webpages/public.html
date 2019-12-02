@@ -6,7 +6,7 @@
         <!-- Scripts -->
         <script type='text/javascript' src='scripts/api.js'></script>
         <!-- <script type='text/javascript' src='scripts/add-to-playlist.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/create-playlist.js'></script> -->
+        <script type='text/javascript' src='scripts/create-playlist.js'></script>
         <!-- <script type='text/javascript' src='scripts/delete-playlist.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/delete-segment.js'></script> -->
         <script type='text/javascript' src='scripts/list-playlist-segments.js'></script>
@@ -29,68 +29,22 @@
     </head>
     <body onload="JavaScript:initialize()">
         <h1>iTrek</h1>
-        <h3>Search Video Segments</h3>
-        <form>
-            <input type="text" placeholder="Search by Character">
-            <input type="text" placeholder="Search by Sentence">
-            <input type="submit" value="Boldly Go">
-        </form>
-        <hr>
-        <h2>Preformatted Content</h2>
-        <p>
-            This section contains hard-coded data in case something in AWS breaks.
-        </p>
+        <div>
+            <h3>Search Video Segments</h3>
+            <form>
+                <input type="text" placeholder="Search by Character">
+                <input type="text" placeholder="Search by Sentence">
+                <input type="submit" value="Boldly Go">
+            </form>
+        </div>
         <div>
             <h3>Playlists</h3>
             <form>
-                <input type="submit" value="Delete Selected Playlist">
-                <input type="submit" value="Append Selected to Playlist">
-            </form>
-            <form>
                 <input type="text" placeholder="Playlist Name">
-                <input type="submit" value="Create Playlist">
+                <input type="button" id="createPlaylistButton" value="Create Playlist" onclick="handleCreateClick(this)">
             </form>
-            <table id="playlists">
-                <tr>
-                    <th>Selected</th>
-                    <th>Playlist Name</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>Playlist 1</td>
-                </tr>
-            </table>
         </div>
-        <div>
-            <h3>Video Segments</h3>
-            <video id="allFull" width="320" height="240" controls>
-                <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/emotion.ogg" type="video/ogg">
-                <!-- <source src="../segments/emotion.ogg" type="video/ogg"> -->
-                Your browser does not support the video tag.
-            </video>
-            <video id="allFull2" width="320" height="240" controls>
-                <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/salt.ogg" type="video/ogg">
-                <!-- <source src="../segments/salt.ogg" type="video/ogg"> -->
-                Your browser does not support the video tag.
-            </video>
-            <video id="allFull3" width="320" height="240" controls>
-                <source src="https://3733lydia.s3.us-east-2.amazonaws.com/segments/shower.ogg" type="video/ogg">
-                <!-- <source src="../segments/shower.ogg" type="video/ogg"> -->
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <hr>
-        <h2>Server-Generated Content</h2>
-        <p>
-            This section contains information fetched from the server.
-        </p>
-        <h3>Playlist List</h3>
         <div id="playlistList">
-            <!-- <script>
-                document.getElementById("playlistList").addEventListener("onload", refreshPlaylistList);    
-            </script> -->
         </div>
         <h3>Segment List</h3>
         <div id="segmentList"></div>
