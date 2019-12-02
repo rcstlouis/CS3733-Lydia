@@ -39,7 +39,21 @@ public class RegisteredSitesDAO {
             return true;
 
         } catch (Exception e) {
-            throw new Exception("Failed to insert constant: " + e.getMessage());
+            throw new Exception("Failed to register site: " + e.getMessage());
+        }
+    }
+    
+    public boolean deleteRegisteredSite(RegisteredSite rs) throws Exception {
+        try {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM Constants WHERE url = ?;");
+            ps.setString(1, rs.getURL());
+            int numAffected = ps.executeUpdate();
+            ps.close();
+            
+            return (numAffected == 1);
+
+        } catch (Exception e) {
+            throw new Exception("Failed to delete registered site: " + e.getMessage());
         }
     }
     
