@@ -94,6 +94,22 @@ public class PlaylistEntriesDAO {
         }
     }
     
+    public boolean deletePlaylistEntry(PlaylistEntry pe) throws Exception {
+        try {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = ? AND playlistName = ? AND playlistEntryNumber = ?;");
+            ps.setString(1, pe.getSegmentID());
+            ps.setString(2, pe.getPlaylistName());
+            ps.setInt(3, pe.getEntryNumber());
+            int numAffected = ps.executeUpdate();
+            ps.close();
+            
+            return (numAffected == 1);
+
+        } catch (Exception e) {
+            throw new Exception("Failed to insert constant: " + e.getMessage());
+        }
+    }
+    
     private PlaylistEntry generatePlaylistEntry(ResultSet resultSet) throws Exception {
         String segmentID = resultSet.getString("segmentID");
         String playlistName = resultSet.getString("playlistName");
