@@ -144,6 +144,30 @@ public class SegmentsDAO {
         }
     }
 	
+	public boolean deleteSegment(String name, String originSite) throws Exception {
+        try {
+        	PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = (" + 
+        			"SELECT id FROM segments " + 
+        			"WHERE name = '?' and originSite = '?'" +
+        	");");
+            ps.setString(1, name);
+            ps.setString(2, originSite);
+            ps.executeUpdate();
+            ps.close();
+        	
+            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM segments WHERE name = ? AND originSite = ?;");
+            ps1.setString(1, name);
+            ps1.setString(2, originSite);
+            int numAffected = ps.executeUpdate();
+            ps1.close();
+            
+            return (numAffected == 1);
+
+        } catch (Exception e) {
+            throw new Exception("Failed to delete segment: " + e.getMessage());
+        }
+    }
+	
 	public List<Segment> getAllSegments() throws Exception {
         
         List<Segment> allSegments = new ArrayList<>();
