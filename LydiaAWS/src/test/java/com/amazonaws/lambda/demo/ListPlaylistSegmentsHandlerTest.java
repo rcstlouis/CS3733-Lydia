@@ -46,7 +46,7 @@ public class ListPlaylistSegmentsHandlerTest {
 		try {
 			PlaylistEntry pe = cd.getPlaylistEntry("spockFlirting", "4");
 
-			assertTrue (pe.getSegmentID() == "4");
+			assertTrue (pe.getSegmentID().equals("4"));
 		} catch (Exception e) {
 			fail("didn't work:" + e.getMessage());
 		}
