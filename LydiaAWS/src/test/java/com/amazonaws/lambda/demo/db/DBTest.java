@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.amazonaws.lambda.demo.model.Playlist;
+import com.amazonaws.lambda.demo.model.Segment;
 
 import static org.junit.Assert.*;
 
