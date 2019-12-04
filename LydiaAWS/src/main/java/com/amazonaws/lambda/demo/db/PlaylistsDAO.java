@@ -50,6 +50,11 @@ public class PlaylistsDAO {
             int numAffected = ps.executeUpdate();
             ps.close();
             
+            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM playlistsEntries WHERE playlistName = ?;");
+            ps1.setString(1, playlist.getName());
+            ps1.executeUpdate();
+            ps1.close();
+            
             return (numAffected == 1);
 
         } catch (Exception e) {
