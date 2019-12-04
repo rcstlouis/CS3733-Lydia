@@ -64,6 +64,8 @@ public class GetAllPlaylistsHandlerTest {
 
         String output = handler.handleRequest(event, ctx).toString();
 
+        System.out.println(""+output);
+        System.out.println(""+CONTENT_TYPE);
         // TODO: validate output here if needed.
         Assert.assertEquals(CONTENT_TYPE, output);
     }

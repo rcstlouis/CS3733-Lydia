@@ -23,7 +23,7 @@ import com.amazonaws.services.s3.model.S3Object;
 @RunWith(MockitoJUnitRunner.class)
 public class GetAllSegmentsHandlerTest {
 
-	 private final String CONTENT_TYPE = "image/jpeg";
+	 private final String CONTENT_TYPE = "video/ogg";
 	    private S3Event event;
 
 	    @Mock
@@ -61,8 +61,12 @@ public class GetAllSegmentsHandlerTest {
 
 	        String output = handler.handleRequest(event, ctx).toString();
 
+	        System.out.println(""+output);
+	        System.out.println(""+CONTENT_TYPE);
 	        // TODO: validate output here if needed.
 	        Assert.assertEquals(CONTENT_TYPE, output);
+	        
+	        
 	    }
 
 }
