@@ -189,7 +189,7 @@ public class SegmentsDAO {
         }
     }
 	
-public List<Segment> getAllSegmentsFromPlaylist(String playlistName) throws Exception {
+	public List<Segment> getAllSegmentsFromPlaylist(String playlistName) throws Exception {
         
         List<Segment> allSegments = new ArrayList<>();
         try {
@@ -208,7 +208,23 @@ public List<Segment> getAllSegmentsFromPlaylist(String playlistName) throws Exce
         } catch (Exception e) {
             throw new Exception("Failed in getting books: " + e.getMessage());
         }
-    }
+	}
+	
+	public boolean toggleRemotelyAvailable(String name) throws Exception {
+		try {
+			PreparedStatement ps = conn.prepareStatement("UPDATE innodb.segments " + 
+					"SET remotelyAvailable = NOT remotelyAvailable " + 
+					"WHERE name = ? AND originSite = ?;");
+            ps.setString(1, name);
+            ps.setString(2, SITE_URL);
+            int numAffected = ps.executeUpdate();
+            ps.close();
+            return numAffected == 1;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in getting books: " + e.getMessage());
+        }
+	}
 	
 	private Segment generateSegment(ResultSet resultSet) throws Exception {
 		String id = resultSet.getString("id");
