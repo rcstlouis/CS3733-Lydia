@@ -7,7 +7,7 @@
         <script type='text/javascript' src='scripts/api.js'></script>
         <!-- <script type='text/javascript' src='scripts/add-to-playlist.js'></script> -->
         <script type='text/javascript' src='scripts/create-playlist.js'></script>
-        <!-- <script type='text/javascript' src='scripts/delete-playlist.js'></script> -->
+        <script type='text/javascript' src='scripts/delete-playlist.js'></script>
         <!-- <script type='text/javascript' src='scripts/delete-segment.js'></script> -->
         <script type='text/javascript' src='scripts/list-playlist-segments.js'></script>
         <script type='text/javascript' src='scripts/list-playlists.js'></script>
@@ -16,7 +16,7 @@
         <!-- <script type='text/javascript' src='scripts/mark-unmark-local.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/register-site.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/search-segments.js'></script> -->
+        <script type='text/javascript' src='scripts/search-segments.js'></script>
         <!-- <script type='text/javascript' src='scripts/unregister-site.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/upload-segment.js'></script> -->
         <!-- Scripts specific to the user page -->
@@ -31,17 +31,18 @@
         <h1>iTrek</h1>
         <div>
             <h3>Search Video Segments</h3>
-            <form>
-                <input type="text" placeholder="Search by Character">
-                <input type="text" placeholder="Search by Sentence">
-                <input type="submit" value="Boldly Go">
+            <form name="searchForm" method="POST"> 
+                <input type="text" name="character" value="" placeholder="Search by Character">
+                <input type="text" name="sentence" value="" placeholder="Search by Sentence">
+                <input type="button" id="searchSegmentsButton" value="Boldly Go" onclick="handleSearchSegmentsClick(this)">
             </form>
+            <div id="searchResults"></div>
         </div>
         <div>
             <h3>Playlists</h3>
-            <form>
-                <input type="text" placeholder="Playlist Name">
-                <input type="button" id="createPlaylistButton" value="Create Playlist" onclick="handleCreateClick(this)">
+            <form name="createPlaylistForm" method="POST">
+                <input type="text" name="playlistName" value="" placeholder="Playlist Name">
+                <input type="button" id="createPlaylistButton" value="Create Playlist" onclick="handleCreatePlaylistClick(this)">
             </form>
         </div>
         <div id="playlistList">

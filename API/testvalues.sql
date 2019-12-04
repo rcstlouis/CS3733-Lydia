@@ -30,3 +30,8 @@ select * from innodb.registeredSites;
 SELECT * FROM innodb.segments WHERE id in (
     SELECT segmentID FROM innodb.playlistEntries WHERE playlistName="spockFlirting"
 );
+
+DELETE FROM innodb.playlistEntries WHERE segmentID = (
+    SELECT id FROM innodb.segements WHERE name = ? and originSite = ?
+)
+
