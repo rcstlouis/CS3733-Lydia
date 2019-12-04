@@ -2,6 +2,8 @@ package com.amazonaws.lambda.demo.model;
 
 import java.util.UUID;
 
+import com.amazonaws.lambda.demo.db.SegmentsDAO;
+
 public class Segment {
 
 	String id;
@@ -11,6 +13,16 @@ public class Segment {
 	String originFilePath;
 	String originSite;
 	boolean remotelyAvailable;
+	
+	public Segment(String name, String character, String sentence) {
+		this.setNewId();
+		this.name = name;
+		this.character = character;
+		this.sentence = sentence;
+		this.originFilePath = SegmentsDAO.SITE_URL + name;
+		this.originSite = SegmentsDAO.SITE_URL;
+		this.remotelyAvailable = false;
+	}
 	
 	public Segment(String name, String character, String sentence, String originFilePath, String originSite, boolean remotelyAvailable) {
 		this.setNewId();

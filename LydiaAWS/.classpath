@@ -51,8 +51,8 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/matthewstlouis/Desktop/gson-2.6.2.jar"/>
-	<classpathentry kind="lib" path="/Users/matthewstlouis/Desktop/mysql-connector-java-5.1.6.jar"/>
-	<classpathentry kind="lib" path="/Users/matthewstlouis/Desktop/simpleJSON.jar"/>
+	<classpathentry kind="lib" path="libs/gson-2.6.2.jar"/>
+	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.6.jar"/>
+	<classpathentry kind="lib" path="libs/simpleJSON.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

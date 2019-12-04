@@ -6,6 +6,7 @@ lydia.code-workspace
 ./**/MANIFEST.MF
 LydiaAWS/target/classes/META-INF/MANIFEST.MF
 errors.md
+credentials.csv
 
 #LydiaAWS/.meta/.plugins/*
 

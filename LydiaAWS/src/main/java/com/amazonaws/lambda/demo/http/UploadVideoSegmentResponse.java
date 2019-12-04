@@ -17,5 +17,9 @@ public class UploadVideoSegmentResponse {
 	public String toString() {
 		return "Response(" + response + ")";
 	}
+	
+	public int getCode() {
+		return this.httpCode;
+	}
 
 }
