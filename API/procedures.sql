@@ -1,9 +1,16 @@
+delimiter //
+
 CREATE TRIGGER RenumberOnDeleteTrigger
-BEFORE DELETE ON playlistEntries
-REFERENCING
-    NEW ROW AS newRow
-    OLD ROW AS oldRow
-FOR EACH ROW
-    WHEN newRow.number > -- number of thing deleted
-    UPDATE
-;
+AFTER DELETE ON playlistEntries
+FOR EACH STATEMENT
+BEGIN
+    SET @pointer = SELECT COUNT(*) FROM playlistEntries;
+    SET @pointer = @pointer + 1;
+    REPEAT
+        UPDATE playlistEntries SET NEW.playlistEntryNumber = @pointer - 1 WHERE OLD.playlistEntryNumber = @pointer;
+    UNTIL
+        SELECT COUNT(*) FROM playlistEntries WHERE 
+
+    END REPEAT;
+END;//
+delimiter;
