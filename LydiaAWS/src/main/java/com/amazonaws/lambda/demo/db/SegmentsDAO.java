@@ -20,12 +20,12 @@ public class SegmentsDAO {
     	}
     }
     
-	public Segment getSegment(String name) throws Exception {
+	public Segment getSegment(String id) throws Exception {
 	        
         try {
             Segment segment = null;
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE name=?;");
-            ps.setString(1,  name);
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE id=?;");
+            ps.setString(1,  id);
             ResultSet resultSet = ps.executeQuery();
             
             while (resultSet.next()) {
@@ -38,9 +38,67 @@ public class SegmentsDAO {
 
         } catch (Exception e) {
         	e.printStackTrace();
-            throw new Exception("Failed in getting constant: " + e.getMessage());
+            throw new Exception("Failed in getting segment: " + e.getMessage());
         }
     }
+	
+	public List<Segment> searchByCharacter(String character) throws Exception{
+		List<Segment> allSegments = new ArrayList<>();
+        try {
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*?.*';");
+            ps.setString(1, character);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in searching segments: " + e.getMessage());
+        }
+	}
+	
+	public List<Segment> searchBySentence(String sentence) throws Exception{
+		List<Segment> allSegments = new ArrayList<>();
+        try {
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `sentence` RLIKE '.*?.*';");
+            ps.setString(1, sentence);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in searching segments: " + e.getMessage());
+        }
+	}
+	
+	public List<Segment> searchByAll(String search) throws Exception{
+		List<Segment> allSegments = new ArrayList<>();
+        try {
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*?.*' OR ;");
+            ps.setString(1, search);
+            ps.setString(2, search);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                Segment s = generateSegment(resultSet);
+                allSegments.add(s);
+            }
+            resultSet.close();
+            return allSegments;
+
+        } catch (Exception e) {
+            throw new Exception("Failed in searching segments: " + e.getMessage());
+        }
+	}
 	
 	public boolean addSegment(Segment segment) throws Exception {
         try {
