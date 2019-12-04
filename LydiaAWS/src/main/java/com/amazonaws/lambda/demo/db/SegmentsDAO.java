@@ -46,7 +46,7 @@ public class SegmentsDAO {
 	public List<Segment> searchByCharacter(String character) throws Exception{
 		List<Segment> allSegments = new ArrayList<>();
         try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*?.*';");
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*\\?.*';");
             ps.setString(1, character);
             ResultSet resultSet = ps.executeQuery();
 
@@ -65,7 +65,7 @@ public class SegmentsDAO {
 	public List<Segment> searchBySentence(String sentence) throws Exception{
 		List<Segment> allSegments = new ArrayList<>();
         try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `sentence` RLIKE '.*?.*';");
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `sentence` RLIKE '.*\\?.*';");
             ps.setString(1, sentence);
             ResultSet resultSet = ps.executeQuery();
 
@@ -84,7 +84,7 @@ public class SegmentsDAO {
 	public List<Segment> searchByAll(String search) throws Exception{
 		List<Segment> allSegments = new ArrayList<>();
         try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*?.*' OR ;");
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*\\?.*' OR ;");
             ps.setString(1, search);
             ps.setString(2, search);
             ResultSet resultSet = ps.executeQuery();
