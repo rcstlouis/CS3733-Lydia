@@ -34,4 +34,3 @@ SELECT * FROM innodb.segments WHERE id in (
 DELETE FROM innodb.playlistEntries WHERE segmentID = (
     SELECT id FROM innodb.segements WHERE name = ? and originSite = ?
 )
-
