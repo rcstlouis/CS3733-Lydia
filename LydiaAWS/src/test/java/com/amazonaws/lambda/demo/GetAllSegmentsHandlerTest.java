@@ -1,8 +1,12 @@
 package com.amazonaws.lambda.demo;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,6 +17,10 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.amazonaws.lambda.demo.db.PlaylistEntriesDAO;
+import com.amazonaws.lambda.demo.db.SegmentsDAO;
+import com.amazonaws.lambda.demo.model.PlaylistEntry;
+import com.amazonaws.lambda.demo.model.Segment;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.events.S3Event;
 import com.amazonaws.services.s3.AmazonS3;
@@ -67,6 +75,34 @@ public class GetAllSegmentsHandlerTest {
 	        Assert.assertEquals(CONTENT_TYPE, output);
 	        
 	        
+	    }
+	    
+	    @Test
+	    public void testGetSegment() {
+	    	SegmentsDAO cd = new SegmentsDAO();
+			try {
+				Segment s = cd.getSegment("salt");
+				System.out.println(s.getID());
+				assertTrue (s.getID().equals("3"));
+				assertTrue(s.getName().equals("salt"));
+				assertTrue(s.getCharacter().equals("Crater"));
+				assertTrue(s.getSentence().equals("It needs love as much as it needs salt."));
+				assertTrue(s.isRemotelyAvailable() == true);
+			} catch (Exception e) {
+				fail("didn't work:" + e.getMessage());
+			}
+	    }
+	    
+	    @Test
+	    public void testSearchByCharacterWhole() {
+	    	SegmentsDAO cd = new SegmentsDAO();
+			try {
+				List<Segment> s = cd.searchByCharacter("Spock");
+				assertTrue(s.size() == 1);
+				assertTrue(s.contains(cd.getSegment("emotion")));
+			} catch (Exception e) {
+				fail("didn't work:" + e.getMessage());
+			}
 	    }
 
 }
