@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.amazonaws.lambda.demo.db.PlaylistEntriesDAO;
+import com.amazonaws.lambda.demo.db.PlaylistsDAO;
+import com.amazonaws.lambda.demo.db.SegmentsDAO;
 import com.amazonaws.lambda.demo.http.*;
 import com.amazonaws.lambda.demo.model.*;
 import com.amazonaws.services.lambda.runtime.Context;
@@ -25,5 +28,29 @@ public class ListPlaylistSegmentsHandlerTest {
         ctx.setFunctionName(apiCall);
         return ctx;
     }
+	
+	@Test
+	public void testGetPlaylistLength() {
+		PlaylistEntriesDAO cd = new PlaylistEntriesDAO();
+		try {
+			int length = cd.getPlaylistLength("spockFlirting");
+			assertTrue (length == 2);
+		} catch (Exception e) {
+			fail("didn't work:" + e.getMessage());
+		}
+	}
+	
+	@Test
+	public void testGetPlaylistEntry() {
+		PlaylistEntriesDAO cd = new PlaylistEntriesDAO();
+		try {
+			PlaylistEntry pe = cd.getPlaylistEntry("spockFlirting", "4");
+
+			assertTrue (pe.getSegmentID() == "4");
+		} catch (Exception e) {
+			fail("didn't work:" + e.getMessage());
+		}
+	}
+	
 
 }
