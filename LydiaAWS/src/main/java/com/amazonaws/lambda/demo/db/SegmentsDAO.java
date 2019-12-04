@@ -11,6 +11,7 @@ import com.amazonaws.lambda.demo.model.Segment;
 
 public class SegmentsDAO {
 	java.sql.Connection conn;
+	public static final String SITE_URL = "https://3733lydia.s3.us-east-2.amazonaws.com/segments/";
 
     public SegmentsDAO() {
     	try  {
@@ -20,12 +21,12 @@ public class SegmentsDAO {
     	}
     }
     
-	public Segment getSegment(String id) throws Exception {
+	public Segment getSegment(String name) throws Exception {
 	        
         try {
             Segment segment = null;
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE id=?;");
-            ps.setString(1,  id);
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE name=?;");
+            ps.setString(1,  name);
             ResultSet resultSet = ps.executeQuery();
             
             while (resultSet.next()) {
