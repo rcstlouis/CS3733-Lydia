@@ -5,20 +5,20 @@ function processCreatePlaylistResponse(result) {
     refreshPlaylistsList();
 }
   
-function handleCreateClick(e) {
-    var form = document.createForm;
+function handleCreatePlaylistClick(e) {
+    var form = document.createPlaylistForm;
    
     var data = {};
-    data["name"]               = form.constantName.value;
+    data["name"]               = form.playlistName.value;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.createForm.base64Encoding.value.split(',');
+    var segments = document.createPlaylistForm.base64Encoding.value.split(',');
     data["base64EncodedValue"] = segments[1];  // skip first one 
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", create_platylist_url, true);
+    xhr.open("POST", create_playlist_url, true);
   
     // send the collected data as JSON
     xhr.send(js);
