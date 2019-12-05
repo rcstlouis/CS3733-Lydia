@@ -35,6 +35,41 @@ public class RegisteredSitesTest {
 			ListIterator<RegisteredSite> listIterator = list.listIterator();
 
 			for (int i = 0; i < hold.size(); i++) {
+				assertTrue(hold.get(i).getURL().equals(list.get(i).getURL()));
+			}
+			
+				
+			
+		} catch (Exception e) {
+			fail("didn't work:" + e.getMessage());
+		}
+	}
+
+	
+	@Test
+	public void testAddRegisteredSites() {
+    	RegisteredSitesDAO cd = new RegisteredSitesDAO();
+		try {
+			List<RegisteredSite> hold = cd.getAllRegisteredSites();
+			List<RegisteredSite> list = new ArrayList<RegisteredSite>();
+			ListIterator<RegisteredSite> holdIterator = hold.listIterator();
+			RegisteredSite hello = new RegisteredSite("hello");
+			RegisteredSite url = new RegisteredSite("url.com");
+			RegisteredSite fraud = new RegisteredSite("fraudguarantee.com");
+			RegisteredSite heineman = new RegisteredSite("https://web.cs.wpi.edu/~heineman/cs3733/");
+			RegisteredSite wpi = new RegisteredSite("https://www.wpi.edu/");
+			RegisteredSite test = new RegisteredSite("jonbrownlowsbowlcut.info");
+			list.add(fraud);
+			list.add(hello);
+			list.add(heineman);
+			list.add(wpi);
+			list.add(url);
+			list.add(test);
+			
+			cd.addRegisteredSite(test);
+			ListIterator<RegisteredSite> listIterator = list.listIterator();
+
+			for (int i = 0; i < hold.size(); i++) {
 				System.out.println(hold.get(i));
 				System.out.println(list.get(i));
 			}
@@ -45,5 +80,4 @@ public class RegisteredSitesTest {
 			fail("didn't work:" + e.getMessage());
 		}
 	}
-
 }
