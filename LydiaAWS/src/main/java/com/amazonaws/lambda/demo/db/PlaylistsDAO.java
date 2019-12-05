@@ -21,9 +21,28 @@ public class PlaylistsDAO {
     	}
     }
 	
+	public boolean getPlaylist(String name) throws Exception {
+		try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlists WHERE name = ?;");
+            ps.setString(1, name);
+            ResultSet resultSet = ps.executeQuery();
+            
+            // already present?
+            while (resultSet.next()) {
+                Playlist p = generatePlaylist(resultSet);
+                resultSet.close();
+                return false;
+            }
+            return true;
+
+        } catch (Exception e) {
+            throw new Exception("Failed to insert playlist: " + e.getMessage());
+        }
+	}
+	
 	public boolean addPlaylist(Playlist playlist) throws Exception {
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlists WHERE id = ?;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlists WHERE name = ?;");
             ps.setString(1, playlist.getName());
             ResultSet resultSet = ps.executeQuery();
             
