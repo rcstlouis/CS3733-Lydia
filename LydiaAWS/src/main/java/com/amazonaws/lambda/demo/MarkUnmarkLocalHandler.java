@@ -1,6 +1,8 @@
 package com.amazonaws.lambda.demo;
 
 import java.io.ByteArrayInputStream;
+import java.util.Iterator;
+import java.util.List;
 
 import com.amazonaws.lambda.demo.http.ChangeMarkSegmentRequest;
 import com.amazonaws.lambda.demo.http.ChangeMarkSegmentResponse;
@@ -34,14 +36,18 @@ public class MarkUnmarkLocalHandler implements RequestHandler<ChangeMarkSegmentR
 	public ChangeMarkSegmentResponse handleRequest(ChangeMarkSegmentRequest req, Context context)  {
 		logger = context.getLogger();
 		logger.log(req.toString());
+		List<String> segmentNames = req.getNames();
+		Iterator<String> iter = segmentNames.iterator();
 
 		SegmentsDAO dao = new SegmentsDAO();
 		ChangeMarkSegmentResponse response;
 		try {
-			dao.toggleRemotelyAvailable(req.getName());
-			response = new ChangeMarkSegmentResponse("Successfully changed mark of " + req.getName(), 200);
+			while(iter.hasNext()) {
+				dao.toggleRemotelyAvailable(iter.next());
+			}
+			response = new ChangeMarkSegmentResponse("Successfully changed marks", 200);
 		} catch (Exception e) {
-			response = new ChangeMarkSegmentResponse("Unable to upload segment: " + req.getName() + "(" + e.getMessage() + ")", 400);
+			response = new ChangeMarkSegmentResponse("Unable to change marks: " + "(" + e.getMessage() + ")", 400);
 		}
 
 		return response;

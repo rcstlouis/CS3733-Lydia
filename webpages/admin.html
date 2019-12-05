@@ -13,7 +13,7 @@
         <script type='text/javascript' src='scripts/list-playlists.js'></script>
         <script type='text/javascript' src='scripts/list-segments.js'></script>
         <!-- <script type='text/javascript' src='scripts/list-sites.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/mark-unmark-local.js'></script> -->
+        <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
         <!-- <script type='text/javascript' src='scripts/register-site.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/search-segments.js'></script> -->
@@ -58,10 +58,7 @@
         <h3>Remote Segment List</h3>
         <div id="remoteSegmentList"></div>
         <h3>Mark Segments</h3>
-        <form>
-            <input type="submit" value="Mark Selected as Local">
-            <input type="submit" value="Unmark Selected as Local">
-        </form>
+        <button onclick="handleMarkUnmarkClick()">Change Remote Availability of Selected</button>
         <table id="markTable">
             <tr>
                 <th>Selected</th>

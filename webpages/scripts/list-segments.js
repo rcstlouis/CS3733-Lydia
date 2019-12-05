@@ -82,7 +82,7 @@ function processSegmentListResponse(result){
 			var cell5 = row.insertCell(4);
 
 			// Add some text to the new cells:
-			cell1.innerHTML = "<input type='checkbox'>";
+			cell1.innerHTML = `<input type="checkbox" id="markSegmentBox${i}">`;
 			cell2.innerHTML = name;
 			cell3.innerHTML = character;
 			cell4.innerHTML = sentence;
