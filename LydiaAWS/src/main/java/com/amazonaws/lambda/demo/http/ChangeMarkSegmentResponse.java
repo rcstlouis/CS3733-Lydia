@@ -18,4 +18,8 @@ public class ChangeMarkSegmentResponse {
 		return "Response(" + response + ")";
 	}
 
+	public int getStatusCode() {
+		return this.httpCode;
+	}
+
 }
