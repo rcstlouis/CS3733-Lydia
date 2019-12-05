@@ -37,6 +37,7 @@ public class MarkUnmarkLocalHandler implements RequestHandler<ChangeMarkSegmentR
 		logger = context.getLogger();
 		logger.log(req.toString());
 		List<String> segmentNames = req.getNames();
+		logger.log("Value of segment names is " + segmentNames.toString());
 		Iterator<String> iter = segmentNames.iterator();
 
 		SegmentsDAO dao = new SegmentsDAO();

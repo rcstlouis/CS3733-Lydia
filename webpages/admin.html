@@ -12,7 +12,7 @@
         <script type='text/javascript' src='scripts/list-playlist-segments.js'></script>
         <script type='text/javascript' src='scripts/list-playlists.js'></script>
         <script type='text/javascript' src='scripts/list-segments.js'></script>
-        <!-- <script type='text/javascript' src='scripts/list-sites.js'></script> -->
+        <script type='text/javascript' src='scripts/list-sites.js'></script>
         <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
         <!-- <script type='text/javascript' src='scripts/register-site.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
@@ -24,6 +24,7 @@
             function initialize() {
                 refreshPlaylistsList();
                 refreshSegmentsList();
+                refreshRegisteredSiteList()
             }
         </script>
     </head>
@@ -38,6 +39,13 @@
             </form>
         </div>
         <div>
+            <h3>Registered Remote Sites</h3>
+            <table id="siteTable">
+                    <tr>
+                        <th>Selected</th>
+                        <th>URL</th>
+                    </tr>
+                </table>
             <h3>Register Remote Site</h3>
             <form>
                 <input type="url" placeholder="Remote Site URL">
