@@ -22,7 +22,7 @@ public class RegisteredSitesDAO {
     
     public boolean addRegisteredSite(RegisteredSite registeredSite) throws Exception {
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM registeredSites WHERE name = ?;");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM registeredSites WHERE url = ?;");
             ps.setString(1, registeredSite.getURL());
             ResultSet resultSet = ps.executeQuery();
             
