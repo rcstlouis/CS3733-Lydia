@@ -34,7 +34,9 @@ public class UnregisterSiteHandler implements RequestHandler <UnregisterRemoteSi
 			if (dao.deleteRegisteredSite(new RegisteredSite(req.getUrl()))) {
 				response = new UnregisterRemoteSiteResponse("Unregistered site: " + req.getUrl(), 200);
 			}
-			response = new UnregisterRemoteSiteResponse("Failed to Unregister site: " + req.getUrl(), 409);
+			else {
+				response = new UnregisterRemoteSiteResponse("Failed to Unregister site: " + req.getUrl(), 409);
+			}
 		} catch (Exception e) {
 			response = new UnregisterRemoteSiteResponse(e.getMessage(), 403);
 		}

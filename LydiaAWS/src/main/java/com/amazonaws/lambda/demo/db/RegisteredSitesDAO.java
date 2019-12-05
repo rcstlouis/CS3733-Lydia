@@ -45,7 +45,7 @@ public class RegisteredSitesDAO {
     
     public boolean deleteRegisteredSite(RegisteredSite rs) throws Exception {
         try {
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM Constants WHERE url = ?;");
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM registeredSites WHERE url = ?;");
             ps.setString(1, rs.getURL());
             int numAffected = ps.executeUpdate();
             ps.close();
