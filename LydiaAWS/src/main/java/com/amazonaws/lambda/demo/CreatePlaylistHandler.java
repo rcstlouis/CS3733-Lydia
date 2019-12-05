@@ -11,7 +11,7 @@ import com.amazonaws.services.s3.AmazonS3;
 
 public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistRequest, CreatePlaylistResponse> {
 	
-	LambdaLogger logger;
+	public LambdaLogger logger;
 	
 	private AmazonS3 s3 = null;
 	
