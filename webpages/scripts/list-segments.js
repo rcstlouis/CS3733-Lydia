@@ -69,7 +69,10 @@ function processSegmentListResponse(result){
 				<p> sentence: ${sentence}</p><br>
 				<p> remotely available: ${isRemotelyAvailable}</p>
 				Selected: <input type="checkbox">
-			</div>`;
+				<form name="DeleteSegmentForm">
+					<input type="button" id="deleteSegmentButton" value="Delete Segment" onclick="handleDeleteSegmentClick(${segmentID})">
+				</form>
+				</div>`;
 		if(table !== null){
 			// Create an empty <tr> element and add it to the ith position of the table:
 			var row = table.insertRow(i+1);
