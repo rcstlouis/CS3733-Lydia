@@ -44,8 +44,7 @@ function processPlaylistListResponse(result) {
     `<div class="playlist" id="playlist:${name}">
       <span class="playlistName">${name}</span><br>
       <form id="deletePlaylistForm" method="POST">
-        <input name="playlistName" value="${name}">
-        <input type="button" value="Delete Playlist" onclick="handleDeletePlaylistClick(this)">
+        <input type="button" id="playlistName" value="Delete Playlist" onclick="handleDeletePlaylistClick(${name})">
       </form>
       <form>
         <input type="submit" value="Append Selected to this Playlist">
