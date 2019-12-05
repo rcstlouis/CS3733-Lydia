@@ -32,9 +32,10 @@ function processPlaylistListResponse(result) {
   // Can grab any DIV or SPAN HTML element and can then manipulate its contents dynamically via javascript
   var js = JSON.parse(result);
   var playlistList = document.getElementById('playlistList');
-
+  var dropDown = document.getElementById('playlistSelect');
   var playlistNames = [];
   var output = "";
+  var listOutput = "";
   for (var i = 0; i < js.list.length; i++) {
     var playlistJson = js.list[i];
     console.log(playlistJson);
@@ -47,14 +48,18 @@ function processPlaylistListResponse(result) {
         <input type="button" id="playlistName" value="Delete Playlist" onclick="handleDeletePlaylistClick(${name})">
       </form>
       <form>
-        <input type="submit" value="Append Selected to this Playlist">
         <input type="submit" value="Delete Selected from this Playlist">
       </form><br>
     </div>`;
+
+    listOutput = listOutput +
+    `<option>${name}</option>`;
+
     playlistNames.push(name);
   }
   // Update computation result
   playlistList.innerHTML = output;
+  dropDown.innerHTML = listOutput;
 
   //Fill each playlist with entries
   for (let i = 0; i < playlistNames.length; i++){
