@@ -40,7 +40,9 @@
         </div>
         <div>
             <h3>Registered Remote Sites</h3>
-            <button onclick="unregisterSelected()">Unregister Selected Sites</button>
+            <form onsubmit="unregisterSelected()">
+                <input type="submit" value="Unregister Selected Sites">
+            </form>
             <table id="siteTable">
                     <tr>
                         <th>Selected</th>
