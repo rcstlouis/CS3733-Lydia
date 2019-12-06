@@ -16,7 +16,7 @@
         <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
         <script type='text/javascript' src='scripts/register-site.js'></script>
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/search-segments.js'></script> -->
+        <script type='text/javascript' src='scripts/search-segments.js'></script>
         <script type='text/javascript' src='scripts/unregister-site.js'></script>
         <!-- <script type='text/javascript' src='scripts/upload-segment.js'></script> -->
         <!-- Scripts specific to the admin page -->
@@ -32,10 +32,16 @@
         <h1>iTrek - Admin</h1>
         <div>
             <h3>Search Video Segments</h3>
-            <form>
+            <!-- <form>
                 <input type="text" placeholder="Search by Character">
                 <input type="text" placeholder="Search by Sentence">
                 <input type="submit" value="Boldly Go">
+                <button onclick="handleSearchSegmentsClick(this)"><strong>Bold</strong>ly go</button>
+            </form> -->
+            <form name="searchForm" method="POST"> 
+                <input type="text" name="character" value="" placeholder="Search by Character">
+                <input type="text" name="sentence" value="" placeholder="Search by Sentence">
+                <input type="button" id="searchSegmentsButton" value="Boldly Go" onclick="handleSearchSegmentsClick(this)">
             </form>
         </div>
         <div>

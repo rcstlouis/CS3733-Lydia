@@ -22,6 +22,9 @@ function processSearchSegmentsResponse(result, data) {
 		var character = segmentJSON["character"];
 		var sentence = segmentJSON["sentence"];
 		var isRemotelyAvailable = "false";
+		if(remotelyAvailable){
+			isRemotelyAvailable = "true";
+		}
 
 	
 
