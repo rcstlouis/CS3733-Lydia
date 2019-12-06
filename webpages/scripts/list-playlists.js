@@ -32,7 +32,7 @@ function processPlaylistListResponse(result) {
   // Can grab any DIV or SPAN HTML element and can then manipulate its contents dynamically via javascript
   var js = JSON.parse(result);
   var playlistList = document.getElementById('playlistList');
-  var dropDown = document.getElementById('playlistSelect');
+  var dropDown = document.getElementsByName('playlistSelect');
   var playlistNames = [];
   var output = "";
   var listOutput = "";
@@ -59,7 +59,10 @@ function processPlaylistListResponse(result) {
   }
   // Update computation result
   playlistList.innerHTML = output;
-  dropDown.innerHTML = listOutput;
+  for(var i = 0; i < dropDown.length; i++){
+    dropDown[i].innerHTML = listOutput;
+  }
+ 
 
   //Fill each playlist with entries
   for (let i = 0; i < playlistNames.length; i++){

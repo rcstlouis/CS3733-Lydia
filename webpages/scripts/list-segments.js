@@ -72,7 +72,7 @@ function processSegmentListResponse(result){
 					<input type="button" id="deleteSegmentButton" value="Delete Segment" onclick="handleDeleteSegmentClick(${segmentID})">
 				</form>
 				<form name="playlistSelectForm">
-					<select id="playlistSelect" value=""></select>
+					<select name="playlistSelect" value="Select Playlist"></select>
 					<input type="button" id="addToPlaylistButton" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick(${segmentID})">
 				</form>
 				</div>`;
