@@ -34,4 +34,16 @@ public class DBTest {
 	    	fail ("didn't work:" + e.getMessage());
 	    }
 	}
+	
+	@Test
+	public void testAddPlaylist() {
+		PlaylistsDAO cd = new PlaylistsDAO();
+		try {
+			Playlist fuck = new Playlist("fuck");
+			cd.addPlaylist(fuck);
+			assertTrue(cd.getAllPlaylists().contains(fuck));
+		} catch (Exception e) {
+			fail ("didn't work:" + e.getMessage());
+		}
+	}
 }
