@@ -68,9 +68,12 @@ function processSegmentListResponse(result){
 				<p> character: ${character}</p>
 				<p> sentence: ${sentence}</p><br>
 				<p> remotely available: ${isRemotelyAvailable}</p>
-				Selected: <input type="checkbox">
 				<form name="DeleteSegmentForm">
 					<input type="button" id="deleteSegmentButton" value="Delete Segment" onclick="handleDeleteSegmentClick(${segmentID})">
+				</form>
+				<form name="playlistSelectForm">
+					<select name="playlistSelect" value="Select Playlist"></select>
+					<input type="button" id="addToPlaylistButton" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick(${segmentID})">
 				</form>
 				</div>`;
 		if(table !== null){

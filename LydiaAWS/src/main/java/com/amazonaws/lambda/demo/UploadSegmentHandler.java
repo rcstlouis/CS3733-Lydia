@@ -8,6 +8,7 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -65,7 +66,7 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		ObjectMetadata omd = new ObjectMetadata();
 		omd.setContentLength(contents.length);
 		
-		PutObjectResult res = s3.putObject(new PutObjectRequest("3733lydia", "segments/" + name, bais, omd));
+		PutObjectResult res = s3.putObject(new PutObjectRequest("3733lydia", "segments/" + name, bais, omd).withCannedAcl(CannedAccessControlList.PublicRead));
 		
 		// if we ever get here, then whole thing was stored
 		return true;

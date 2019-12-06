@@ -4,15 +4,16 @@ function processAddToPlaylistResponse(result) {
     console.log("result:" + result);
     refreshPlaylistSegments();
 }
-  
-function handleCreateClick(e) {
-    var form = document.createForm;
+
+function handleAddToPlaylistClick(e) {
+    var form = document.getElementById("playlistSelect");
    
     var data = {};
-    data["name"]               = form.constantName.value;
+    data["nameOfPlaylist"] = form.value;
+    data["segmentID"] = e;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.createForm.base64Encoding.value.split(',');
+    var segments = document.playlistSelectedForm.base64Encoding.value.split(',');
     data["base64EncodedValue"] = segments[1];  // skip first one 
   
     var js = JSON.stringify(data);

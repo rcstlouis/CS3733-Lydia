@@ -248,11 +248,11 @@ paths:
         - application/json
         parameters:
         - in: body
-          name: ChangeMarkSegment
+          name: ChangeMarkSegmentRequest
           description: Flip the value of marking the segment
           required: false
           schema:
-            $ref: '#/definitions/ChangeMarkSegment'
+            $ref: '#/definitions/ChangeMarkSegmentRequest'
         responses:
           200:
             description: value updated successfully
@@ -387,13 +387,15 @@ definitions:
         format: uuid
       playlistName:
         type: string
-  ChangeMarkSegment:
+  ChangeMarkSegmentRequest:
      type: object
      required:
-     - segmentName
+     - segmentNames
      properties:
-        segmentName:
-           type: string
+        segmentNames:
+           type: array
+           items:
+            type: string
   RegisterRemoteSite:
      type: object
      required:
@@ -407,7 +409,9 @@ definitions:
      - url
      properties:
         url:
-           type: string
+           type: array
+           items:
+            type: string
       
 
 # Added by API Auto Mocking Plugin

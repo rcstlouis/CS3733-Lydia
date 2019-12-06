@@ -9,7 +9,7 @@ function handleDeleteSegmentClick(e) {
     var form = document.DeleteSegmentForm;
    
     var data = {};
-    data["segmentID"] = form.Name.value;
+    data["segmentID"] = e;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
     var segments = document.createForm.base64Encoding.value.split(',');

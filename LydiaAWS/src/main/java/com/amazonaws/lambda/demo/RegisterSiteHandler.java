@@ -36,7 +36,9 @@ public class RegisterSiteHandler implements RequestHandler <RegisterRemoteSiteRe
 			if (dao.addRegisteredSite(new RegisteredSite(req.getUrl()))) {
 				response = new RegisterRemoteSiteResponse("Registered site: " + req.getUrl(), 200);
 			}
-			response = new RegisterRemoteSiteResponse("Failed to Register site: " + req.getUrl(), 409);
+			else{
+				response = new RegisterRemoteSiteResponse("Failed to Register site: " + req.getUrl(), 409);
+			}
 		} catch (Exception e) {
 			response = new RegisterRemoteSiteResponse(e.getMessage(), 403);
 		}

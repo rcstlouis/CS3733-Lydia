@@ -9,7 +9,7 @@ function handleDeletePlaylistClick(e) {
     var form = document.deletePlaylistForm;
    
     var data = {};
-    data["name"]               = form.playlistName.value;
+    data["name"] = e;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
     var segments = document.deletePlaylistForm.base64Encoding.value.split(',');
