@@ -2,18 +2,14 @@ function processDeletePlaylistResponse(result) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
-    refreshPlaylistList();
+    refreshPlaylistsList();
 }
   
-function handleDeletePlaylistClick(e) {
+function handleDeletePlaylistClick(name) {
     var form = document.deletePlaylistForm;
    
     var data = {};
-    data["name"] = e;
-    
-    // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.deletePlaylistForm.base64Encoding.value.split(',');
-    data["base64EncodedValue"] = segments[1];  // skip first one 
+    data["name"] = name;
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);
