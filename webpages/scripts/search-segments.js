@@ -25,11 +25,11 @@ function processSearchSegmentsResponse(result, data) {
 
 	
 
-		if ((!character.match("") && (character.match(`.*${characterSearch}.*`)) || (!sentence.match("") && (sentence.match(`.*${sentenceSearch}.*`)))){
+		if ((!character.match("") && (character.match(`.*${characterSearch}.*`))) || (!sentence.match("") && (sentence.match(`.*${sentenceSearch}.*`)))){
 			
 		
 		//Add a check to see if the origin site is our site at some point
-		output = output + 
+		output = output +
 			`<div class="segment" id="segment:${name}:entry:${segmentID}">
 				<span class="playlistEntry">${name}</span><br>
 				<div class="centerable">
