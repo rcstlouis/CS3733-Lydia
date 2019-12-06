@@ -25,7 +25,10 @@ function processSearchSegmentsResponse(result, data) {
 
 	
 
-		if ((!character.match("") && (character.match(`.*${characterSearch}.*`))) || (!sentence.match("") && (sentence.match(`.*${sentenceSearch}.*`)))){
+		if (
+      (characterSearch !== "" && character.match(`.*${characterSearch}.*`))
+      || (sentenceSearch !== "" && sentence.match(`.*${sentenceSearch}.*`))
+    ){
 			
 		
 		//Add a check to see if the origin site is our site at some point
