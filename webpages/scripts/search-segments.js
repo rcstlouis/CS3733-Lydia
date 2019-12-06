@@ -1,12 +1,15 @@
-function processSearchSegmentsResponse(result) {
+function processSearchSegmentsResponse(result, data) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
-    
     var js = JSON.parse(result);
 	var segmentList = document.getElementById('searchResults');
+	
+	var characterSearch = data["character"];
+	var sentenceSearch = data["sentence"];
+	
 
-	var output = segmentList.innerHTML;
+	var output = "";
 	for (var i = 0; i < js.list.length; i++){
 		var segmentJSON = js.list[i];
 		console.log(segmentJSON);
@@ -18,12 +21,13 @@ function processSearchSegmentsResponse(result) {
 		var remotelyAvailable = segmentJSON["remotelyAvailable"];
 		var character = segmentJSON["character"];
 		var sentence = segmentJSON["sentence"];
-
 		var isRemotelyAvailable = "false";
-		if(remotelyAvailable){
-			isRemotelyAvailable = "true";
-		}
 
+	
+
+		if ((!character.match("") && (character.match(`.*${characterSearch}.*`)) || (!sentence.match("") && (sentence.match(`.*${sentenceSearch}.*`)))){
+			
+		
 		//Add a check to see if the origin site is our site at some point
 		output = output + 
 			`<div class="segment" id="segment:${name}:entry:${segmentID}">
@@ -38,8 +42,11 @@ function processSearchSegmentsResponse(result) {
 				<p> sentence: ${sentence}</p><br>
 				<p> remotely available: ${isRemotelyAvailable}</p>
 				Selected: <input type="checkbox">
-            </div>`;
-    }
+			</div>`;
+		}
+	}
+	
+	segmentList.innerHTML = output;
 
 }
   
@@ -50,17 +57,17 @@ function handleSearchSegmentsClick(e) {
     data["character"] = form.character.value;
     data["sentence"] = form.sentence.value;
     
-    // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.searchForm.base64Encoding.value.split(',');
-    data["base64EncodedValue"] = segments[1];  // skip first one 
-  
-    var js = JSON.stringify(data);
-    console.log("JS:" + js);
+//    // base64EncodedValue":"data:text/plain;base64,My4xND....."
+//    var segments = document.searchForm.base64Encoding.value.split(',');
+//    data["base64EncodedValue"] = segments[1];  // skip first one 
+//  
+//    var js = JSON.stringify(data);
+//    console.log("JS:" + js);
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", search_segments_url, true);
+    xhr.open("GET", list_segments_url, true);
   
     // send the collected data as JSON
-    xhr.send(js);
+    xhr.send();
   
     // This will process results and update HTML as appropriate. 
     xhr.onloadend = function () {
@@ -69,7 +76,7 @@ function handleSearchSegmentsClick(e) {
       if (xhr.readyState == XMLHttpRequest.DONE) {
            if (xhr.status == 200) {
             console.log ("XHR:" + xhr.responseText);
-            processAddToPlaylistResponse(xhr.responseText);
+            processSearchSegmentsResponse(xhr.responseText, data);
            } else {
                console.log("actual:" + xhr.responseText)
                 var js = JSON.parse(xhr.responseText);
@@ -77,7 +84,7 @@ function handleSearchSegmentsClick(e) {
                 alert (err);
            }
       } else {
-        processAddToPlaylistResponse("N/A");
+        processSearchSegmentsResponse("N/A", data);
       }
     };
   }
