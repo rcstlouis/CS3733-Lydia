@@ -68,8 +68,14 @@ function processSegmentListResponse(result){
 				<p> character: ${character}</p>
 				<p> sentence: ${sentence}</p><br>
 				<p> remotely available: ${isRemotelyAvailable}</p>
-				Selected: <input type="checkbox">
-			</div>`;
+				<form name="DeleteSegmentForm">
+					<input type="button" id="deleteSegmentButton" value="Delete Segment" onclick="handleDeleteSegmentClick(${segmentID})">
+				</form>
+				<form name="playlistSelectForm">
+					<select id="playlistSelect" value=""></select>
+					<input type="button" id="addToPlaylistButton" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick(${segmentID})">
+				</form>
+				</div>`;
 		if(table !== null){
 			// Create an empty <tr> element and add it to the ith position of the table:
 			var row = table.insertRow(i+1);

@@ -6,10 +6,10 @@ function processDeleteSegmentResponse(result) {
 }
   
 function handleDeleteSegmentClick(e) {
-    var form = document.createForm;
+    var form = document.DeleteSegmentForm;
    
     var data = {};
-    data["name"]               = form.constantName.value;
+    data["segmentID"] = e;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
     var segments = document.createForm.base64Encoding.value.split(',');
