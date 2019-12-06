@@ -14,7 +14,7 @@
         <script type='text/javascript' src='scripts/list-segments.js'></script>
         <script type='text/javascript' src='scripts/list-sites.js'></script>
         <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
-        <!-- <script type='text/javascript' src='scripts/register-site.js'></script> -->
+        <script type='text/javascript' src='scripts/register-site.js'></script>
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/search-segments.js'></script> -->
         <script type='text/javascript' src='scripts/unregister-site.js'></script>
@@ -48,8 +48,8 @@
                     </tr>
                 </table>
             <h3>Register Remote Site</h3>
-            <form>
-                <input type="url" placeholder="Remote Site URL">
+            <form onsubmit="registerSite()">
+                <input id="siteToRegister" type="url" placeholder="Remote Site URL">
                 <input type="submit" value="Register">
             </form>
         </div>
