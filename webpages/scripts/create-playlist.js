@@ -9,10 +9,10 @@ function handleCreatePlaylistClick(e) {
     var form = document.createPlaylistForm;
    
     var data = {};
-    data["name"]               = form.playlistName.value;
+    data["name"] = form.playlistName.value;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.createPlaylistForm.base64Encoding.value.split(',');
+    var segments = document.createPlaylistForm;
     data["base64EncodedValue"] = segments[1];  // skip first one 
   
     var js = JSON.stringify(data);

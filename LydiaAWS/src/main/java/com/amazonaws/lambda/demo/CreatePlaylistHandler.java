@@ -24,7 +24,9 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 		if(exist) {
 			return dao.addPlaylist(playlist);
 		} else {
+			logger.log("Not successfully added to the database.");
 			return false;
+			
 		}
 	}
 	

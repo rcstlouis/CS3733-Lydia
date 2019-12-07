@@ -55,6 +55,7 @@ public class PlaylistsDAO {
             
             ps = conn.prepareStatement("INSERT INTO playlists values(?);");
             ps.setString(1,  playlist.getName());
+            ps.execute();
             return true;
 
         } catch (Exception e) {
@@ -69,7 +70,7 @@ public class PlaylistsDAO {
             int numAffected = ps.executeUpdate();
             ps.close();
             
-            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM playlistsEntries WHERE playlistName = ?;");
+            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM playlistEntries WHERE playlistName = ?;");
             ps1.setString(1, playlist.getName());
             ps1.executeUpdate();
             ps1.close();
