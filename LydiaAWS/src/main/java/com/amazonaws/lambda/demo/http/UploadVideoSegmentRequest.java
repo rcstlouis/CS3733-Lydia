@@ -15,7 +15,7 @@ public class UploadVideoSegmentRequest {
 	public String getSentence() { return sentence; }
 	public void setSentence(String sentence) { this.sentence = sentence; }
 	
-	public String getBase64EncodedValue() { return base64EncodedValue; }
+	public String getBase64EncodedValue() { return this.base64EncodedValue; }
 	public void setBase(String base64EncodedValue) { this.base64EncodedValue = base64EncodedValue; }
 	
 	public UploadVideoSegmentRequest(String name, String character, String sentence, String base64EncodedValue) {
@@ -26,7 +26,7 @@ public class UploadVideoSegmentRequest {
 	}
 	
 	public String toString() {
-		return "UploadSegment(" + name + "," + character + "," + sentence + ")";
+		return "UploadSegment(" + name + "," + character + "," + sentence + ")\nValue: " + this.base64EncodedValue;
 	}
 	
 	public UploadVideoSegmentRequest() {

@@ -38,9 +38,11 @@ function processSegmentListResponse(result){
 
 	var output = '';
 
-while (table.rows.length > 1){
-	table.deleteRow(table.rows.length - 1);
-}
+	if(table !== null){
+		while (table.rows.length > 1){
+			table.deleteRow(table.rows.length - 1);
+		}
+	}
 	for (var i = 0; i < js.list.length; i++){
 		var segmentJSON = js.list[i];
 		console.log(segmentJSON);
