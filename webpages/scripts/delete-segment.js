@@ -2,18 +2,14 @@ function processDeleteSegmentResponse(result) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
-    refreshSegmentList();
+    refreshSegmentsList();
 }
   
-function handleDeleteSegmentClick(e) {
+function handleDeleteSegmentClick(segmentID) {
     var form = document.DeleteSegmentForm;
    
     var data = {};
-    data["segmentID"] = e;
-    
-    // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.createForm.base64Encoding.value.split(',');
-    data["base64EncodedValue"] = segments[1];  // skip first one 
+    data["segmentID"] = segmentID;
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);
@@ -38,7 +34,7 @@ function handleDeleteSegmentClick(e) {
                 alert (err);
            }
       } else {
-        processDeletePlaylistResponse("N/A");
+        processDeleteSegmentResponse("N/A");
       }
     };
   }
