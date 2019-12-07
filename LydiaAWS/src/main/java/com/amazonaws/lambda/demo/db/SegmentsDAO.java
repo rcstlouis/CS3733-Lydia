@@ -146,8 +146,11 @@ public class SegmentsDAO {
 	
 	public boolean deleteSegment(String id, String originSite) throws Exception {
         try {
-        	PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = (SELECT id FROM segments WHERE name = ? and originSite = ?);");
-            ps.setString(1, id);
+        	//PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = (SELECT id FROM segments WHERE name = ? and originSite = ?);");
+        	//PreparedStatement ps = conn.prepareStatement("SELECT id FROM segments WHERE name = ? and originSite = ?;");
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments;");
+
+        	ps.setString(1, id);
             ps.setString(2, originSite);
             ps.executeUpdate();
             ps.close();
