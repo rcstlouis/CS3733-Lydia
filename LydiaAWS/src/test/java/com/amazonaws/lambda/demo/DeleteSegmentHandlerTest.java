@@ -2,6 +2,7 @@ package com.amazonaws.lambda.demo;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class DeleteSegmentHandlerTest {
     }
 	
 	Context createContext(String apiCall) {
-        TestContext ctx = new TestContext();
+        TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
     }
