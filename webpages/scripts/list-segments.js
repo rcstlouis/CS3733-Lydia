@@ -98,4 +98,5 @@ function processSegmentListResponse(result){
 
 	// Update computation result
 	segmentList.innerHTML = output;
+	refreshPlaylistsList()
 }

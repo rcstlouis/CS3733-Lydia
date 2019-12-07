@@ -4,6 +4,10 @@
  *    GET list_playlists_url
  *    RESPONSE  list of [name] playlists
  */
+/*
+ * This function is called in the list segments function to deal
+ * with asynchronous events
+ */
 function refreshPlaylistsList() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", list_playlists_url, true);
