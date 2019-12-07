@@ -76,6 +76,10 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 	public UploadVideoSegmentResponse handleRequest(UploadVideoSegmentRequest req, Context context)  {
 		logger = context.getLogger();
 		logger.log(req.toString());
+		logger.log("Request file name: " + req.getName());
+		logger.log("Request character name: " + req.getCharacter());
+		logger.log("Request sentence: " + req.getSentence());
+		logger.log("Request base64EncodedValue: " + req.getBase64EncodedValue());
 
 		UploadVideoSegmentResponse response;
 		try {
@@ -85,6 +89,7 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 			} else {
 				response = new UploadVideoSegmentResponse(req.getName(), 422);
 			}
+			logger.log("Segment has made it into the bucket.");
 			if(response.getCode() == 200) {
 				if (createSegmentEntry(req)) {
 					response = new UploadVideoSegmentResponse(req.getName());
@@ -93,7 +98,9 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 				}
 			}
 		} catch (Exception e) {
-			response = new UploadVideoSegmentResponse("Unable to upload segment: " + req.getName() + "(" + e.getMessage() + ")", 400);
+			logger.log("Upload failed. Raised excpetion: " + e.getMessage());
+			logger.log("Stack Trace: " + e.getMessage());
+			response = new UploadVideoSegmentResponse("Unable to upload segment: " + req.getName() + "(" + e.getMessage() + ")" + " Stack Trace: " + e.getStackTrace(), 400);
 		}
 
 		return response;
