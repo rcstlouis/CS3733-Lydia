@@ -81,16 +81,19 @@ public class PlaylistEntriesDAO {
                 resultSet.close();
                 return false;
             }
+            ps.close();
 
-            ps = conn.prepareStatement("INSERT INTO playlistEntries values(?,?,?);");
-            ps.setString(1,  playlistEntry.getSegmentID());
-            ps.setString(2,  playlistEntry.getPlaylistName());
-            ps.setInt(3, getPlaylistLength(playlistEntry.getPlaylistName())+1); 
+            PreparedStatement ps1 = conn.prepareStatement("INSERT INTO playlistEntries values(?,?,?);");
+            ps1.setString(1,  playlistEntry.getSegmentID());
+            ps1.setString(2,  playlistEntry.getPlaylistName());
+            ps1.setInt(3, getPlaylistLength(playlistEntry.getPlaylistName())+1); 
             //This last one may take some tweaking depending on how we do things
+            ps1.execute();
+            ps1.close();
             return true;
 
         } catch (Exception e) {
-            throw new Exception("Failed to insert constant: " + e.getMessage());
+            throw new Exception("Failed to add segment to playlist: " + e.getMessage());
         }
     }
     

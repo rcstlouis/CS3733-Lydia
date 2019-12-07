@@ -43,63 +43,6 @@ public class SegmentsDAO {
         }
     }
 	
-	public List<Segment> searchByCharacter(String character) throws Exception{
-		List<Segment> allSegments = new ArrayList<>();
-        try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*\\\\?.*';");
-            ps.setString(1, character);
-            ResultSet resultSet = ps.executeQuery();
-
-            while (resultSet.next()) {
-                Segment s = generateSegment(resultSet);
-                allSegments.add(s);
-            }
-            resultSet.close();
-            return allSegments;
-
-        } catch (Exception e) {
-            throw new Exception("Failed in searching segments: " + e.getMessage());
-        }
-	}
-	
-	public List<Segment> searchBySentence(String sentence) throws Exception{
-		List<Segment> allSegments = new ArrayList<>();
-        try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `sentence` RLIKE '.*\\\\?.*';");
-            ps.setString(1, sentence);
-            ResultSet resultSet = ps.executeQuery();
-
-            while (resultSet.next()) {
-                Segment s = generateSegment(resultSet);
-                allSegments.add(s);
-            }
-            resultSet.close();
-            return allSegments;
-
-        } catch (Exception e) {
-            throw new Exception("Failed in searching segments: " + e.getMessage());
-        }
-	}
-	
-	public List<Segment> searchByAll(String search) throws Exception{
-		List<Segment> allSegments = new ArrayList<>();
-        try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE `character` RLIKE '.*\\\\?.*' OR ;");
-            ps.setString(1, search);
-            ps.setString(2, search);
-            ResultSet resultSet = ps.executeQuery();
-
-            while (resultSet.next()) {
-                Segment s = generateSegment(resultSet);
-                allSegments.add(s);
-            }
-            resultSet.close();
-            return allSegments;
-
-        } catch (Exception e) {
-            throw new Exception("Failed in searching segments: " + e.getMessage());
-        }
-	}
 	
 	public boolean addSegment(Segment segment) throws Exception {
         try {
@@ -144,17 +87,18 @@ public class SegmentsDAO {
         }
     }
 	
-	public boolean deleteSegment(String id, String originSite) throws Exception {
+	public boolean deleteSegment(String id) throws Exception {
         try {
-        	PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = (SELECT id FROM segments WHERE name = ? and originSite = ?);");
-            ps.setString(1, id);
-            ps.setString(2, originSite);
+        	PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = ?;");
+        	//PreparedStatement ps = conn.prepareStatement("SELECT id FROM segments WHERE name = ? and originSite = ?;");
+        	//PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments;");
+
+        	ps.setString(1, id);
             ps.executeUpdate();
             ps.close();
         	
-            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM segments WHERE id = ? AND originSite = ?;");
+            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM segments WHERE id = ?;");
             ps1.setString(1, id);
-            ps1.setString(2, originSite);
             int numAffected = ps1.executeUpdate();
             ps1.close();
             

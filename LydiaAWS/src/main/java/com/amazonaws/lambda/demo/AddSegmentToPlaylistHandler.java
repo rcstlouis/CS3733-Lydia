@@ -17,16 +17,22 @@ public class AddSegmentToPlaylistHandler implements RequestHandler<AddSegmentToP
 	@Override
 	public AddSegmentToPlaylistResponse handleRequest(AddSegmentToPlaylistRequest req, Context context) {
 		logger = context.getLogger();
-		logger.log("Loading Java Lambda handler to add segment " + req.getSegmentName() + "to playlist" + req.getPlaylistName());
+		logger.log("Loading Java Lambda handler to add segment " + req.getSegmentID() + "to playlist" + req.getPlaylistName());
 		
 		AddSegmentToPlaylistResponse response;
 		try {
 			PlaylistEntriesDAO dao = new PlaylistEntriesDAO();
-			if (dao.addPlaylistEntry(new PlaylistEntry(req.getSegmentName(), -1, req.getPlaylistName()))) {
-				response = new AddSegmentToPlaylistResponse("Added segment: " + req.getSegmentName() + "to playlist: " + req.getPlaylistName(), 200);
+			logger.log("Adding segment [" + req.getSegmentID() + "] to playlist [" + req.getPlaylistName() + "]");
+			if (dao.addPlaylistEntry(new PlaylistEntry(req.getSegmentID(), -1, req.getPlaylistName()))) { //-1 is a dummy value
+				logger.log("Add Success!!");
+				response = new AddSegmentToPlaylistResponse("Added segment: " + req.getSegmentID() + " to playlist: " + req.getPlaylistName(), 200);
 			}
-			response = new AddSegmentToPlaylistResponse("Failed to add segment: " + req.getSegmentName() + "to playlist: " + req.getPlaylistName(), 409);
+			else {
+				logger.log("Add failed, no exception.");
+				response = new AddSegmentToPlaylistResponse("Failed to add segment: " + req.getSegmentID() + " to playlist: " + req.getPlaylistName(), 409);
+			}
 		} catch (Exception e) {
+			logger.log("Add failed with exception: " + e.getMessage() +"\nStack Trace:"+ e.getStackTrace());
 			response = new AddSegmentToPlaylistResponse(e.getMessage(), 403);
 		}
 		

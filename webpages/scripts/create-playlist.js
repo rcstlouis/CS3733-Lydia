@@ -2,7 +2,8 @@ function processCreatePlaylistResponse(result) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
-    refreshPlaylistsList();
+    
+    refreshSegmentsList(); //calls refreshPlaylistsList();
 }
   
 function handleCreatePlaylistClick(e) {

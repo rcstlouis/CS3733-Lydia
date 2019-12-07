@@ -92,17 +92,5 @@ public class GetAllSegmentsHandlerTest {
 				fail("didn't work:" + e.getMessage());
 			}
 	    }
-	    
-	    @Test
-	    public void testSearchByCharacterWhole() {
-	    	SegmentsDAO cd = new SegmentsDAO();
-			try {
-				List<Segment> s = cd.searchByCharacter("Spock");
-				assertTrue(s.size() == 1);
-				assertTrue(s.contains(cd.getSegment("emotion")));
-			} catch (Exception e) {
-				fail("didn't work:" + e.getMessage());
-			}
-	    }
 
 }

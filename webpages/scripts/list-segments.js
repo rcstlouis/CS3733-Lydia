@@ -69,11 +69,11 @@ function processSegmentListResponse(result){
 				<p> sentence: ${sentence}</p><br>
 				<p> remotely available: ${isRemotelyAvailable}</p>
 				<form name="DeleteSegmentForm">
-					<input type="button" id="deleteSegmentButton" value="Delete Segment" onclick="handleDeleteSegmentClick('${segmentID}')">
+					<input type="button" id="deleteSegmentButton:${segmentID}" value="Delete Segment" onclick="handleDeleteSegmentClick('${segmentID}')">
 				</form>
 				<form name="playlistSelectForm">
-					<select name="playlistSelect" value="Select Playlist"></select>
-					<input type="button" id="addToPlaylistButton" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick('${segmentID}')">
+					<select id="playlistSelect:${segmentID}" name="playlistSelect" value="Select Playlist"></select>
+					<input type="button" id="addToPlaylistButton:${segmentID}" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick('${segmentID}')">
 				</form>
 				</div>`;
 		if(table !== null){
@@ -98,4 +98,5 @@ function processSegmentListResponse(result){
 
 	// Update computation result
 	segmentList.innerHTML = output;
+	refreshPlaylistsList()
 }
