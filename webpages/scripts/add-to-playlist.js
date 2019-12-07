@@ -2,19 +2,17 @@ function processAddToPlaylistResponse(result) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
+    refreshSegmentsList();
+    refreshPlaylistsList();
     refreshPlaylistSegments();
 }
 
-function handleAddToPlaylistClick(e) {
-    var form = document.getElementById("playlistSelect");
+function handleAddToPlaylistClick(segmentID) {
+    var form = document.getElementById("playlistSelect:" + segmentID);
    
     var data = {};
-    data["nameOfPlaylist"] = form.value;
-    data["segmentID"] = e;
-    
-    // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.playlistSelectedForm.base64Encoding.value.split(',');
-    data["base64EncodedValue"] = segments[1];  // skip first one 
+    data["playlistName"] = form.value;
+    data["segmentID"] = segmentID;
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);
