@@ -5,7 +5,7 @@
         <link id="theme" rel="stylesheet" href="./styles/light.css" type="text/css">
         <!-- Scripts -->
         <script type='text/javascript' src='scripts/api.js'></script>
-        <!-- <script type='text/javascript' src='scripts/add-to-playlist.js'></script> -->
+        <script type='text/javascript' src='scripts/add-to-playlist.js'></script>
         <script type='text/javascript' src='scripts/create-playlist.js'></script>
         <script type='text/javascript' src='scripts/delete-playlist.js'></script>
         <script type='text/javascript' src='scripts/delete-segment.js'></script>
@@ -13,12 +13,9 @@
         <script type='text/javascript' src='scripts/list-playlists.js'></script>
         <script type='text/javascript' src='scripts/list-segments.js'></script>
         <!-- <script type='text/javascript' src='scripts/list-sites.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/mark-unmark-local.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/register-site.js'></script> -->
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
         <script type='text/javascript' src='scripts/search-segments.js'></script>
-        <!-- <script type='text/javascript' src='scripts/unregister-site.js'></script> -->
-        <!-- <script type='text/javascript' src='scripts/upload-segment.js'></script> -->
+        <script type='text/javascript' src='scripts/upload-segment.js'></script>
         <!-- Scripts specific to the user page -->
         <script type="text/javascript">
             function initialize() {
@@ -30,8 +27,8 @@
     <body onload="JavaScript:initialize()">
         <h1>iTrek</h1>
         <div>
-            <h3>Search Video Segments</h3>
-            <form name="searchForm" method="POST"> 
+            <h2>Search Video Segments</h2>
+            <form name="searchForm"> 
                 <input type="text" name="character" value="" placeholder="Search by Character">
                 <input type="text" name="sentence" value="" placeholder="Search by Sentence">
                 <input type="button" id="searchSegmentsButton" value="Boldly Go" onclick="handleSearchSegmentsClick(this)">
@@ -39,16 +36,24 @@
             <div id="searchResults"></div>
         </div>
         <div>
-            <h3>Playlists</h3>
-            <form name="createPlaylistForm" method="POST">
+            <h2>Upload a Video Segment</h2>
+            <form name="uploadSegmentForm">
+                <input type="file" name="file" value="">
+                <input type="button" id="uploadSegmentButton" value="Upload" onclick="handleUploadSegmentClick(this)">
+            </form>
+        </div>
+        <div>
+            <h2>Playlists</h2>
+            <form name="createPlaylistForm">
                 <input type="text" name="playlistName" value="" placeholder="Playlist Name">
                 <input type="button" id="createPlaylistButton" value="Create Playlist" onclick="handleCreatePlaylistClick(this)">
             </form>
         </div>
-        <div id="playlistList">
+        <div id="playlistList"></div>
+        <div>
+            <h2>Segment List</h2>
+            <div id="segmentList"></div>
         </div>
-        <h3>Segment List</h3>
-        <div id="segmentList"></div>
         <button id="themebutton" onclick="toggletheme()">Memes</button>
     </body>
 </html>

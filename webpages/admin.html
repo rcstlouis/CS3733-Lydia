@@ -5,7 +5,7 @@
         <link id="theme" rel="stylesheet" href="./styles/light.css" type="text/css">
         <!-- Scripts -->
         <script type='text/javascript' src='scripts/api.js'></script>
-        <!-- <script type='text/javascript' src='scripts/add-to-playlist.js'></script> -->
+        <script type='text/javascript' src='scripts/add-to-playlist.js'></script>
         <script type='text/javascript' src='scripts/create-playlist.js'></script>
         <script type='text/javascript' src='scripts/delete-playlist.js'></script>
         <script type='text/javascript' src='scripts/delete-segment.js'></script>
@@ -18,7 +18,7 @@
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
         <script type='text/javascript' src='scripts/search-segments.js'></script>
         <script type='text/javascript' src='scripts/unregister-site.js'></script>
-        <!-- <script type='text/javascript' src='scripts/upload-segment.js'></script> -->
+        <script type='text/javascript' src='scripts/upload-segment.js'></script>
         <!-- Scripts specific to the admin page -->
         <script type="text/javascript">
             function initialize() {
@@ -31,50 +31,37 @@
     <body onload="JavaScript:initialize()">
         <h1>iTrek - Admin</h1>
         <div>
-            <h3>Search Video Segments</h3>
-            <!-- <form>
-                <input type="text" placeholder="Search by Character">
-                <input type="text" placeholder="Search by Sentence">
-                <input type="submit" value="Boldly Go">
-                <button onclick="handleSearchSegmentsClick(this)"><strong>Bold</strong>ly go</button>
-            </form> -->
-            <form name="searchForm" method="POST"> 
+            <h2>Search Video Segments</h2>
+            <form name="searchForm"> 
                 <input type="text" name="character" value="" placeholder="Search by Character">
                 <input type="text" name="sentence" value="" placeholder="Search by Sentence">
                 <input type="button" id="searchSegmentsButton" value="Boldly Go" onclick="handleSearchSegmentsClick(this)">
             </form>
+            <div id="searchResults"></div>
         </div>
         <div>
-            <h3>Registered Remote Sites</h3>
-            <form onsubmit="unregisterSelected()">
-                <input type="submit" value="Unregister Selected Sites">
-            </form>
-            <table id="siteTable">
-                    <tr>
-                        <th>Selected</th>
-                        <th>URL</th>
-                    </tr>
-                </table>
-            <h3>Register Remote Site</h3>
-            <form onsubmit="registerSite()">
-                <input id="siteToRegister" type="url" placeholder="Remote Site URL">
-                <input type="submit" value="Register">
+            <h2>Upload a Video Segment</h2>
+            <form name="uploadSegmentForm">
+                <input type="file" name="file" value="">
+                <input type="button" id="uploadSegmentButton" value="Upload" onclick="handleUploadSegmentClick(this)">
             </form>
         </div>
         <div>
-            <form>
-                <input type="text" placeholder="Playlist Name">
-                <input type="button" id="createPlaylistButton" value="Create Playlist" onclick="handleCreateClick(this)">
+            <h2>Playlists</h2>
+            <form name="createPlaylistForm">
+                <input type="text" name="playlistName" value="" placeholder="Playlist Name">
+                <input type="button" id="createPlaylistButton" value="Create Playlist" onclick="handleCreatePlaylistClick(this)">
             </form>
-            <h3>Playlist List</h3>
-            <div id="playlistList">
-            </div>
         </div>
-        <h3>Local Segment List</h3>
-        <div id="segmentList"></div>
-        <h3>Remote Segment List</h3>
-        <div id="remoteSegmentList"></div>
-        <h3>Mark Segments</h3>
+        <div id="playlistList"></div>
+        <div>
+            <h2>Segment List</h2>
+            <h3>Local Segment List</h3>
+            <div id="segmentList"></div>
+            <h3>Remote Segment List</h3>
+            <div id="remoteSegmentList"></div>
+        </div>
+        <h2>Mark Segments</h2>
         <button onclick="handleMarkUnmarkClick()">Change Remote Availability of Selected</button>
         <table id="markTable">
             <tr>
@@ -85,6 +72,24 @@
                 <th>Local</th>
             </tr>
         </table>
+        <div>
+            <h2>Remote Site Manager</h2>
+            <table id="siteTable">
+                <tr>
+                    <th>Selected</th>
+                    <th>URL</th>
+                </tr>
+            </table>
+            <h3>Register Remote Site</h3>
+            <form onsubmit="registerSite()">
+                <input id="siteToRegister" type="url" placeholder="Remote Site URL">
+                <input type="submit" value="Register">
+            </form>
+            <h3>Unregister Remote Site</h3>
+            <form onsubmit="unregisterSelected()">
+                <input type="submit" value="Unregister Selected Sites">
+            </form>
+        </div>
+        <button id="themebutton" onclick="toggletheme()">Memes</button>
     </body>
-    <button id="themebutton" onclick="toggletheme()">Memes</button>
 </html>

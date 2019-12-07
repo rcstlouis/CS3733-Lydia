@@ -5,14 +5,14 @@ function processUploadSegmentResponse(result) {
     refreshSegmentsList();
 }
   
-function handleCreateClick(e) {
-    var form = document.createForm;
+function handleUploadSegmentClick(e) {
+    var form = document.uploadSegmentForm;
    
     var data = {};
-    data["name"]               = form.constantName.value;
+    data["segment"]               = form.file.value;
     
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
-    var segments = document.createForm.base64Encoding.value.split(',');
+    var segments = document.uploadSegmentForm.base64Encoding.value.split(',');
     data["base64EncodedValue"] = segments[1];  // skip first one 
   
     var js = JSON.stringify(data);
