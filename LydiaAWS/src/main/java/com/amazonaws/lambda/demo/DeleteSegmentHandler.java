@@ -27,7 +27,7 @@ public class DeleteSegmentHandler implements RequestHandler<DeleteVideoSegmentRe
 		// See how awkward it is to call delete with an object, when you only
 		// have one part of its information?
 		try {
-			if (dao.deleteSegment(req.getName(), SegmentsDAO.SITE_URL)) {
+			if (dao.deleteSegment(req.getName())) {
 				response = new DeleteVideoSegmentResponse(req.name, 200);
 			} else {
 				response = new DeleteVideoSegmentResponse(req.name, 422, "Unable to delete segment.");
