@@ -88,6 +88,7 @@ public class PlaylistEntriesDAO {
             ps1.setString(2,  playlistEntry.getPlaylistName());
             ps1.setInt(3, getPlaylistLength(playlistEntry.getPlaylistName())+1); 
             //This last one may take some tweaking depending on how we do things
+            ps1.execute();
             ps1.close();
             return true;
 
