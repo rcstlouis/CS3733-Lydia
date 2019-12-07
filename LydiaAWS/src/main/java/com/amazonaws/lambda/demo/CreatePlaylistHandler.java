@@ -18,30 +18,38 @@ public class CreatePlaylistHandler implements RequestHandler<CreatePlaylistReque
 	boolean createPlaylist(CreatePlaylistRequest req) throws Exception {
 		if (logger != null) {logger.log("in createPlaylist"); }
 		PlaylistsDAO dao = new PlaylistsDAO();
-		
-		boolean exist = dao.getPlaylist(req.getName());
+		boolean exist = dao.playlistExists(req.getName());
+		logger.log("Alaready exists: " + exist);
 		Playlist playlist = new Playlist(req.getName());
-		if(exist) {
+		if(!exist) {
 			return dao.addPlaylist(playlist);
-		} else {
-			logger.log("Not successfully added to the database.");
-			return false;
-			
 		}
+		logger.log("Not successfully added to the database.");
+		return false;
 	}
 	
 	@Override
 	public CreatePlaylistResponse handleRequest(CreatePlaylistRequest req, Context context) {
-		logger =context.getLogger();
+		this.logger = context.getLogger();
 		logger.log(req.toString());
 		
 		CreatePlaylistResponse response;
 		try {
-			PlaylistsDAO dao = new PlaylistsDAO();
-			if (dao.addPlaylist(new Playlist(req.getName()))) {
-				response = new CreatePlaylistResponse("Created playlist" + req.getName(), 200);
+			if(req.getName() == null) {
+				logger.log("New playlist name is Null");
 			}
-			response = new CreatePlaylistResponse("Unable to create playlist" + req.getName(), 409);
+			else {
+				logger.log("New playlist name is " + req.getName());
+			}
+			PlaylistsDAO dao = new PlaylistsDAO();
+			if (createPlaylist(req)) {
+				logger.log("Creted new playlist successfully!!");
+				response = new CreatePlaylistResponse("Created playlist " + req.getName(), 200);
+			}
+			else {
+				logger.log("Failed to create new playlist, but no exception was raiesd.");
+				response = new CreatePlaylistResponse("Unable to create playlist " + req.getName(), 409);
+			}
 		} catch (Exception e) {
 			response = new CreatePlaylistResponse(e.getMessage(), 403);
 		}

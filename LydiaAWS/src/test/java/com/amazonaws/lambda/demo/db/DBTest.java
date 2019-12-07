@@ -39,9 +39,9 @@ public class DBTest {
 	public void testAddPlaylist() {
 		PlaylistsDAO cd = new PlaylistsDAO();
 		try {
-			Playlist fuck = new Playlist("fuck");
-			cd.addPlaylist(fuck);
-			assertTrue(cd.getAllPlaylists().contains(fuck));
+			Playlist test = new Playlist("test");
+			cd.addPlaylist(test);
+			assertTrue(cd.getAllPlaylists().contains(test));
 		} catch (Exception e) {
 			fail ("didn't work:" + e.getMessage());
 		}

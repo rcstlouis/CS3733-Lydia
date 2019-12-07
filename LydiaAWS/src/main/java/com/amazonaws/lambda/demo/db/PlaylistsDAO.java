@@ -21,7 +21,7 @@ public class PlaylistsDAO {
     	}
     }
 	
-	public boolean getPlaylist(String name) throws Exception {
+	public boolean playlistExists(String name) throws Exception {
 		try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlists WHERE name = ?;");
             ps.setString(1, name);
@@ -31,9 +31,9 @@ public class PlaylistsDAO {
             while (resultSet.next()) {
                 Playlist p = generatePlaylist(resultSet);
                 resultSet.close();
-                return false;
+                return true;
             }
-            return true;
+            return false;
 
         } catch (Exception e) {
             throw new Exception("Failed to insert playlist: " + e.getMessage());
