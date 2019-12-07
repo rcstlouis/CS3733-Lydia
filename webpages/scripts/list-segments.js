@@ -37,6 +37,10 @@ function processSegmentListResponse(result){
 	var table = document.getElementById("markTable");
 
 	var output = '';
+
+while (table.rows.length > 1){
+	table.deleteRow(table.rows.length - 1);
+}
 	for (var i = 0; i < js.list.length; i++){
 		var segmentJSON = js.list[i];
 		console.log(segmentJSON);
