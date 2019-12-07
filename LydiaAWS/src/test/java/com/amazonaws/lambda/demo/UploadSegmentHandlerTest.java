@@ -2,6 +2,9 @@ package com.amazonaws.lambda.demo;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,10 +19,23 @@ public class UploadSegmentHandlerTest {
 	
 	@Test
 	public void testUploadSegment() {
-		UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("bowling.ogg", "Riley", "There will be a formal dance in the bowling alley", "Mi43MTgyODE4Mjg=");
-		UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Upload"));
+		File file = new File("C:\\Users\\Maggie.Raque\\Downloads\\woman.txt");
+		Scanner scan;
+		try {
+			scan = new Scanner(file);
+			String base64encoding = "";
+			while(scan.hasNext()) {
+				base64encoding = base64encoding + scan.next();
+			}
+			UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("woman.ogg", "Kirk", "There's no right way to hit a woman", base64encoding);
+			UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Upload"));
+			
+			Assert.assertEquals(200, res.httpCode);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		Assert.assertEquals(200, res.httpCode);
 	}
 	
 	Context createContext(String apiCall) {

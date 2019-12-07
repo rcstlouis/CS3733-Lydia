@@ -1,12 +1,12 @@
 package com.amazonaws.lambda.demo;
 
-import static org.junit.Assert.assertFalse;
+//import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
-import java.util.List;
+//import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,9 +17,9 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.amazonaws.lambda.demo.db.PlaylistEntriesDAO;
+//import com.amazonaws.lambda.demo.db.PlaylistEntriesDAO;
 import com.amazonaws.lambda.demo.db.SegmentsDAO;
-import com.amazonaws.lambda.demo.model.PlaylistEntry;
+//import com.amazonaws.lambda.demo.model.PlaylistEntry;
 import com.amazonaws.lambda.demo.model.Segment;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.events.S3Event;
