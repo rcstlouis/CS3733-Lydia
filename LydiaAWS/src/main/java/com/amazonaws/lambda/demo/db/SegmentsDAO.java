@@ -144,20 +144,18 @@ public class SegmentsDAO {
         }
     }
 	
-	public boolean deleteSegment(String id, String originSite) throws Exception {
+	public boolean deleteSegment(String id) throws Exception {
         try {
-        	//PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = (SELECT id FROM segments WHERE name = ? and originSite = ?);");
+        	PreparedStatement ps = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = ?;");
         	//PreparedStatement ps = conn.prepareStatement("SELECT id FROM segments WHERE name = ? and originSite = ?;");
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments;");
+        	//PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments;");
 
         	ps.setString(1, id);
-            ps.setString(2, originSite);
             ps.executeUpdate();
             ps.close();
         	
-            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM segments WHERE id = ? AND originSite = ?;");
+            PreparedStatement ps1 = conn.prepareStatement("DELETE FROM segments WHERE id = ?;");
             ps1.setString(1, id);
-            ps1.setString(2, originSite);
             int numAffected = ps1.executeUpdate();
             ps1.close();
             
