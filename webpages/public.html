@@ -16,6 +16,7 @@
         <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
         <script type='text/javascript' src='scripts/search-segments.js'></script>
         <script type='text/javascript' src='scripts/upload-segment.js'></script>
+        <script type='text/javascript' src='scripts/base64.js'></script>
         <!-- Scripts specific to the user page -->
         <script type="text/javascript">
             function initialize() {
@@ -38,9 +39,13 @@
         <div>
             <h2>Upload a Video Segment</h2>
             <form name="uploadSegmentForm">
-                <input type="file" name="file" value="">
+                <input name="base64Encoding" hidden value=""/>
+                <input type="file" name="file" id="file" value="">
                 <input type="button" id="uploadSegmentButton" value="Upload" onclick="handleUploadSegmentClick(this)">
             </form>
+            <script>
+                document.getElementById('file').addEventListener('change', handleFileSelect, false);
+            </script>
         </div>
         <div>
             <h2>Playlists</h2>
