@@ -38,6 +38,8 @@
         <div>
             <h2>Upload a Video Segment</h2>
             <form name="uploadSegmentForm">
+                <input type="text" name="character" value="" placeholder="Character Name">
+                <input type="text" name="sentence" value="" placeholder="Sentence">
                 <input name="base64Encoding" hidden value=""/>
                 <input type="file" name="file" id="file" value="">
                 <input type="button" id="uploadSegmentButton" value="Upload" onclick="handleUploadSegmentClick(this)">

@@ -9,8 +9,9 @@ function handleUploadSegmentClick(e) {
     var form = document.uploadSegmentForm;
    
     var data = {};
-    data["segment"]               = form.file.value;
-    
+    data["name"]               = form.file.value;
+    data["character"]             = form.character.value;
+    data["sentence"]              = form.sentence.value;
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
     var segments = document.uploadSegmentForm.base64Encoding.value.split(',');
     data["base64EncodedValue"] = segments[1];  // skip first one 
