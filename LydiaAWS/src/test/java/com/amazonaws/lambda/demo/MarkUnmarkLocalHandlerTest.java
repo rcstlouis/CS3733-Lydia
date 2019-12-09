@@ -21,7 +21,7 @@ public class MarkUnmarkLocalHandlerTest {
 		ChangeMarkSegmentRequest req = new ChangeMarkSegmentRequest(names);
 		MarkUnmarkLocalHandler handler = new MarkUnmarkLocalHandler();
 		ChangeMarkSegmentResponse resp = handler.handleRequest(req, createContext("Mark/Unmark"));
-		Assert.assertTrue(resp.getStatusCode() == 200);
+		Assert.assertEquals(200, resp.getStatusCode());
 		//Reset
 		handler.handleRequest(req, createContext("Mark/Unmark"));
 	}
@@ -32,7 +32,7 @@ public class MarkUnmarkLocalHandlerTest {
 		ChangeMarkSegmentRequest req = new Gson().fromJson(testJSON, ChangeMarkSegmentRequest.class);
 		MarkUnmarkLocalHandler handler = new MarkUnmarkLocalHandler();
 		ChangeMarkSegmentResponse resp = handler.handleRequest(req, createContext("Mark/Unmark"));
-		Assert.assertTrue(resp.getStatusCode() == 200);
+		Assert.assertEquals(200, resp.getStatusCode());
 		//Reset
 		handler.handleRequest(req, createContext("Mark/Unmark"));
 	}

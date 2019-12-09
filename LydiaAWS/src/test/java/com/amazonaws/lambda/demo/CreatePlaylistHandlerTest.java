@@ -8,14 +8,15 @@ import org.junit.Test;
 
 import com.amazonaws.lambda.demo.http.CreatePlaylistRequest;
 import com.amazonaws.lambda.demo.http.CreatePlaylistResponse;
+import com.amazonaws.lambda.demo.http.DeletePlaylistRequest;
+import com.amazonaws.lambda.demo.http.DeletePlaylistResponse;
 import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class CreatePlaylistHandlerTest {
-	
 	@Test
 	public void testCreatePlaylist() {
-		CreatePlaylistRequest req = new CreatePlaylistRequest("test");
+		CreatePlaylistRequest req = new CreatePlaylistRequest("test2: Electric Testaloo");
 		CreatePlaylistResponse res = new CreatePlaylistHandler().handleRequest(req, createContext("CreatePlaylist"));
 		
 		Assert.assertEquals(200, res.httpCode);
@@ -26,5 +27,13 @@ public class CreatePlaylistHandlerTest {
         ctx.setFunctionName(apiCall);
         return ctx;
     }
+	
+	@Test
+	public void testDeletePlaylist() {
+		DeletePlaylistRequest req = new DeletePlaylistRequest("test2: Electric Testaloo");
+		DeletePlaylistResponse res = new DeletePlaylistHandler().handleRequest(req, createContext("DeletePlaylist"));
+		
+		Assert.assertEquals(200, res.statusCode);
+	}
 
 }
