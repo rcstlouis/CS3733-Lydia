@@ -2,10 +2,17 @@ package com.amazonaws.lambda.demo;
 
 
 
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.amazonaws.lambda.demo.db.PlaylistEntriesDAO;
+import com.amazonaws.lambda.demo.db.PlaylistsDAO;
+import com.amazonaws.lambda.demo.http.ListPlaylistsRequest;
 import com.amazonaws.lambda.demo.http.ListPlaylistsResponse;
+import com.amazonaws.lambda.demo.model.PlaylistEntry;
 import com.amazonaws.services.lambda.runtime.Context;
 
 /**
@@ -24,7 +31,8 @@ public class GetAllPlaylistsHandlerTest {
     public void testGetAllPlaylistsHandler() {
     	
         GetAllPlaylistsHandler handler = new GetAllPlaylistsHandler();
-		ListPlaylistsResponse res = handler.handleRequest(null, createContext("GetAllPlaylists"));
+        ListPlaylistsRequest req = new ListPlaylistsRequest();
+		ListPlaylistsResponse res = handler.handleRequest(req, createContext("GetAllPlaylists"));
 
 
 
@@ -34,4 +42,26 @@ public class GetAllPlaylistsHandlerTest {
         Assert.assertEquals(200, res.statusCode);
 
     }
+   @Test
+    public void testGetPlaylistLength() {
+    	PlaylistEntriesDAO cd = new PlaylistEntriesDAO();
+    	try {
+			int length = cd.getPlaylistLength("spockFlirting");
+			Assert.assertEquals (length, 3);
+		} catch (Exception e) {
+			fail("didn't work:" + e.getMessage());
+		}
+    }
+   
+   @Test
+	public void testGetPlaylistEntry() {
+		PlaylistEntriesDAO cd = new PlaylistEntriesDAO();
+		try {
+			PlaylistEntry pe = cd.getPlaylistEntry("spockFlirting", "4");
+
+			Assert.assertEquals (pe.getSegmentID(), "4");
+		} catch (Exception e) {
+			fail("didn't work:" + e.getMessage());
+		}
+	}
 }

@@ -51,4 +51,21 @@ public class GetAllSegmentsHandlerTest {
         // TODO: validate output here if needed.
         Assert.assertEquals(200, res.statusCode);
     }
+    
+    @Test
+    public void testSegmentStuff() {
+    	Segment test = new Segment("Test", "Tyler", "I am so tired right now");
+    	Segment test2 = new Segment("Test", "Tyler", "I am so tired right now", "The crawlspace between FlUpper and FLower", "Wooly Pollytestic Institute", false);
+    	Assert.assertNotEquals(test.getID(), test2.getID());
+    	Assert.assertEquals(test2.getName(), test.getName());
+    	Assert.assertEquals(test.getCharacter(), test2.getCharacter());
+    	Assert.assertEquals(test.getSentence(), test2.getSentence());
+    	Assert.assertEquals(test2.getOriginFilePath(), "The crawlspace between FlUpper and FLower");
+    	Assert.assertEquals(test2.getOriginSite(), "Wooly Pollytestic Institute");
+    	Assert.assertEquals(test2.isRemotelyAvailable(), false);
+    	//Assert.assertEquals(test.getCharacter(), test2.getCharacter());
+
+    	//Assert.assertEquals("Test", test.getID());
+    	//Assert.assertEquals("Test", test.getID());
+    }
 }

@@ -1,4 +1,4 @@
-package com.amazonaws.lambda.demo.model;
+/*package com.amazonaws.lambda.demo.model;
 
 public class Constant {
 	public final String name;
@@ -22,7 +22,7 @@ public class Constant {
 	/**
 	 * Equality of Constants determined by name alone.
 	 */
-	public boolean equals (Object o) {
+	/*public boolean equals (Object o) {
 		if (o == null) { return false; }
 		
 		if (o instanceof Constant) {
@@ -32,4 +32,4 @@ public class Constant {
 		
 		return false;  // not a Constant
 	}
-}
+}*/
