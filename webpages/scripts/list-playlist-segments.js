@@ -66,10 +66,12 @@ function refreshPlaylistSegments(playlistName) {
             <source src="${originFilePath}" type="video/ogg">
             Your browser does not support the video tag.
           </video> <br>
-          <p> character: ${character}</p>
-          <p> sentence: ${sentence}</p><br>
-          <p> remotely available: ${isRemotelyAvailable}</p>
-          Selected: <input type="checkbox">
+          <p> Character: ${character}</p>
+          <p> Sentence: ${sentence}</p>
+          <p> Remotely Available: ${isRemotelyAvailable}</p>
+          <form name="RemoveFromPlaylistForm">
+					  <input type="button" id="RemoveFromPlaylistButton:${segmentID}" value="Remove From Playlist" onclick="handleRemoveFromPlaylistClick('${segmentID}')">
+				  </form>
         </div>`;
    }
  
