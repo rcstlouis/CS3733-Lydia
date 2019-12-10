@@ -36,19 +36,15 @@ public class MarkUnmarkLocalHandler implements RequestHandler<ChangeMarkSegmentR
 	public ChangeMarkSegmentResponse handleRequest(ChangeMarkSegmentRequest req, Context context)  {
 		logger = context.getLogger();
 		logger.log(req.toString());
-		List<String> segmentNames = req.getNames();
-		logger.log("Value of segment names is " + req.getNames().toString());
-		Iterator<String> iter = segmentNames.iterator();
 
 		SegmentsDAO dao = new SegmentsDAO();
-		ChangeMarkSegmentResponse response;
+		ChangeMarkSegmentResponse response = null;
 		try {
-			while(iter.hasNext()) {
-				dao.toggleRemotelyAvailable(iter.next());
-			}
-			response = new ChangeMarkSegmentResponse("Successfully changed marks", 200);
+			if(dao.toggleRemotelyAvailable(req.getName())) {
+				response = new ChangeMarkSegmentResponse("Availability changed for segment: " + req.getName(), 200);
+			} 
 		} catch (Exception e) {
-			response = new ChangeMarkSegmentResponse("Unable to change marks: " + "(" + e.getMessage() + ")", 400);
+			response = new ChangeMarkSegmentResponse("Unable to change availability: " + "(" + e.getMessage() + ")", 400);
 		}
 
 		return response;
