@@ -8,6 +8,7 @@ import java.util.List;
 
 //import com.amazonaws.lambda.demo.model.Constant;
 import com.amazonaws.lambda.demo.model.Segment;
+import com.amazonaws.lambda.demo.model.SegmentRemote;
 
 public class SegmentsDAO {
 	java.sql.Connection conn;
@@ -172,6 +173,27 @@ public class SegmentsDAO {
 	    }
 	}
 	
+	public List<SegmentRemote> exportAvailableSegments() throws Exception {
+	    
+	    List<SegmentRemote> allSegmentRemotes = new ArrayList<>();
+	    try {
+	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE remotelyAvailable = True;");
+	        ps.setString(1, SegmentsDAO.SITE_URL);
+	        ResultSet resultSet = ps.executeQuery();
+	
+	        while (resultSet.next()) {
+	            Segment s = generateSegmentRemote(resultSet);
+	            allSegmentRemotes.add(s);
+	        }
+	        resultSet.close();
+	        ps.close();
+	        return allSegmentRemotes;
+	
+	    } catch (Exception e) {
+	        throw new Exception("Failed in getting remotely available segments: " + e.getMessage());
+	    }
+	}
+	
 	public List<Segment> getAllSegmentsFromPlaylist(String playlistName) throws Exception {
         
         List<Segment> allSegments = new ArrayList<>();
@@ -195,9 +217,7 @@ public class SegmentsDAO {
 	
 	public boolean toggleRemotelyAvailable(String name) throws Exception {
 		try {
-			PreparedStatement ps = conn.prepareStatement("UPDATE innodb.segments " + 
-					"SET remotelyAvailable = NOT remotelyAvailable " + 
-					"WHERE name = ? AND originSite = ?;");
+			PreparedStatement ps = conn.prepareStatement("UPDATE innodb.segments SET remotelyAvailable = NOT remotelyAvailable WHERE name = ? AND originSite = ?;");
             ps.setString(1, name);
             ps.setString(2, SITE_URL);
             int numAffected = ps.executeUpdate();
@@ -219,5 +239,13 @@ public class SegmentsDAO {
 		String sentence = resultSet.getString("sentence");
 	    //Construct a segment
 	    return new Segment(id, name, character, sentence, originFilePath, originSite, remotelyAvailable);
+	}
+	
+	private SegmentRemote generateSegmentRemote(ResultSet resultSet) throws Exception{
+		String url = resultSet.getString("url");
+		String character = resultSet.getString("character");
+		String text = resultSet.getString("text");
+		
+		return new SegmentRemote(url, character, text);
 	}
 }
