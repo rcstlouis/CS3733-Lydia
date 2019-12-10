@@ -17,7 +17,7 @@ public class DeleteSegmentHandler implements RequestHandler<DeleteVideoSegmentRe
 	@Override
 	public DeleteVideoSegmentResponse handleRequest(DeleteVideoSegmentRequest req, Context context) {
 		logger = context.getLogger();
-		logger.log("Loading Java Lambda handler to delete");
+		logger.log("Loading Java Lambda handler to delete segment");
 
 		DeleteVideoSegmentResponse response = null;
 		logger.log(req.toString());

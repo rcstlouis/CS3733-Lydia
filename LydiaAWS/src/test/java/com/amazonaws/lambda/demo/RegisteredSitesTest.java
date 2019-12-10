@@ -6,118 +6,67 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.amazonaws.lambda.demo.db.RegisteredSitesDAO;
+import com.amazonaws.lambda.demo.http.ListPlaylistsResponse;
+import com.amazonaws.lambda.demo.http.ListRegisteredSitesResponse;
+import com.amazonaws.lambda.demo.http.RegisterRemoteSiteRequest;
+import com.amazonaws.lambda.demo.http.RegisterRemoteSiteResponse;
+import com.amazonaws.lambda.demo.http.UnregisterRemoteSiteRequest;
+import com.amazonaws.lambda.demo.http.UnregisterRemoteSiteResponse;
 import com.amazonaws.lambda.demo.model.RegisteredSite;
+import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class RegisteredSitesTest {
+	Context createContext(String apiCall) {
+		TestContext2 ctx = new TestContext2();
+		ctx.setFunctionName(apiCall);
+		return ctx;
+	}
 
 	@Test
 	public void testGetAllRegisteredSites() {
-    	RegisteredSitesDAO cd = new RegisteredSitesDAO();
-		try {
-			List<RegisteredSite> hold = cd.getAllRegisteredSites();
-			List<RegisteredSite> list = new ArrayList<RegisteredSite>();
-			ListIterator<RegisteredSite> holdIterator = hold.listIterator();
-			RegisteredSite hello = new RegisteredSite("hello");
-			RegisteredSite url = new RegisteredSite("url.com");
-			RegisteredSite fraud = new RegisteredSite("fraudguarantee.com");
-			RegisteredSite heineman = new RegisteredSite("https://web.cs.wpi.edu/~heineman/cs3733/");
-			RegisteredSite wpi = new RegisteredSite("https://www.wpi.edu/");
-			
-			list.add(fraud);
-			list.add(hello);
-			list.add(heineman);
-			list.add(wpi);
-			list.add(url);
-			ListIterator<RegisteredSite> listIterator = list.listIterator();
 
-			assertTrue(hold.get(0).getURL().equals(list.get(0).getURL()));
-			assertTrue(hold.get(1).getURL().equals(list.get(1).getURL()));
-			assertTrue(hold.get(2).getURL().equals(list.get(2).getURL()));
-			assertTrue(hold.get(3).getURL().equals(list.get(3).getURL()));
-			assertTrue(hold.get(4).getURL().equals(list.get(4).getURL()));
+		ListSitesHandler handler = new ListSitesHandler();
+		ListRegisteredSitesResponse res = handler.handleRequest(null, createContext("GetAllRegisteredSites"));
 
-			
-				
-			
-		} catch (Exception e) {
-			fail("didn't work:" + e.getMessage());
-		}
+
+
+		//  System.out.println(""+output);
+		// System.out.println(""+CONTENT_TYPE);
+		// TODO: validate output here if needed.
+		Assert.assertEquals(200, res.statusCode);
 	}
-
-/*	
 	@Test
 	public void testAddRegisteredSites() {
-    	RegisteredSitesDAO cd = new RegisteredSitesDAO();
-		try {
-			List<RegisteredSite> hold = cd.getAllRegisteredSites();
-			List<RegisteredSite> list = new ArrayList<RegisteredSite>();
-			ListIterator<RegisteredSite> holdIterator = hold.listIterator();
-			RegisteredSite hello = new RegisteredSite("hello");
-			RegisteredSite url = new RegisteredSite("url.com");
-			RegisteredSite fraud = new RegisteredSite("fraudguarantee.com");
-			RegisteredSite heineman = new RegisteredSite("https://web.cs.wpi.edu/~heineman/cs3733/");
-			RegisteredSite wpi = new RegisteredSite("https://www.wpi.edu/");
-			RegisteredSite test = new RegisteredSite("jonbrownlowsbowlcut.info");
-			list.add(fraud);
-			list.add(hello);
-			list.add(heineman);
-			list.add(wpi);
-			list.add(url);
-			list.add(test);
-			
-			cd.addRegisteredSite(test);
-			cd.addRegisteredSite(fraud);
-			ListIterator<RegisteredSite> listIterator = list.listIterator();
+		RegisterRemoteSiteRequest req = new RegisterRemoteSiteRequest("I want to fucking shoot myself");
+		RegisterRemoteSiteResponse res = new RegisterSiteHandler().handleRequest(req, createContext("AddRegisteredSite"));
 
-			for (int i = 0; i < hold.size(); i++) {
-				assertTrue(hold.get(i).getURL().equals(list.get(i).getURL()));
-
-			}
-				
-			
-		} catch (Exception e) {
-			fail("didn't work:" + e.getMessage());
-		}
+		Assert.assertEquals(200, res.httpCode);
 	}
 	
 	@Test
 	public void testDeleteRegisteredSites() {
-    	RegisteredSitesDAO cd = new RegisteredSitesDAO();
-		try {
-			List<RegisteredSite> hold = cd.getAllRegisteredSites();
-			List<RegisteredSite> list = new ArrayList<RegisteredSite>();
-			ListIterator<RegisteredSite> holdIterator = hold.listIterator();
-			RegisteredSite hello = new RegisteredSite("hello");
-			RegisteredSite url = new RegisteredSite("url.com");
-			RegisteredSite fraud = new RegisteredSite("fraudguarantee.com");
-			RegisteredSite heineman = new RegisteredSite("https://web.cs.wpi.edu/~heineman/cs3733/");
-			RegisteredSite wpi = new RegisteredSite("https://www.wpi.edu/");
-			RegisteredSite test = new RegisteredSite("jonbrownlowsbowlcut.info");
-			list.add(fraud);
-			list.add(hello);
-			list.add(heineman);
-			list.add(wpi);
-			list.add(url);
-			list.remove(test);
-			
-			cd.deleteRegisteredSite(test);
-			
-			ListIterator<RegisteredSite> listIterator = list.listIterator();
+		UnregisterRemoteSiteRequest req = new UnregisterRemoteSiteRequest("I want to fucking shoot myself");
+		UnregisterRemoteSiteResponse res = new UnregisterSiteHandler().handleRequest(req, createContext("DeleteRegisteredSite"));
 
-			for (int i = 0; i < hold.size(); i++) {
-				assertTrue(hold.get(i).getURL().equals(list.get(i).getURL()));
-
-			}
-				
-			
-		} catch (Exception e) {
-			fail("didn't work:" + e.getMessage());
-		}
+		Assert.assertEquals(200, res.httpCode);
 	}
-	*/
 	
+	@Test
+	public void testGetSites() {
+
+		ListSitesHandler handler = new ListSitesHandler();
+		ListRegisteredSitesResponse res = handler.handleRequest(null, createContext("GetSites"));
+
+
+
+		//  System.out.println(""+output);
+		// System.out.println(""+CONTENT_TYPE);
+		// TODO: validate output here if needed.
+		Assert.assertEquals(200, res.statusCode);
+	}
 }

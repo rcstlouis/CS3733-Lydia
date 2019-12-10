@@ -14,7 +14,7 @@ public class DeleteSegmentHandlerTest {
 
 	@Test
     public void deleteVideoSegment() {
-        DeleteVideoSegmentRequest req = new DeleteVideoSegmentRequest("6");
+        DeleteVideoSegmentRequest req = new DeleteVideoSegmentRequest("27");
         DeleteVideoSegmentResponse res = new DeleteSegmentHandler().handleRequest(req, createContext("Delete"));
         // now delete
         Assert.assertEquals(200, res.statusCode);

@@ -16,24 +16,7 @@ import org.junit.Test;
 import java.util.List;
 
 public class DBTest {
-	
-	@Test
-	public void testCreate() {
-	    PlaylistsDAO cd = new PlaylistsDAO();
-	    try {
-	    	// can add it
-	    	List<Playlist> playlists = cd.getAllPlaylists();
-
-	    	for(Playlist p: playlists) {
-	    		System.out.println("Playlist found: " + p.getName());
-	    	}
-	    	
-	    	// can delete it
-	    	assertTrue (playlists.size() > 0);
-	    } catch (Exception e) {
-	    	fail ("didn't work:" + e.getMessage());
-	    }
-	}
+/*	
 	
 	@Test
 	public void testAddPlaylist() {
@@ -45,5 +28,5 @@ public class DBTest {
 		} catch (Exception e) {
 			fail ("didn't work:" + e.getMessage());
 		}
-	}
+	}*/
 }

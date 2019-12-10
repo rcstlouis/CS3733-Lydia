@@ -16,7 +16,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class UploadSegmentHandlerTest {
-	
+/*	
 	@Test
 	public void testUploadSegment() {
 		File file = new File("C:\\Users\\Maggie.Raque\\Downloads\\woman.txt");
@@ -42,6 +42,6 @@ public class UploadSegmentHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }
+    }*/
 
 }

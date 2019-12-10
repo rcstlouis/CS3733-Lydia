@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.amazonaws.lambda.demo.model.Constant;
+//import com.amazonaws.lambda.demo.model.Constant;
 import com.amazonaws.lambda.demo.model.Segment;
 
 public class SegmentsDAO {
