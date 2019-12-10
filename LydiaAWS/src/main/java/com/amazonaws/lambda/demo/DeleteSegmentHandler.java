@@ -28,12 +28,12 @@ public class DeleteSegmentHandler implements RequestHandler<DeleteVideoSegmentRe
 		// have one part of its information?
 		try {
 			if (dao.deleteSegment(req.getName())) {
-				response = new DeleteVideoSegmentResponse(req.name, 200);
+				response = new DeleteVideoSegmentResponse(req.segmentID, 200);
 			} else {
-				response = new DeleteVideoSegmentResponse(req.name, 422, "Unable to delete segment.");
+				response = new DeleteVideoSegmentResponse(req.segmentID, 422, "Unable to delete segment.");
 			}
 		} catch (Exception e) {
-			response = new DeleteVideoSegmentResponse(req.name, 403, "Unable to delete segment: " + req.name + "(" + e.getMessage() + ")");
+			response = new DeleteVideoSegmentResponse(req.segmentID, 403, "Unable to delete segment: " + req.segmentID + "(" + e.getMessage() + ")");
 		}
 
 		return response;
