@@ -3,22 +3,11 @@
  *
  */
 
-function unregisterSelected() {
-    siteTable = document.getElementById('siteTable')
-    var sitesToUnregister = []
-    // for(i = 0; i < siteTable.rows.length; i++){
-    //     if(siteTable.rows[i].cells[0].innerHTML.match('.*checked.*')){
-    //         sitesToUnregister.push(siteTable.rows[i].cells[1].innerHTML)
-    //     }
-    // }
-    for(i = 0; i < siteTable.rows.length - 1; i++){
-        if(document.getElementById('unregisterSiteBox' + i).checked){
-            sitesToUnregister.push(siteTable.rows[i + 1].cells[1].innerText)
-        }
-    }
+function unregisterSite(url) {
+    var form = document.unregisterSiteForm;
     
     var data = {};
-    data["url"] = sitesToUnregister[0];
+    data["url"] = url;
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);

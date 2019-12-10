@@ -79,21 +79,19 @@
         </table>
         <div>
             <h2>Remote Site Manager</h2>
-            <table id="siteTable">
-                <tr>
-                    <th>Selected</th>
-                    <th>URL</th>
-                </tr>
-            </table>
             <h3>Register Remote Site</h3>
             <form onsubmit="registerSite()">
                 <input id="siteToRegister" type="url" placeholder="Remote Site URL">
                 <input type="submit" value="Register">
             </form>
-            <h3>Unregister Remote Site</h3>
-            <form onsubmit="unregisterSelected()">
-                <input type="submit" value="Unregister Selected Sites">
-            </form>
+            <h3>Registered Sites</h3>
+            <table id="siteTable">
+                <tr>
+                    <th>Selected</th>
+                    <th>URL</th>
+                    <th>Options</th>
+                </tr>
+            </table>
         </div>
         <button id="themebutton" onclick="toggletheme()">Memes</button>
     </body>
