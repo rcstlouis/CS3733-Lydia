@@ -130,6 +130,48 @@ public class SegmentsDAO {
         }
     }
 	
+	public List<Segment> getAllLocalSegments() throws Exception {
+	    
+	    List<Segment> allSegments = new ArrayList<>();
+	    try {
+	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE originSite = ?");
+	        ps.setString(1, SegmentsDAO.SITE_URL);
+	        ResultSet resultSet = ps.executeQuery();
+	
+	        while (resultSet.next()) {
+	            Segment s = generateSegment(resultSet);
+	            allSegments.add(s);
+	        }
+	        resultSet.close();
+	        ps.close();
+	        return allSegments;
+	
+	    } catch (Exception e) {
+	        throw new Exception("Failed in getting books: " + e.getMessage());
+	    }
+	}
+
+	public List<Segment> getAllRemoteSegments() throws Exception {
+    
+	    List<Segment> allSegments = new ArrayList<>();
+	    try {
+	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE originSite <> ?");
+	        ps.setString(1, SegmentsDAO.SITE_URL);
+	        ResultSet resultSet = ps.executeQuery();
+	
+	        while (resultSet.next()) {
+	            Segment s = generateSegment(resultSet);
+	            allSegments.add(s);
+	        }
+	        resultSet.close();
+	        ps.close();
+	        return allSegments;
+	
+	    } catch (Exception e) {
+	        throw new Exception("Failed in getting books: " + e.getMessage());
+	    }
+	}
+	
 	public List<Segment> getAllSegmentsFromPlaylist(String playlistName) throws Exception {
         
         List<Segment> allSegments = new ArrayList<>();
