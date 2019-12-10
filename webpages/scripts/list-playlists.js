@@ -51,9 +51,6 @@ function processPlaylistListResponse(result) {
       <form id="deletePlaylistForm">
         <input type="button" id="playlistName" value="Delete Playlist" onclick="handleDeletePlaylistClick('${name}')">
       </form>
-      <form>
-        <input type="submit" value="Delete Selected from this Playlist">
-      </form><br>
     </div>`;
 
     listOutput = listOutput +

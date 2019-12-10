@@ -71,9 +71,9 @@ function processSegmentListResponse(result){
 						Your browser does not support the video tag.
 					</video> <br>
 				</div>
-				<p> character: ${character}</p>
-				<p> sentence: ${sentence}</p><br>
-				<p> remotely available: ${isRemotelyAvailable}</p>
+				<p> Character: ${character}</p>
+				<p> Sentence: ${sentence}</p>
+				<p> Remotely Available: ${isRemotelyAvailable}</p>
 				<form name="DeleteSegmentForm">
 					<input type="button" id="deleteSegmentButton:${segmentID}" value="Delete Segment" onclick="handleDeleteSegmentClick('${segmentID}')">
 				</form>
