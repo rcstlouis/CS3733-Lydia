@@ -60,8 +60,10 @@ public class GetAllPlaylistsHandlerTest {
 			PlaylistEntry pe = cd.getPlaylistEntry("spockFlirting", "4");
 
 			Assert.assertEquals (pe.getSegmentID(), "4");
+			Assert.assertEquals(pe.getEntryNumber(), 1);
 		} catch (Exception e) {
 			fail("didn't work:" + e.getMessage());
 		}
 	}
+   
 }

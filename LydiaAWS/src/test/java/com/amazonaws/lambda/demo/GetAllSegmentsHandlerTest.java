@@ -31,41 +31,45 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 
 public class GetAllSegmentsHandlerTest {
-	
-	Context createContext(String apiCall) {
-        TestContext2 ctx = new TestContext2();
-        ctx.setFunctionName(apiCall);
-        return ctx;
-    }
 
-    @Test
-    public void testGetAllSegments() {
-    	
-        GetAllSegmentsHandler handler = new GetAllSegmentsHandler();
+	Context createContext(String apiCall) {
+		TestContext2 ctx = new TestContext2();
+		ctx.setFunctionName(apiCall);
+		return ctx;
+	}
+
+	@Test
+	public void testGetAllSegments() {
+
+		GetAllSegmentsHandler handler = new GetAllSegmentsHandler();
 		ListSegmentsResponse res = handler.handleRequest(null, createContext("GetAllPlaylists"));
 
 
 
-      //  System.out.println(""+output);
-       // System.out.println(""+CONTENT_TYPE);
-        // TODO: validate output here if needed.
-        Assert.assertEquals(200, res.statusCode);
-    }
-    
-    @Test
-    public void testSegmentStuff() {
-    	Segment test = new Segment("Test", "Tyler", "I am so tired right now");
-    	Segment test2 = new Segment("Test", "Tyler", "I am so tired right now", "The crawlspace between FlUpper and FLower", "Wooly Pollytestic Institute", false);
-    	Assert.assertNotEquals(test.getID(), test2.getID());
-    	Assert.assertEquals(test2.getName(), test.getName());
-    	Assert.assertEquals(test.getCharacter(), test2.getCharacter());
-    	Assert.assertEquals(test.getSentence(), test2.getSentence());
-    	Assert.assertEquals(test2.getOriginFilePath(), "The crawlspace between FlUpper and FLower");
-    	Assert.assertEquals(test2.getOriginSite(), "Wooly Pollytestic Institute");
-    	Assert.assertEquals(test2.isRemotelyAvailable(), false);
-    	//Assert.assertEquals(test.getCharacter(), test2.getCharacter());
+		//  System.out.println(""+output);
+		// System.out.println(""+CONTENT_TYPE);
+		// TODO: validate output here if needed.
+		Assert.assertEquals(200, res.statusCode);
+	}
 
-    	//Assert.assertEquals("Test", test.getID());
-    	//Assert.assertEquals("Test", test.getID());
-    }
+	@Test
+	public void testSegmentStuff() {
+		SegmentsDAO cd = new SegmentsDAO();
+		try {
+			Segment cowards = cd.getSegment("cowards");	
+			Segment test = new Segment("Test", "Tyler", "I am so tired right now");
+			Segment test2 = new Segment("Test", "Tyler", "I am so tired right now", "The crawlspace between FlUpper and FLower", "Wooly Pollytestic Institute", false);
+			Assert.assertEquals(cowards.getCharacter(), "guy");
+			Assert.assertEquals(cowards.getID(), "12");
+			Assert.assertEquals(cowards.getName(), "cowards");
+			Assert.assertEquals(cowards.getSentence(), "COWARDS!");
+			Assert.assertEquals(cowards.getOriginFilePath(), "https://3733lydia.s3.us-east-2.amazonaws.com/segments/COWARDS.ogg");
+			Assert.assertEquals(cowards.getOriginSite(), "https://3733lydia.s3.us-east-2.amazonaws.com/segments/");
+			Assert.assertEquals(cowards.isRemotelyAvailable(), false);
+
+			Assert.assertNotEquals(test, test2);
+		} catch (Exception e) {
+			fail("didn't work:" + e.getMessage());
+		}
+	}
 }

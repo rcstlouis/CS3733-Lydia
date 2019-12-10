@@ -52,7 +52,7 @@ public class PlaylistEntriesDAO {
         
         List<PlaylistEntry> allPlaylistEntries = new ArrayList<>();
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlistEntries WHERE playlistName=?");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM playlistEntries WHERE playlistName=? GROUP BY playlistEntryNumber");
             ps.setString(1,playlistName);
             ResultSet resultSet = ps.executeQuery();
 

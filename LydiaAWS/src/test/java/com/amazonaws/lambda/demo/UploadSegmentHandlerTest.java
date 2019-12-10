@@ -9,6 +9,8 @@ import java.util.Scanner;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.amazonaws.lambda.demo.http.DeleteVideoSegmentRequest;
+import com.amazonaws.lambda.demo.http.DeleteVideoSegmentResponse;
 import com.amazonaws.lambda.demo.http.UploadVideoSegmentRequest;
 import com.amazonaws.lambda.demo.http.UploadVideoSegmentResponse;
 import com.amazonaws.services.lambda.runtime.Context;
@@ -16,6 +18,19 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class UploadSegmentHandlerTest {
+	@Test
+    public void uploadVideoSegment() {
+        UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("27", "Tyler", "I want to ride my bicycle", "No idea what goes here");
+        UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Delete"));
+        // now delete
+        Assert.assertEquals(200, res.httpCode);
+    }
+	
+	Context createContext(String apiCall) {
+        TestContext2 ctx = new TestContext2();
+        ctx.setFunctionName(apiCall);
+        return ctx;
+    }
 /*	
 	@Test
 	public void testUploadSegment() {
