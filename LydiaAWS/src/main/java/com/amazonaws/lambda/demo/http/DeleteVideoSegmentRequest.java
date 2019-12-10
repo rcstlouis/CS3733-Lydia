@@ -1,13 +1,13 @@
 package com.amazonaws.lambda.demo.http;
 
 public class DeleteVideoSegmentRequest {
-	public String name;
+	public String segmentID;
 	
-	public void setName(String name) {this.name = name;}
-	public String getName() {return name;}
+	public void setName(String segmentID) {this.segmentID = segmentID;}
+	public String getName() {return segmentID;}
 	
 	public DeleteVideoSegmentRequest(String n) {
-		this.name = n;
+		this.segmentID = n;
 	}
 	
 	public DeleteVideoSegmentRequest() {
@@ -15,7 +15,7 @@ public class DeleteVideoSegmentRequest {
 	}
 	
 	public String toString() {
-		return "Delete(" + name +")";
+		return "Delete(" + segmentID +")";
 	}
 
 }
