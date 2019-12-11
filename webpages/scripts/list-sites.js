@@ -47,12 +47,10 @@ function processListSitesResponse(result){
 			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
-			var cell3 = row.insertCell(2);
 
 			// Add some text to the new cells:
-			cell1.innerHTML = `<input type="checkbox" id="unregisterSiteBox${i}">`;
-			cell2.innerHTML = url;
-			cell3.innerHTML = 
+			cell1.innerHTML = url;
+			cell2.innerHTML = 
 				`<form id="unregisterSiteForm">
 					<input type="button" id="unregisterSite" value="Unregister Site" onclick="handleUnregisterSite(${url})">
 				</form>`;

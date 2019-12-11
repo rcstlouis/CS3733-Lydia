@@ -15,10 +15,11 @@
         <script type='text/javascript' src='scripts/list-sites.js'></script>
         <script type='text/javascript' src='scripts/mark-unmark-local.js'></script>
         <script type='text/javascript' src='scripts/register-site.js'></script>
-        <!-- <script type='text/javascript' src='scripts/remove-from-playlist.js'></script> -->
+        <script type='text/javascript' src='scripts/remove-from-playlist.js'></script>
         <script type='text/javascript' src='scripts/search-segments.js'></script>
         <script type='text/javascript' src='scripts/unregister-site.js'></script>
         <script type='text/javascript' src='scripts/upload-segment.js'></script>
+        <script type='text/javascript' src='scripts/base64.js'></script>
         <!-- Scripts specific to the admin page -->
         <script type="text/javascript">
             function initialize() {
@@ -66,15 +67,14 @@
             <h3>Remote Segment List</h3>
             <div id="remoteSegmentList"></div>
         </div>
-        <h2>Mark Segments</h2>
-        <button onclick="handleMarkUnmarkClick()">Change Remote Availability of Selected</button>
+        <h2>Segment Manager</h2>
         <table id="markTable">
             <tr>
-                <th>Selected</th>
                 <th>Name</th>
                 <th>Character</th>
                 <th>Sentence</th>
                 <th>Local</th>
+                <th>Options</th>
             </tr>
         </table>
         <div>
@@ -87,12 +87,14 @@
             <h3>Registered Sites</h3>
             <table id="siteTable">
                 <tr>
-                    <th>Selected</th>
                     <th>URL</th>
                     <th>Options</th>
                 </tr>
             </table>
         </div>
-        <button id="themebutton" onclick="toggletheme()">Memes</button>
+        <div>
+            <h2>Preferences</h2>
+            <button id="themebutton" onclick="toggletheme()">Memes</button>
+        </div>
     </body>
 </html>
