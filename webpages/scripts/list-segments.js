@@ -94,11 +94,14 @@ function processSegmentListResponse(result){
 			var cell5 = row.insertCell(4);
 
 			// Add some text to the new cells:
-			cell1.innerHTML = `<input type="checkbox" id="markSegmentBox${i}">`;
-			cell2.innerHTML = name;
-			cell3.innerHTML = character;
-			cell4.innerHTML = sentence;
-			cell5.innerHTML = isRemotelyAvailable;
+			cell1.innerHTML = name;
+			cell2.innerHTML = character;
+			cell3.innerHTML = sentence;
+			cell4.innerHTML = isRemotelyAvailable;
+			cell5.innerHTML = 
+				`<form name="markUnmarkLocalForm">
+					<input type="button" id="markUnmarkLocalButton:${segmentID}" value="Change Remote Availability" onclick="handleMarkUnmarkLocalClick('${segmentID}')">
+				</form>`;
 		}
 	}
 

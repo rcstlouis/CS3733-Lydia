@@ -17,6 +17,12 @@ h1{
     font-size: 2.8em;
 }
 
+form {
+    display: block;
+    margin-top: 0em;
+    margin-block-end: 0em;
+}
+
 .segment{
     background-color: #89b7dd;
     margin: 1em;
