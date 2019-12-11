@@ -29,7 +29,10 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 	LambdaLogger logger;
 	
 	// To access S3 storage
-	private AmazonS3 s3 = null;
+	private AmazonS3 s3 = null; 
+	
+	public static final String REAL_BUCKET = "segments/";
+	public static final String TEST_BUCKET = "testsegments/";
 		
 	/** Store into RDS.
 	 * 
@@ -66,7 +69,7 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		ObjectMetadata omd = new ObjectMetadata();
 		omd.setContentLength(contents.length);
 		
-		PutObjectResult res = s3.putObject(new PutObjectRequest("3733lydia", "segments/" + name, bais, omd).withCannedAcl(CannedAccessControlList.PublicRead));
+		PutObjectResult res = s3.putObject(new PutObjectRequest("3733lydia", "segments/" + name + ".ogg", bais, omd).withCannedAcl(CannedAccessControlList.PublicRead));
 		
 		// if we ever get here, then whole thing was stored
 		return true;

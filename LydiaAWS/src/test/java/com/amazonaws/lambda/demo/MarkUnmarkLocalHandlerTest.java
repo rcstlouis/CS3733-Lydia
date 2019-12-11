@@ -24,16 +24,6 @@ public class MarkUnmarkLocalHandlerTest {
 		handler.handleRequest(req, createContext("Mark/Unmark"));
 	}
 	
-	@Test
-	public void testFromJSON() {
-		String testJSON = "{\"segmentNames\":[\"emotion\",\"shower\"]}";
-		ChangeMarkSegmentRequest req = new Gson().fromJson(testJSON, ChangeMarkSegmentRequest.class);
-		MarkUnmarkLocalHandler handler = new MarkUnmarkLocalHandler();
-		ChangeMarkSegmentResponse resp = handler.handleRequest(req, createContext("Mark/Unmark"));
-		Assert.assertEquals(200, resp.getStatusCode());
-		//Reset
-		handler.handleRequest(req, createContext("Mark/Unmark"));
-	}
 	
 	Context createContext(String apiCall) {
         TestContext2 ctx = new TestContext2();

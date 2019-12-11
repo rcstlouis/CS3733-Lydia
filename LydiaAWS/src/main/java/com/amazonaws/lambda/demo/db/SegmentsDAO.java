@@ -61,7 +61,7 @@ public class SegmentsDAO {
             ps = conn.prepareStatement("INSERT INTO segments values(?,?,?,?,?,?,?);");
             ps.setString(1,  segment.getID());
             ps.setString(2,  segment.getName());
-            ps.setString(3, segment.getOriginFilePath());
+            ps.setString(3, segment.getOriginFilePath() + ".ogg");
             ps.setString(4,  segment.getOriginSite());
             ps.setBoolean(5,  segment.isRemotelyAvailable());
             ps.setString(6,  segment.getCharacter());
@@ -177,12 +177,12 @@ public class SegmentsDAO {
 	    
 	    List<SegmentRemote> allSegmentRemotes = new ArrayList<>();
 	    try {
-	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE remotelyAvailable = True;");
+	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE remotelyAvailable = True and originSite = ?;");
 	        ps.setString(1, SegmentsDAO.SITE_URL);
 	        ResultSet resultSet = ps.executeQuery();
 	
 	        while (resultSet.next()) {
-	            Segment s = generateSegmentRemote(resultSet);
+	            SegmentRemote s = generateSegmentRemote(resultSet);
 	            allSegmentRemotes.add(s);
 	        }
 	        resultSet.close();
@@ -217,7 +217,7 @@ public class SegmentsDAO {
 	
 	public boolean toggleRemotelyAvailable(String name) throws Exception {
 		try {
-			PreparedStatement ps = conn.prepareStatement("UPDATE segments SET remotelyAvailable = NOT remotelyAvailable WHERE name = ? AND originSite = ?;");
+			PreparedStatement ps = conn.prepareStatement("UPDATE segments SET remotelyAvailable = NOT remotelyAvailable WHERE id = ? AND originSite = ?;");
             ps.setString(1, name);
             ps.setString(2, SITE_URL);
             int numAffected = ps.executeUpdate();
@@ -242,9 +242,9 @@ public class SegmentsDAO {
 	}
 	
 	private SegmentRemote generateSegmentRemote(ResultSet resultSet) throws Exception{
-		String url = resultSet.getString("url");
+		String url = resultSet.getString("originFilePath");
 		String character = resultSet.getString("character");
-		String text = resultSet.getString("text");
+		String text = resultSet.getString("sentence");
 		
 		return new SegmentRemote(url, character, text);
 	}
