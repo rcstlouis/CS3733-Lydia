@@ -9,7 +9,7 @@ function handleUploadSegmentClick(e) {
     var form = document.uploadSegmentForm;
    
     var data = {};
-    data["name"]               = form.file.value;
+    data["name"]                  = form.fileName.value;
     data["character"]             = form.character.value;
     data["sentence"]              = form.sentence.value;
     // base64EncodedValue":"data:text/plain;base64,My4xND....."
