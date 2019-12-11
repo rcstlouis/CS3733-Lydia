@@ -177,12 +177,12 @@ public class SegmentsDAO {
 	    
 	    List<SegmentRemote> allSegmentRemotes = new ArrayList<>();
 	    try {
-	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE remotelyAvailable = True;");
+	        PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE remotelyAvailable = True and originSite = ?;");
 	        ps.setString(1, SegmentsDAO.SITE_URL);
 	        ResultSet resultSet = ps.executeQuery();
 	
 	        while (resultSet.next()) {
-	            Segment s = generateSegmentRemote(resultSet);
+	            SegmentRemote s = generateSegmentRemote(resultSet);
 	            allSegmentRemotes.add(s);
 	        }
 	        resultSet.close();
@@ -242,9 +242,9 @@ public class SegmentsDAO {
 	}
 	
 	private SegmentRemote generateSegmentRemote(ResultSet resultSet) throws Exception{
-		String url = resultSet.getString("url");
+		String url = resultSet.getString("originFilePath");
 		String character = resultSet.getString("character");
-		String text = resultSet.getString("text");
+		String text = resultSet.getString("sentence");
 		
 		return new SegmentRemote(url, character, text);
 	}
