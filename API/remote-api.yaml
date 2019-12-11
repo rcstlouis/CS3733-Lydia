@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  description: This is the Lydia API for remote sites to access segments and to access segments from remote sites
+  version: 1.0.0
+  title: Lydia Remote API
+  contact:
+    email: gr-lydia@wpi.edu
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+# tags are used for organizing operations
+tags:
+- name: admins
+  description: Secured Admin-only calls
+- name: consumers
+  description: Operations available to regular consumers
+
+paths:
+  /get-remote-segments:
+    post:
+      tags:
+      - consumers
+      summary: Gives a list of remote segments from the requested site
+      operationId: getRemoteSegments
+      description: Requests a list of remote segments that have been marked as remotely available from a given site
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: GetRemoteSegmentsRequest
+        description: Request for getting remote segments
+        required: false
+        schema:
+          $ref: '#/definitions/GetRemoteSegmentsRequest'
+      responses:
+        200:
+          description: video segments successfully returned
+        400:
+          description: could not reach remote site
+        409:
+          description: could reach remote site, but no segments could be found
+  /remote:
+    get:
+      tags:
+      - consumers
+      summary: Requests a list of remotely available segmetns
+      operationId: remote
+      description: Requests a list of the segments that we have uploaded to our site and marked as remotely available
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: list successfully returned
+        400:
+          description: unable to retrieve list of segments
+definitions:
+  GetRemoteSegmentsRequest:
+    type: object
+    required:
+      - url
+    properties:
+      url:
+        type: string
+
+schemes:
+ - https
