@@ -21,15 +21,15 @@ public class RemoveSegmentFromPlaylistHandler implements RequestHandler<RemoveSe
 		
 		PlaylistEntriesDAO dao = new PlaylistEntriesDAO();
 		
-		PlaylistEntry playlistEntry = new PlaylistEntry(req.segmentName, -1, req.playlistName);
+		PlaylistEntry playlistEntry = new PlaylistEntry(req.segmentID, req.playlistEntryNum, req.playlistName);
 		try {
 			if(dao.deletePlaylistEntry(playlistEntry)) {
-				response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), 200);
+				response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), playlistEntry.getEntryNumber(), 200);
 			} else {
-				response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), 422, "Unable to remove segment");
+				response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), playlistEntry.getEntryNumber(), 422, "Unable to remove segment");
 			}
 		} catch (Exception e) {
-			response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), 403, "Unable to remove segment: " + req.segmentName + "from playlist: " + req.playlistName);
+			response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), playlistEntry.getEntryNumber(), 403, "Unable to remove segment: " + req.segmentID + "from playlist: " + req.playlistName + "at entry: " + req.playlistEntryNum);
 		}
 		
 		return response;
