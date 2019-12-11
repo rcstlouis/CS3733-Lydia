@@ -33,7 +33,14 @@ function processListSitesResponse(result){
 	console.log("res:" + result);
 
 	var js = JSON.parse(result);
-    var table = document.getElementById('siteTable');
+	var table = document.getElementById('siteTable');
+
+	//Clear the table
+	if(table !== null){
+		while (table.rows.length > 1){
+			table.deleteRow(table.rows.length - 1);
+		}
+	}
     
 	for (var i = 0; i < js.list.length; i++){
 		var registerdSiteJSON = js.list[i];
@@ -52,7 +59,7 @@ function processListSitesResponse(result){
 			cell1.innerHTML = url;
 			cell2.innerHTML = 
 				`<form id="unregisterSiteForm">
-					<input type="button" id="unregisterSite" value="Unregister Site" onclick="handleUnregisterSite(${url})">
+					<input type="button" id="unregisterSite" value="Unregister Site" onclick="handleUnregisterSite('${url}')">
 				</form>`;
 		}
 	}
