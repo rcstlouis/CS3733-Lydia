@@ -41,7 +41,7 @@ function processMarkUnmarkLocalResponse(result) {
     
     if (status == 200) {
         // Update computation result
-        window.location.reload();
+        // window.location.reload();
         refreshSegmentsList();
     } else {
         

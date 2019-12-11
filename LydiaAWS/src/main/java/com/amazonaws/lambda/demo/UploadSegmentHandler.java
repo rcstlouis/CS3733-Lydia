@@ -69,7 +69,7 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 		ObjectMetadata omd = new ObjectMetadata();
 		omd.setContentLength(contents.length);
 		
-		PutObjectResult res = s3.putObject(new PutObjectRequest("3733lydia", "segments/" + name, bais, omd).withCannedAcl(CannedAccessControlList.PublicRead));
+		PutObjectResult res = s3.putObject(new PutObjectRequest("3733lydia", "segments/" + name + ".ogg", bais, omd).withCannedAcl(CannedAccessControlList.PublicRead));
 		
 		// if we ever get here, then whole thing was stored
 		return true;
