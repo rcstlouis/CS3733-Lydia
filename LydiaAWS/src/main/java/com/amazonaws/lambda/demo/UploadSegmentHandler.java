@@ -29,7 +29,10 @@ public class UploadSegmentHandler implements RequestHandler<UploadVideoSegmentRe
 	LambdaLogger logger;
 	
 	// To access S3 storage
-	private AmazonS3 s3 = null;
+	private AmazonS3 s3 = null; 
+	
+	public static final String REAL_BUCKET = "segments/";
+	public static final String TEST_BUCKET = "testsegments/";
 		
 	/** Store into RDS.
 	 * 

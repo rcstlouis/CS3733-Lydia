@@ -24,14 +24,14 @@ function registerSite() {
         
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log ("XHR:" + xhr.responseText);
-            processUnregisterSiteResponse(xhr.responseText);
+            processRegisterSiteResponse(xhr.responseText);
         } else {
-            processUnregisterSiteResponse("N/A");
+            processRegisterSiteResponse("N/A");
         }
     };
 }
   
-function processUnregisterSiteResponse(result) {
+function processRegisterSiteResponse(result) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
