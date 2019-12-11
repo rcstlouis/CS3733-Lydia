@@ -25,6 +25,7 @@ function registerSite() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log ("XHR:" + xhr.responseText);
             processRegisterSiteResponse(xhr.responseText);
+            receiveRemoteSegments(url);
         } else {
             processRegisterSiteResponse("N/A");
         }

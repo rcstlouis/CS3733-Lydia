@@ -6,25 +6,25 @@ import java.util.List;
 import com.amazonaws.lambda.demo.model.*;
 
 public class RemoteResponse {
-	public final List<SegmentRemote> list;
+	public final List<SegmentRemote> segments;
 	public final int statusCode;
 	public final String error;
 	
 	public RemoteResponse (List<SegmentRemote> list, int code) {
-		this.list = list;
+		this.segments = list;
 		this.statusCode = code;
 		this.error = "";
 	}
 	
 	public RemoteResponse (int code, String errorMessage) {
-		this.list = new ArrayList<SegmentRemote>();
+		this.segments = new ArrayList<SegmentRemote>();
 		this.statusCode = code;
 		this.error = errorMessage;
 	}
 	
 	public String toString() {
-		if (list == null) { return "EmptyConstants"; }
-		return "AllConstants(" + list.size() + ")";
+		if (segments == null) { return "Empty Segment List"; }
+		return "AllConstants(" + segments.size() + ")";
 	}
 	
 	public int getStatusCode() {

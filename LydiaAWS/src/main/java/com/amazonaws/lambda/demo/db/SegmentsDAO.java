@@ -61,7 +61,7 @@ public class SegmentsDAO {
             ps = conn.prepareStatement("INSERT INTO segments values(?,?,?,?,?,?,?);");
             ps.setString(1,  segment.getID());
             ps.setString(2,  segment.getName());
-            ps.setString(3, segment.getOriginFilePath());
+            ps.setString(3, segment.getOriginFilePath() + ".ogg");
             ps.setString(4,  segment.getOriginSite());
             ps.setBoolean(5,  segment.isRemotelyAvailable());
             ps.setString(6,  segment.getCharacter());
