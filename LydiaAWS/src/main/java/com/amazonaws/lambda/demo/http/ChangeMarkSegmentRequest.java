@@ -6,17 +6,17 @@ import java.util.List;
 
 public class ChangeMarkSegmentRequest {
 
-	String segmentName;
+	String segmentID;
 	boolean isAvailable;
 	
 	public boolean getAvailable() {return isAvailable;}
 	public void setAvailable(boolean avail) {this.isAvailable = avail;}
 	
-	public String getName() {return segmentName;}
-	public void setName(String name) {this.segmentName = name;}
+	public String getSegmentID() {return segmentID;}
+	public void setSegmentID(String segmentID) {this.segmentID = segmentID;}
 	
-	public ChangeMarkSegmentRequest(String segmentName, boolean avail) {
-		this.segmentName = segmentName;
+	public ChangeMarkSegmentRequest(String segmentID, boolean avail) {
+		this.segmentID = segmentID;
 	    this.isAvailable = avail;
 		
 	}
@@ -26,7 +26,7 @@ public class ChangeMarkSegmentRequest {
 	}
 	
 	public String toString() {
-	return "Segment(" + segmentName + "is available:" + isAvailable + ")";
+	return "Segment(" + segmentID + " is available:" + isAvailable + ")";
 		
 	}
 

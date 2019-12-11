@@ -40,9 +40,12 @@ public class MarkUnmarkLocalHandler implements RequestHandler<ChangeMarkSegmentR
 		SegmentsDAO dao = new SegmentsDAO();
 		ChangeMarkSegmentResponse response = null;
 		try {
-			if(dao.toggleRemotelyAvailable(req.getName())) {
-				response = new ChangeMarkSegmentResponse("Availability changed for segment: " + req.getName(), 200);
+			if(dao.toggleRemotelyAvailable(req.getSegmentID())) {
+				return new ChangeMarkSegmentResponse("Availability changed for segment: " + req.getSegmentID(), 200);
 			} 
+			else {
+				return new ChangeMarkSegmentResponse("Unable to change availability. Database access failed.", 409);
+			}
 		} catch (Exception e) {
 			response = new ChangeMarkSegmentResponse("Unable to change availability: " + "(" + e.getMessage() + ")", 400);
 		}

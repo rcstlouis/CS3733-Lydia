@@ -3,22 +3,11 @@
  *
  */
 
-function handleMarkUnmarkClick() {
-    markTable = document.getElementById('markTable')
-    var segmentsToChange = []
-    // for(i = 0; i < markTable.rows.length; i++){
-    //     if(markTable.rows[i].cells[0].innerHTML.match('.*checked.*')){
-    //         segmentsToChange.push(markTable.rows[i].cells[1].innerHTML)
-    //     }
-    // }
-    for(i = 0; i < markTable.rows.length - 1; i++){
-        if(document.getElementById('markSegmentBox' + i).checked){
-            segmentsToChange.push(markTable.rows[i + 1].cells[1].innerText)
-        }
-    }
+function handleMarkUnmarkLocalClick(segmentID) {
+    markTable = document.getElementById('markTable');
     
     var data = {};
-    data["segmentNames"] = segmentsToChange;
+    data["segmentID"] = segmentID;
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);
@@ -35,14 +24,14 @@ function handleMarkUnmarkClick() {
         
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log ("XHR:" + xhr.responseText);
-            processMarkUnmarkResponse(xhr.responseText);
+            processMarkUnmarkLocalResponse(xhr.responseText);
         } else {
-            processMarkUnmarkResponse("N/A");
+            processMarkUnmarkLocalResponse("N/A");
         }
     };
 }
   
-function processMarkUnmarkResponse(result) {
+function processMarkUnmarkLocalResponse(result) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
@@ -52,7 +41,8 @@ function processMarkUnmarkResponse(result) {
     
     if (status == 200) {
         // Update computation result
-        window.location.reload()
+        window.location.reload();
+        refreshSegmentsList();
     } else {
         
     }

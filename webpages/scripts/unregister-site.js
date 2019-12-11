@@ -3,7 +3,7 @@
  *
  */
 
-function unregisterSite(url) {
+function handleUnregisterSite(url) {
     var form = document.unregisterSiteForm;
     
     var data = {};
@@ -37,7 +37,7 @@ function processUnregisterSiteResponse(result) {
     console.log("result:" + result);
     var js = JSON.parse(result);
 
-    var status      = js["statusCode"];
+    var status      = js["httpCode"];
     
     if (status == 200) {
         // Update computation result

@@ -15,10 +15,8 @@ public class MarkUnmarkLocalHandlerTest {
 
 	@Test
 	public void test() {
-		ArrayList<String> names = new ArrayList<String>();
-		names.add("shower");
-		names.add("emotion");
-		ChangeMarkSegmentRequest req = new ChangeMarkSegmentRequest(names);
+		String id = "8";
+		ChangeMarkSegmentRequest req = new ChangeMarkSegmentRequest(id, false);
 		MarkUnmarkLocalHandler handler = new MarkUnmarkLocalHandler();
 		ChangeMarkSegmentResponse resp = handler.handleRequest(req, createContext("Mark/Unmark"));
 		Assert.assertEquals(200, resp.getStatusCode());
@@ -38,7 +36,7 @@ public class MarkUnmarkLocalHandlerTest {
 	}
 	
 	Context createContext(String apiCall) {
-        TestContext ctx = new TestContext();
+        TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
     }
