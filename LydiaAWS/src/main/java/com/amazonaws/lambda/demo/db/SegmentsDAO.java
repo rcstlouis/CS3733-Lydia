@@ -217,7 +217,7 @@ public class SegmentsDAO {
 	
 	public boolean toggleRemotelyAvailable(String name) throws Exception {
 		try {
-			PreparedStatement ps = conn.prepareStatement("UPDATE innodb.segments SET remotelyAvailable = NOT remotelyAvailable WHERE name = ? AND originSite = ?;");
+			PreparedStatement ps = conn.prepareStatement("UPDATE segments SET remotelyAvailable = NOT remotelyAvailable WHERE name = ? AND originSite = ?;");
             ps.setString(1, name);
             ps.setString(2, SITE_URL);
             int numAffected = ps.executeUpdate();
