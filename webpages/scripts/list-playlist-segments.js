@@ -70,7 +70,7 @@ function refreshPlaylistSegments(playlistName) {
           <p> Sentence: ${sentence}</p>
           <p> Remotely Available: ${isRemotelyAvailable}</p>
           <form name="RemoveFromPlaylistForm">
-					  <input type="button" id="RemoveFromPlaylistButton:${segmentID}" value="Remove From Playlist" onclick="handleRemoveFromPlaylistClick('${segmentID}')">
+					  <input type="button" id="RemoveFromPlaylistButton:${segmentID}" value="Remove From Playlist" onclick="handleRemoveFromPlaylistClick('${segmentID}','${playlistName}',${i})">
 				  </form>
         </div>`;
    }
