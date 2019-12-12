@@ -25,7 +25,7 @@ import com.amazonaws.lambda.demo.model.SegmentRemote;
 
  * @author heineman
  */
-public class GetRemoteSegmentsHandler implements RequestHandler<GetRemoteSegmentsRequest,GetRemoteSegmentsResponse> {
+public class GetRemoteSegmentsHandler implements RequestHandler<ReceiveRemoteSegmentsRequest,ReceiveRemoteSegmentsResponse> {
 
 	LambdaLogger logger;
 	
@@ -39,7 +39,7 @@ public class GetRemoteSegmentsHandler implements RequestHandler<GetRemoteSegment
 	 * 
 	 * @throws Exception 
 	 */
-	boolean createSegmentEntry(GetRemoteSegmentsRequest req) throws Exception {
+	boolean createSegmentEntry(ReceiveRemoteSegmentsRequest req) throws Exception {
 		if (logger != null) { logger.log("in createConstant"); }
 		SegmentsDAO dao = new SegmentsDAO();
 		
@@ -47,14 +47,14 @@ public class GetRemoteSegmentsHandler implements RequestHandler<GetRemoteSegment
 //		Segment exist = dao.getSegment(req.getName());
 		SegmentRemote segment = new SegmentRemote (req.getUrl(), req.getCharacter(), req.getText());
 		if (/*exist == null*/ true) {
-			return dao.addSegment(segment, req.getOriginSite());
+			return dao.addExternalSegment(segment, req.getOriginSite());
 		} else {
 			return false;
 		}
 	}
 	
 	@Override 
-	public GetRemoteSegmentsResponse handleRequest(GetRemoteSegmentsRequest req, Context context)  {
+	public ReceiveRemoteSegmentsResponse handleRequest(ReceiveRemoteSegmentsRequest req, Context context)  {
 		logger = context.getLogger();
 		logger.log(req.toString());
 		logger.log("Request file path: " + req.getUrl());
@@ -62,17 +62,17 @@ public class GetRemoteSegmentsHandler implements RequestHandler<GetRemoteSegment
 		logger.log("Request sentence: " + req.getText());
 		logger.log("Request originSite: " + req.getOriginSite());
 
-		GetRemoteSegmentsResponse response;
+		ReceiveRemoteSegmentsResponse response;
 		try {
 			if (createSegmentEntry(req)) {
-				response = new UploadVideoSegmentResponse(req.getName(), 200);
+				response = new ReceiveRemoteSegmentsResponse("Received segment: " + req.getCharacter() + " - " + req.getText(), 200);
 			} else {
-				response = new UploadVideoSegmentResponse(req.getName(), 422);
+				response = new ReceiveRemoteSegmentsResponse("Segment already exists in db", 400);
 			}
 		} catch (Exception e) {
 			logger.log("Upload failed. Raised excpetion: " + e.getMessage());
 			logger.log("Stack Trace: " + e.getMessage());
-			response = new UploadVideoSegmentResponse("Unable to upload segment: " + req.getName() + "(" + e.getMessage() + ")" + " Stack Trace: " + e.getStackTrace(), 400);
+			response = new ReceiveRemoteSegmentsResponse("Unable to recieve segment: " + req.getCharacter() + " - " + req.getText() + "(" + e.getMessage() + ")" + " Stack Trace: " + e.getStackTrace(), 409);
 		}
 
 		return response;
