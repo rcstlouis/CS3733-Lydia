@@ -64,9 +64,17 @@ definitions:
     type: object
     required:
       - url
+      - character
+      - text
+      - originSite
     properties:
       url:
         type: string
-
+      character:
+        type: string
+      text:
+        type: string
+      originSite:
+        type: string
 schemes:
  - https
