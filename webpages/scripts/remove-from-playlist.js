@@ -1,8 +1,8 @@
-function processRemoveFromPlaylistResponse(result) {
+function processRemoveFromPlaylistResponse(result, playlistName) {
     // Can grab any DIV or SPAN HTML element and can then manipulate its
     // contents dynamically via javascript
     console.log("result:" + result);
-    refreshPlaylistSegments();
+    refreshPlaylistSegments(playlistName);
 }
   
 function handleRemoveFromPlaylistClick(segmentID, playlistName, playlistEntryNum) {
@@ -28,7 +28,7 @@ function handleRemoveFromPlaylistClick(segmentID, playlistName, playlistEntryNum
       if (xhr.readyState == XMLHttpRequest.DONE) {
            if (xhr.status == 200) {
             console.log ("XHR:" + xhr.responseText);
-            processRemoveFromPlaylistResponse(xhr.responseText);
+            processRemoveFromPlaylistResponse(xhr.responseText, playlistName);
            } else {
                console.log("actual:" + xhr.responseText)
                 var js = JSON.parse(xhr.responseText);
@@ -36,7 +36,7 @@ function handleRemoveFromPlaylistClick(segmentID, playlistName, playlistEntryNum
                 alert (err);
            }
       } else {
-        processRemoveFromPlaylistResponse("N/A");
+        processRemoveFromPlaylistResponse("N/A", playlistName);
       }
     };
   }
