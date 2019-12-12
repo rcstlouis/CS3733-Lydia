@@ -29,7 +29,7 @@ public class RemoveSegmentFromPlaylistHandler implements RequestHandler<RemoveSe
 				response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), playlistEntry.getEntryNumber(), 422, "Unable to remove segment");
 			}
 		} catch (Exception e) {
-			response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), playlistEntry.getEntryNumber(), 403, "Unable to remove segment: " + req.segmentID + "from playlist: " + req.playlistName + "at entry: " + req.playlistEntryNum);
+			response = new RemoveSegmentFromPlaylistResponse(playlistEntry.getSegmentID(), playlistEntry.getPlaylistName(), playlistEntry.getEntryNumber(), 403, "Unable to remove segment: " + req.segmentID + "from playlist: " + req.playlistName + "at entry: " + req.playlistEntryNum + " Error message: " + e.getMessage());
 		}
 		
 		return response;
