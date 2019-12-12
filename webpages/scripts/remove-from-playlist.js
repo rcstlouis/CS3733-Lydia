@@ -11,7 +11,7 @@ function handleRemoveFromPlaylistClick(segmentID, playlistName, playlistEntryNum
     var data = {};
     data["segmentID"] = segmentID;
     data["playlistName"] = playlistName;
-    data["playlistEntryNum"] = playlistEntryNum;
+    data["playlistEntryNum"] = playlistEntryNum+1;
   
     var js = JSON.stringify(data);
     console.log("JS:" + js);
