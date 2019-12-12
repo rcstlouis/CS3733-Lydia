@@ -73,6 +73,35 @@ public class SegmentsDAO {
             throw new Exception("Failed to insert segment: " + e.getMessage());
         }
     }
+
+    public boolean addExternalSegment(SegmentRemote sr, String originSite) throws Exception {
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE originFilePath = ?;");
+            ps.setString(1, sr.getUrl());
+            ResultSet resultSet = ps.executeQuery();
+            
+            // already present?
+            while (resultSet.next()) {
+                Segment s = generateSegment(resultSet);
+                resultSet.close();
+                return false;
+            }
+            String newID = Segment.getNewID();
+            ps = conn.prepareStatement("INSERT INTO segments values(?,?,?,?,?,?,?);");
+            ps.setString(1,  newID);
+            ps.setString(2,  sr.getCharacter() + newID.substring(0, 5));
+            ps.setString(3, sr.getUrl());
+            ps.setString(4,  originSite);
+            ps.setBoolean(5,  false);
+            ps.setString(6,  sr.getCharacter());
+            ps.setString(7,  sr.getText());
+            ps.execute();
+            return true;
+
+        } catch (Exception e) {
+            throw new Exception("Failed to insert segment: " + e.getMessage());
+        }
+    }
 	
 	public boolean deleteSegment(Segment segment) throws Exception {
         try {

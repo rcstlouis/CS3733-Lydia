@@ -102,19 +102,23 @@ public class PlaylistEntriesDAO {
         	PreparedStatement ps = conn.prepareStatement(
         			"UPDATE playlistEntries " + 
         			"SET playlistEntryNumber = playlistEntryNumber - 1 " + 
-        			"WHERE `playlistName` = '?' and playlistEntryNumber > ? " + 
+        			"WHERE `playlistName` = ? and playlistEntryNumber > ? " + 
         			"ORDER BY playlistEntryNumber ASC;"
         	);
+        	
             ps.setString(1, pe.getPlaylistName());
             ps.setInt(2, pe.getEntryNumber());
             ps.close();
             
+
             PreparedStatement ps1 = conn.prepareStatement("DELETE FROM playlistEntries WHERE segmentID = ? AND playlistName = ? AND playlistEntryNumber = ?;");
             ps1.setString(1, pe.getSegmentID());
             ps1.setString(2, pe.getPlaylistName());
             ps1.setInt(3, pe.getEntryNumber());
             int numAffected = ps1.executeUpdate();
             ps1.close();
+            
+
             
             return (numAffected == 1);
 
