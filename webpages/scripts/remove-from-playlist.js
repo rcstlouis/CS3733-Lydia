@@ -3,6 +3,7 @@ function processRemoveFromPlaylistResponse(result, playlistName) {
     // contents dynamically via javascript
     console.log("result:" + result);
     refreshPlaylistSegments(playlistName);
+    location.reload(true);
 }
   
 function handleRemoveFromPlaylistClick(segmentID, playlistName, playlistEntryNum) {

@@ -1,9 +1,30 @@
-function processLoadedExternalSegmentResponse(result){
+function processLoadedExternalSegmentResponse(result, originFilePath){
   if(result = 'N/A'){
     console.log("Something messed up in putting an external segment in the RDS");
     return
   }
   console.log("Remote segment registered: " + result["statusCode"]);
+  remoteList = document.getElementById(originFilePath)
+  remoteList.innerHTML += `
+    <div class="segment" id="segment:${result.name}:entry:${result.segmentID}">
+    <span class="playlistEntry">${result.name}</span><br>
+    <div class="centerable">
+      <video id="${result.segmentID}" width="320" height="240" controls>
+        <source src="${result.originFilePath}" type="video/ogg">
+        Your browser does not support the video tag.
+      </video> <br>
+    </div>
+    <p> Character: ${result.character}</p>
+    <p> Sentence: ${result.sentence}</p>
+    <form name="DeleteSegmentForm">
+      <input type="button" id="deleteSegmentButton:${result.segmentID}" value="Delete Segment" onclick="handleDeleteSegmentClick('${result.segmentID}')">
+    </form>
+    <form name="playlistSelectForm">
+      <select id="playlistSelect:${result.segmentID}" name="playlistSelect" value="Select Playlist"></select>
+      <input type="button" id="addToPlaylistButton:${result.segmentID}" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick('${result.segmentID}')">
+    </form>
+    </div>
+  `
 } 
 
 function processReceiveRemoteSegmentsResponse(result, url) {
@@ -11,6 +32,8 @@ function processReceiveRemoteSegmentsResponse(result, url) {
   // contents dynamically via javascript
   console.log("result:" + result);
   var segments = result["segments"];
+  var siteDiv = document.getElementById(url);
+  siteDiv.innerHTML = "";
   for(i = 0; i < segments.length; i++){
     var data = {}
 
@@ -20,18 +43,18 @@ function processReceiveRemoteSegmentsResponse(result, url) {
     data["originSite"] = url;
     var js = JSON.stringify(data);
     var xhr = new XMLHttpRequest();
+    siteDiv.innerHTML += `<div id=${segments[i].url}></div>`
     xhr.open("POST", get_remote_segments, true);
     xhr.send(js);
     xhr.onloaded = function(){
       if (xhr.readyState == XMLHttpRequest.DONE) {
         console.log ("XHR:" + xhr.responseText);
-        processLoadedExternalSegmentResponse(xhr.responseText, url);
+        processLoadedExternalSegmentResponse(xhr.responseText, segments[i].url);
       } else {
-        processLoadedExternalSegmentResponse("N/A", url);
+        processLoadedExternalSegmentResponse("N/A", segments[i].url);
       }
     }
   }
-  refreshSegmentsList();
 }
 
 function receiveRemoteSegments(urlapi) {

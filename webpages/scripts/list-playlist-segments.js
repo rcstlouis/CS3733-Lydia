@@ -34,7 +34,9 @@ function refreshPlaylistSegments(playlistName) {
    console.log("res:" + result);
    // Can grab any DIV or SPAN HTML element and can then manipulate its contents dynamically via javascript
    var js = JSON.parse(result);
-   var playlistEntries = document.getElementById('playlist:' + playlistName); //Make sure each playlist makes a div
+   var id = "playlist:" + playlistName;
+   //.reload(true);
+   var playlistEntries = document.getElementById(id); //Make sure each playlist makes a div
    
    var output = playlistEntries.innerHTML;
    for (var i = 0; i < js.list.length; i++) {
