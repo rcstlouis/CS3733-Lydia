@@ -12,7 +12,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MarkUnmarkLocalHandlerTest {
-
+/*
 	@Test
 	public void test() {
 		String id = "8";
@@ -29,6 +29,6 @@ public class MarkUnmarkLocalHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }
+    }*/
 
 }
