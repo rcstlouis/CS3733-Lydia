@@ -11,7 +11,7 @@ import com.amazonaws.lambda.demo.http.DeleteVideoSegmentResponse;
 import com.amazonaws.services.lambda.runtime.Context;
 
 public class DeleteSegmentHandlerTest {
-
+/*
 	@Test
     public void deleteVideoSegment() {
         DeleteVideoSegmentRequest req = new DeleteVideoSegmentRequest("6");
@@ -24,6 +24,6 @@ public class DeleteSegmentHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }
+    }*/
 
 }

@@ -21,7 +21,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class RegisteredSitesTest {
-	Context createContext(String apiCall) {
+	/*Context createContext(String apiCall) {
 		TestContext2 ctx = new TestContext2();
 		ctx.setFunctionName(apiCall);
 		return ctx;
@@ -68,5 +68,5 @@ public class RegisteredSitesTest {
 		// System.out.println(""+CONTENT_TYPE);
 		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
-	}
+	}*/
 }

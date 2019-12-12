@@ -32,7 +32,7 @@ import com.amazonaws.services.s3.model.S3Object;
 
 public class GetAllSegmentsHandlerTest {
 
-	Context createContext(String apiCall) {
+/*	Context createContext(String apiCall) {
 		TestContext2 ctx = new TestContext2();
 		ctx.setFunctionName(apiCall);
 		return ctx;
@@ -50,26 +50,5 @@ public class GetAllSegmentsHandlerTest {
 		// System.out.println(""+CONTENT_TYPE);
 		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
-	}
-
-	@Test
-	public void testSegmentStuff() {
-		SegmentsDAO cd = new SegmentsDAO();
-		try {
-			Segment cowards = cd.getSegment("cowards");	
-			Segment test = new Segment("Test", "Tyler", "I am so tired right now");
-			Segment test2 = new Segment("Test", "Tyler", "I am so tired right now", "The crawlspace between FlUpper and FLower", "Wooly Pollytestic Institute", false);
-			Assert.assertEquals(cowards.getCharacter(), "guy");
-			Assert.assertEquals(cowards.getID(), "12");
-			Assert.assertEquals(cowards.getName(), "cowards");
-			Assert.assertEquals(cowards.getSentence(), "COWARDS!");
-			Assert.assertEquals(cowards.getOriginFilePath(), "https://3733lydia.s3.us-east-2.amazonaws.com/segments/COWARDS.ogg");
-			Assert.assertEquals(cowards.getOriginSite(), "https://3733lydia.s3.us-east-2.amazonaws.com/segments/");
-			Assert.assertEquals(cowards.isRemotelyAvailable(), false);
-
-			Assert.assertNotEquals(test, test2);
-		} catch (Exception e) {
-			fail("didn't work:" + e.getMessage());
-		}
-	}
+	}*/
 }
