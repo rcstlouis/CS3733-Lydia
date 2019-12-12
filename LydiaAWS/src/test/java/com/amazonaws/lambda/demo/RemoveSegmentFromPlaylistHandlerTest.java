@@ -12,7 +12,7 @@ import com.amazonaws.lambda.demo.http.RemoveSegmentFromPlaylistResponse;
 import com.amazonaws.services.lambda.runtime.Context;
 
 public class RemoveSegmentFromPlaylistHandlerTest {
-/*
+
 	Context createContext(String apiCall) {
 		TestContext2 ctx = new TestContext2();
 		ctx.setFunctionName(apiCall);
@@ -22,9 +22,9 @@ public class RemoveSegmentFromPlaylistHandlerTest {
 	@Test
 	public void testRemoveSegmentFromPlaylist() {
 		RemoveSegmentFromPlaylistHandler handler = new RemoveSegmentFromPlaylistHandler();
-		RemoveSegmentFromPlaylistResponse res = handler.handleRequest(new RemoveSegmentFromPlaylistRequest("10", "test", 1), createContext("RemoveSegmentFromPlaylist"));
+		RemoveSegmentFromPlaylistResponse res = handler.handleRequest(new RemoveSegmentFromPlaylistRequest("7", "test2: Electric Testaloo", 1), createContext("RemoveSegmentFromPlaylist"));
 		
 		Assert.assertEquals(200,  res.statusCode);
-	}*/
+	}
 
 }
