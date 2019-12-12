@@ -1,10 +1,10 @@
-function processLoadedExternalSegmentResponse(result, url){
+function processLoadedExternalSegmentResponse(result, originFilePath){
   if(result = 'N/A'){
     console.log("Something messed up in putting an external segment in the RDS");
     return
   }
   console.log("Remote segment registered: " + result["statusCode"]);
-  remoteList = document.getElementById(url)
+  remoteList = document.getElementById(originFilePath)
   remoteList.innerHTML += `
     <div class="segment" id="segment:${result.name}:entry:${result.segmentID}">
     <span class="playlistEntry">${result.name}</span><br>
@@ -32,6 +32,8 @@ function processReceiveRemoteSegmentsResponse(result, url) {
   // contents dynamically via javascript
   console.log("result:" + result);
   var segments = result["segments"];
+  var siteDiv = document.getElementById(url);
+  siteDiv.innerHTML = "";
   for(i = 0; i < segments.length; i++){
     var data = {}
 
@@ -41,18 +43,18 @@ function processReceiveRemoteSegmentsResponse(result, url) {
     data["originSite"] = url;
     var js = JSON.stringify(data);
     var xhr = new XMLHttpRequest();
+    siteDiv.innerHTML += `<div id=${segments[i].url}></div>`
     xhr.open("POST", get_remote_segments, true);
     xhr.send(js);
     xhr.onloaded = function(){
       if (xhr.readyState == XMLHttpRequest.DONE) {
         console.log ("XHR:" + xhr.responseText);
-        processLoadedExternalSegmentResponse(xhr.responseText, url);
+        processLoadedExternalSegmentResponse(xhr.responseText, segments[i].url);
       } else {
-        processLoadedExternalSegmentResponse("N/A", url);
+        processLoadedExternalSegmentResponse("N/A", segments[i].url);
       }
     }
   }
-  refreshSegmentsList();
 }
 
 function receiveRemoteSegments(urlapi) {
