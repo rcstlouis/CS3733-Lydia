@@ -12,7 +12,7 @@ import com.amazonaws.lambda.demo.http.RemoveSegmentFromPlaylistRequest;
 import com.amazonaws.services.lambda.runtime.Context;
 
 public class AddSegmentToPlaylistHandlerTest {
-	@Test
+/*	@Test
 	public void testAddSegment() {
 		AddSegmentToPlaylistRequest req = new AddSegmentToPlaylistRequest("7", "test2: Electric Testaloo");
 		AddSegmentToPlaylistResponse res = new AddSegmentToPlaylistHandler().handleRequest(req, createContext("AddToPlaylist"));
@@ -28,12 +28,5 @@ public class AddSegmentToPlaylistHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }
-	
-	/*@Test
-	public void testDeleteSegment() {
-		RemoveSegmentFromPlaylistRequest req = new RemoveSegmentFromPlaylistRequest();
-		RemoveSegmentFromPlaylistResponse rep = new RemoveSegmentFromPlaylistResponse()
-	}*/
-
+    }*/
 }

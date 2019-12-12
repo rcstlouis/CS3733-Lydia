@@ -18,6 +18,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class UploadSegmentHandlerTest {
+	/*
 	@Test
     public void uploadVideoSegment() {
         UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("27", "Tyler", "I want to ride my bicycle", "No idea what goes here");
@@ -30,7 +31,7 @@ public class UploadSegmentHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }
+    }*/
 /*	
 	@Test
 	public void testUploadSegment() {
