@@ -34,6 +34,7 @@ function processListSitesResponse(result){
 
 	var js = JSON.parse(result);
 	var table = document.getElementById('siteTable');
+	var remoteSegmentList = document.getElementById("remoteSegmentList");
 
 	//Clear the table
 	if(table !== null){
@@ -45,7 +46,9 @@ function processListSitesResponse(result){
 	for (var i = 0; i < js.list.length; i++){
 		var registerdSiteJSON = js.list[i];
 		console.log(registerdSiteJSON);
-        var url = registerdSiteJSON["URL"]
+		var url = registerdSiteJSON["URL"]
+
+		var output = '';
         
 		if(table !== null){
 			// Create an empty <tr> element and add it to the ith position of the table:
@@ -61,6 +64,12 @@ function processListSitesResponse(result){
 				`<form id="unregisterSiteForm">
 					<input type="button" id="unregisterSite" value="Unregister Site" onclick="handleUnregisterSite('${url}')">
 				</form>`;
+			output += `<div id=${url}></div>`
 		}
 	}
+	remoteSegmentList.innerHTML = output
+	for(var i = 0; i < js.list.length; i++){
+		receiveRemoteSegments(js.list[i]["URL"])
+	}
+
 }

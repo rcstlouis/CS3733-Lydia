@@ -1,9 +1,30 @@
-function processLoadedExternalSegmentResponse(result){
+function processLoadedExternalSegmentResponse(result, url){
   if(result = 'N/A'){
     console.log("Something messed up in putting an external segment in the RDS");
     return
   }
   console.log("Remote segment registered: " + result["statusCode"]);
+  remoteList = document.getElementById(url)
+  remoteList.innerHTML += `
+    <div class="segment" id="segment:${result.name}:entry:${result.segmentID}">
+    <span class="playlistEntry">${result.name}</span><br>
+    <div class="centerable">
+      <video id="${result.segmentID}" width="320" height="240" controls>
+        <source src="${result.originFilePath}" type="video/ogg">
+        Your browser does not support the video tag.
+      </video> <br>
+    </div>
+    <p> Character: ${result.character}</p>
+    <p> Sentence: ${result.sentence}</p>
+    <form name="DeleteSegmentForm">
+      <input type="button" id="deleteSegmentButton:${result.segmentID}" value="Delete Segment" onclick="handleDeleteSegmentClick('${result.segmentID}')">
+    </form>
+    <form name="playlistSelectForm">
+      <select id="playlistSelect:${result.segmentID}" name="playlistSelect" value="Select Playlist"></select>
+      <input type="button" id="addToPlaylistButton:${result.segmentID}" value="Add Segment to Selected Playist" onclick="handleAddToPlaylistClick('${result.segmentID}')">
+    </form>
+    </div>
+  `
 } 
 
 function processReceiveRemoteSegmentsResponse(result, url) {
