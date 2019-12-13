@@ -19,7 +19,12 @@ public class CreatePlaylistHandlerTest {
 		CreatePlaylistRequest req = new CreatePlaylistRequest("test2: Electric Testaloo");
 		CreatePlaylistResponse res = new CreatePlaylistHandler().handleRequest(req, createContext("CreatePlaylist"));
 		
+		CreatePlaylistResponse res2 = new CreatePlaylistHandler().handleRequest(req, createContext("CreatePlaylist"));
+
+		
 		Assert.assertEquals(200, res.httpCode);
+		Assert.assertEquals(409, res2.httpCode);
+		Assert.assertEquals("Response(Unable to create playlist test2: Electric Testaloo)", res2.toString());
 	}
 	
 	Context createContext(String apiCall) {

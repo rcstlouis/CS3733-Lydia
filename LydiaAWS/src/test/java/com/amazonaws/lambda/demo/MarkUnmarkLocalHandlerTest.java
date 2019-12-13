@@ -19,7 +19,19 @@ public class MarkUnmarkLocalHandlerTest {
 		ChangeMarkSegmentRequest req = new ChangeMarkSegmentRequest(id, false);
 		MarkUnmarkLocalHandler handler = new MarkUnmarkLocalHandler();
 		ChangeMarkSegmentResponse resp = handler.handleRequest(req, createContext("Mark/Unmark"));
+		
+		ChangeMarkSegmentRequest req2 = new ChangeMarkSegmentRequest();
+		ChangeMarkSegmentResponse res2 = new MarkUnmarkLocalHandler().handleRequest(req2, createContext("Mark/Unmark"));
+		req2.setAvailable(true);
+		req2.setSegmentID("13");
+		Assert.assertEquals(true, req2.getAvailable());
+		Assert.assertEquals("Response(Unable to change availability. Database access failed.)", res2.toString());
+		Assert.assertEquals("13", req2.getSegmentID());
+		Assert.assertEquals(409, res2.httpCode);
+
 		Assert.assertEquals(200, resp.getStatusCode());
+		Assert.assertEquals(false, req.getAvailable());
+		
 		//Reset
 		handler.handleRequest(req, createContext("Mark/Unmark"));
 	}

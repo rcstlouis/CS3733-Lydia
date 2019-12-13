@@ -21,7 +21,12 @@ public class DeletePlaylistHandlerTest {
 	public void testDeletePlaylist() {
 		DeletePlaylistRequest req = new DeletePlaylistRequest("test2: Electric Testaloo");
 		DeletePlaylistResponse res = new DeletePlaylistHandler().handleRequest(req, createContext("DeletePlaylist"));
-		
+
+		DeletePlaylistResponse res2 = new DeletePlaylistHandler().handleRequest(req, createContext("DeletePlaylist"));
+
 		Assert.assertEquals(200, res.statusCode);
+		Assert.assertEquals("DeletePlaylist(test2: Electric Testaloo)", res.toString());
+		Assert.assertEquals(422, res2.statusCode);
+		Assert.assertEquals("Error(test2: Electric Testaloo, statusCode=422, err=Unable to delete playlist)", res2.toString());
 	}
 }
