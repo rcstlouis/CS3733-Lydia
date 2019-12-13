@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   description: This is the Lydia API for remote sites to access segments and to access segments from remote sites
-  version: 1.0.0
-  title: Lydia Remote API
+  version: 1.1.0
+  title: Lydia Remote API v1.1
   contact:
     email: gr-lydia@wpi.edu
 

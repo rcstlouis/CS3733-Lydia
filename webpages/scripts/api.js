@@ -18,8 +18,8 @@ var mark_unmark_local_url      = base_url + "mark-unmark-local";      //POST
 var register_site_url          = base_url + "register-site";          //POST
 var unregister_site_url        = base_url + "unregister-site";        //POST
 var list_sites_url             = base_url + "list-sites";             //GET
-var get_remote_segments        = "https://jyy8wcgjr9.execute-api.us-east-2.amazonaws.com/Beta/GetRemoteSegments" //POST
-
+// var get_remote_segments        = "https://jyy8wcgjr9.execute-api.us-east-2.amazonaws.com/Beta/get-remote-segments" //POST
+var get_remote_segments        ="https://4hqdwn5na8.execute-api.us-east-2.amazonaws.com/Phi/get-remote-segments";
 toggletheme = function(){
     themecss = document.getElementById("theme");
     themebutton = document.getElementById("themebutton");
