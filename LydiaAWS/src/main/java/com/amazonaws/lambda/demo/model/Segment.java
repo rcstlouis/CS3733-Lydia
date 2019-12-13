@@ -56,7 +56,7 @@ public class Segment {
 		this.id = UUID.randomUUID().toString();
 	}
 
-	public static String getNewID(){
+	public static String sgetNewID(){
 		return UUID.randomUUID().toString();
 	}
 }

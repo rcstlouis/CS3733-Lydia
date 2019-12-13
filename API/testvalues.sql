@@ -42,3 +42,6 @@ insert into innodb.segments values ("10", "saturn", "https://3733lydia.s3.us-eas
 insert into innodb.segments values ("11", "woman", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/woman.ogg", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/", false,"Kirk", "Uh, well, there's no right way to hit a woman.");
 insert into innodb.segments values ("12", "cowards", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/cowards.ogg", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/", false, "COWARDS!");
 insert into innodb.segments values ("13", "bowling", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/bowling.ogg", "https://3733lydia.s3.us-east-2.amazonaws.com/segments/", false,"Riley", "There will be a formal dance in the bowling alley.");
+
+-- "url":"https://b19dramaticexit.s3.us-east-2.amazonaws.com/Videos/2019.12.07.01.05.18.ogg","character":"TRELANE","text":"Remember, you must try not to let me find you too quickly."
+

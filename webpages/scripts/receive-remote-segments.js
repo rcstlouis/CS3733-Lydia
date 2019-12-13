@@ -31,7 +31,8 @@ function processReceiveRemoteSegmentsResponse(result, url) {
   // Can grab any DIV or SPAN HTML element and can then manipulate its
   // contents dynamically via javascript
   console.log("result:" + result);
-  var segments = result["segments"];
+  var parsedResult = JSON.parse(result);
+  var segments = parsedResult["segments"];
   var siteDiv = document.getElementById(url);
   siteDiv.innerHTML = "";
   for(i = 0; i < segments.length; i++){
@@ -45,6 +46,7 @@ function processReceiveRemoteSegmentsResponse(result, url) {
     var xhr = new XMLHttpRequest();
     siteDiv.innerHTML += `<div id=${segments[i].url}></div>`
     xhr.open("POST", get_remote_segments, true);
+    xhr.setRequestHeader("x-api-key", "s00mYquHhk7rLJboJhFsa8rUfTQICvSQ4IcDFAec");
     xhr.send(js);
     xhr.onloaded = function(){
       if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -66,8 +68,6 @@ function receiveRemoteSegments(urlapi) {
     var apikey = urlapi.substring(q+8);
     console.log('Remote URL: ' + url);
     console.log('API Key: ' + apikey);
-
-    requestSegments(url, apikey);
   }
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
@@ -81,9 +81,9 @@ function receiveRemoteSegments(urlapi) {
   xhr.onloadend = function () {
     if (xhr.readyState == XMLHttpRequest.DONE) {
       console.log ("XHR:" + xhr.responseText);
-      processReceiveRemoteSegmentResponse(xhr.responseText, url);
+      processReceiveRemoteSegmentsResponse(xhr.responseText, urlapi);
     } else {
-      processReceiveRemoteSegmentResponse("N/A", url);
+      processReceiveRemoteSegmentsResponse("N/A", urlapi);
     }
   };
  }
