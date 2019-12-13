@@ -29,7 +29,7 @@ public class ListPlaylistSegmentsHandlerTest {
 
 		
 
-		Assert.assertEquals(200, res.statusCode);
+		Assert.assertEquals(200, res.getStatusCode());
 		Assert.assertEquals("AllSegments(0)", res2.toString());
 		Assert.assertEquals("ListPlaylistSegments(null)", req.toString());
 

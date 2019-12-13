@@ -21,7 +21,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class RegisteredSitesTest {
-	/*Context createContext(String apiCall) {
+	Context createContext(String apiCall) {
 		TestContext2 ctx = new TestContext2();
 		ctx.setFunctionName(apiCall);
 		return ctx;
@@ -42,18 +42,30 @@ public class RegisteredSitesTest {
 	}
 	@Test
 	public void testAddRegisteredSites() {
-		RegisterRemoteSiteRequest req = new RegisterRemoteSiteRequest("I want to fucking shoot myself");
+		RegisterRemoteSiteRequest req = new RegisterRemoteSiteRequest("Let's not and say we did");
 		RegisterRemoteSiteResponse res = new RegisterSiteHandler().handleRequest(req, createContext("AddRegisteredSite"));
+		
+		RegisterRemoteSiteRequest req2 = new RegisterRemoteSiteRequest();
+		req2.setUrl("I prefer fruit teas to herbal ones");
+		RegisterRemoteSiteResponse res2 = new RegisterSiteHandler().handleRequest(req2, createContext("AddRegisteredSite"));
 
 		Assert.assertEquals(200, res.httpCode);
+		Assert.assertEquals(409, res2.httpCode);
+
 	}
 	
 	@Test
 	public void testDeleteRegisteredSites() {
-		UnregisterRemoteSiteRequest req = new UnregisterRemoteSiteRequest("I want to fucking shoot myself");
+		UnregisterRemoteSiteRequest req = new UnregisterRemoteSiteRequest("Let's not and say we did");
 		UnregisterRemoteSiteResponse res = new UnregisterSiteHandler().handleRequest(req, createContext("DeleteRegisteredSite"));
+		
+		UnregisterRemoteSiteRequest req2 = new UnregisterRemoteSiteRequest("I prefer fruit teas to herbal ones");
+		UnregisterRemoteSiteResponse res2 = new UnregisterSiteHandler().handleRequest(req, createContext("DeleteRegisteredSite"));
+
 
 		Assert.assertEquals(200, res.httpCode);
+		Assert.assertEquals(409, res2.httpCode);
+
 	}
 	
 	@Test
@@ -68,5 +80,5 @@ public class RegisteredSitesTest {
 		// System.out.println(""+CONTENT_TYPE);
 		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
-	}*/
+	}
 }

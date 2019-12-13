@@ -37,7 +37,7 @@ public class RegisteredSitesDAOTest {
 	    public void testGetAllRegisteredSites() {
 	    	RegisteredSitesDAO cd = new RegisteredSitesDAO();
 	    	try {
-				Assert.assertEquals(1, cd.getAllRegisteredSites().size());
+				Assert.assertEquals(2, cd.getAllRegisteredSites().size());
 	    	} catch (Exception e) {
 				fail("didn't work:" + e.getMessage());
 			}

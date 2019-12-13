@@ -40,6 +40,9 @@ public class GetAllPlaylistsHandlerTest {
        // System.out.println(""+CONTENT_TYPE);
         // TODO: validate output here if needed.
         Assert.assertEquals(200, res.statusCode);
+        Assert.assertEquals("List()", req.toString());
+        Assert.assertEquals("AllPlaylists(3)", res.toString());
+
 
     }
 

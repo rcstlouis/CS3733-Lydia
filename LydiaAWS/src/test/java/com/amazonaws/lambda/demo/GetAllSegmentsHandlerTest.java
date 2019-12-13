@@ -20,6 +20,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 //import com.amazonaws.lambda.demo.db.PlaylistEntriesDAO;
 import com.amazonaws.lambda.demo.db.SegmentsDAO;
 import com.amazonaws.lambda.demo.http.ListPlaylistsResponse;
+import com.amazonaws.lambda.demo.http.ListSegmentsRequest;
 import com.amazonaws.lambda.demo.http.ListSegmentsResponse;
 //import com.amazonaws.lambda.demo.model.PlaylistEntry;
 import com.amazonaws.lambda.demo.model.Segment;
@@ -42,7 +43,9 @@ public class GetAllSegmentsHandlerTest {
 	public void testGetAllSegments() {
 
 		GetAllSegmentsHandler handler = new GetAllSegmentsHandler();
-		ListSegmentsResponse res = handler.handleRequest(null, createContext("GetAllPlaylists"));
+		ListSegmentsRequest req = new ListSegmentsRequest();
+
+		ListSegmentsResponse res = handler.handleRequest(req, createContext("GetAllPlaylists"));
 
 
 
@@ -50,5 +53,7 @@ public class GetAllSegmentsHandlerTest {
 		// System.out.println(""+CONTENT_TYPE);
 		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
+		Assert.assertEquals("List()", req.toString());
+		Assert.assertEquals("AllSegments(19)", res.toString());
 	}
 }

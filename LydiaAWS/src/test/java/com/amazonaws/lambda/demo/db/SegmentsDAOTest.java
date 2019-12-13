@@ -27,9 +27,15 @@ public class SegmentsDAOTest {
 				Assert.assertEquals(cowards.isRemotelyAvailable(), true);
 
 				Assert.assertNotEquals(test, test2);
+				Assert.assertEquals(11, cd.getAllLocalSegments().size());
+				Assert.assertEquals(9, cd.getAllRemoteSegments().size());
+				Assert.assertEquals(5, cd.exportAvailableSegments().size());
+				cd.addSegment(test2);
+				cd.addSegment(test2);
+				cd.deleteSegment(test2);
 			} catch (Exception e) {
 				fail("didn't work:" + e.getMessage());
 			}
 		}
-
+		
 }
