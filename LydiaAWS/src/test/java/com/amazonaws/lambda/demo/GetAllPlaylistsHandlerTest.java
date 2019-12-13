@@ -19,7 +19,7 @@ import com.amazonaws.services.lambda.runtime.Context;
  * A simple test harness for locally invoking your Lambda function handler.
  */
 public class GetAllPlaylistsHandlerTest {
-/*
+
 
 	Context createContext(String apiCall) {
         TestContext2 ctx = new TestContext2();
@@ -41,7 +41,7 @@ public class GetAllPlaylistsHandlerTest {
         // TODO: validate output here if needed.
         Assert.assertEquals(200, res.statusCode);
 
-    }*/
+    }
 
    
 }

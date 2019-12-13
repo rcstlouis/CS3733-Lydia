@@ -10,7 +10,7 @@ import com.amazonaws.lambda.demo.http.RemoveSegmentFromPlaylistResponse;
 import com.amazonaws.services.lambda.runtime.Context;
 
 public class ListPlaylistSegmentsHandlerTest {
-	/*
+	
 	Context createContext(String apiCall) {
 		TestContext2 ctx = new TestContext2();
 		ctx.setFunctionName(apiCall);
@@ -30,5 +30,5 @@ public class ListPlaylistSegmentsHandlerTest {
 		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
 
-	}*/
+	}
 }

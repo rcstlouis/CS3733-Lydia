@@ -9,12 +9,12 @@ import com.amazonaws.lambda.demo.model.PlaylistEntry;
 
 public class PlaylistEntriesDAOTest {
 
-/*	   @Test
+	   @Test
 	    public void testGetPlaylistLength() {
 	    	PlaylistEntriesDAO cd = new PlaylistEntriesDAO();
 	    	try {
 				int length = cd.getPlaylistLength("spockFlirting");
-				Assert.assertEquals (length, 3);
+				Assert.assertEquals (length, 2);
 			} catch (Exception e) {
 				fail("didn't work:" + e.getMessage());
 			}
@@ -31,6 +31,6 @@ public class PlaylistEntriesDAOTest {
 			} catch (Exception e) {
 				fail("didn't work:" + e.getMessage());
 			}
-		}*/
+		}
 
 }

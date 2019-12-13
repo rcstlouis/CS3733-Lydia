@@ -14,7 +14,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class CreatePlaylistHandlerTest {
-/*	@Test
+	@Test
 	public void testCreatePlaylist() {
 		CreatePlaylistRequest req = new CreatePlaylistRequest("test2: Electric Testaloo");
 		CreatePlaylistResponse res = new CreatePlaylistHandler().handleRequest(req, createContext("CreatePlaylist"));
@@ -26,5 +26,5 @@ public class CreatePlaylistHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }*/
+    }
 }

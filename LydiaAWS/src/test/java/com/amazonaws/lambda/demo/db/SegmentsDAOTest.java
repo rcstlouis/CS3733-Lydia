@@ -10,7 +10,6 @@ import com.amazonaws.lambda.demo.model.Segment;
 
 public class SegmentsDAOTest {
 
-	/*
 	   
 		@Test
 		public void testSegmentStuff() {
@@ -25,12 +24,12 @@ public class SegmentsDAOTest {
 				Assert.assertEquals(cowards.getSentence(), "COWARDS!");
 				Assert.assertEquals(cowards.getOriginFilePath(), "https://3733lydia.s3.us-east-2.amazonaws.com/segments/COWARDS.ogg");
 				Assert.assertEquals(cowards.getOriginSite(), "https://3733lydia.s3.us-east-2.amazonaws.com/segments/");
-				Assert.assertEquals(cowards.isRemotelyAvailable(), false);
+				Assert.assertEquals(cowards.isRemotelyAvailable(), true);
 
 				Assert.assertNotEquals(test, test2);
 			} catch (Exception e) {
 				fail("didn't work:" + e.getMessage());
 			}
-		}*/
+		}
 
 }

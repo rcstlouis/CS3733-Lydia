@@ -18,11 +18,11 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 
 public class UploadSegmentHandlerTest {
-	/*
-	@Test
+	
+/*	@Test
     public void uploadVideoSegment() {
-        UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("27", "Tyler", "I want to ride my bicycle", "No idea what goes here");
-        UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Delete"));
+        UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("555", "Tyler", "I want to ride my bicycle", "No idea what goes here");
+        UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Upload"));
         // now delete
         Assert.assertEquals(200, res.httpCode);
     }
@@ -32,32 +32,4 @@ public class UploadSegmentHandlerTest {
         ctx.setFunctionName(apiCall);
         return ctx;
     }*/
-/*	
-	@Test
-	public void testUploadSegment() {
-		File file = new File("C:\\Users\\Maggie.Raque\\Downloads\\woman.txt");
-		Scanner scan;
-		try {
-			scan = new Scanner(file);
-			String base64encoding = "";
-			while(scan.hasNext()) {
-				base64encoding = base64encoding + scan.next();
-			}
-			UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("woman.ogg", "Kirk", "There's no right way to hit a woman", base64encoding);
-			UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Upload"));
-			
-			Assert.assertEquals(200, res.httpCode);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-	
-	Context createContext(String apiCall) {
-        TestContext2 ctx = new TestContext2();
-        ctx.setFunctionName(apiCall);
-        return ctx;
-    }*/
-
 }
