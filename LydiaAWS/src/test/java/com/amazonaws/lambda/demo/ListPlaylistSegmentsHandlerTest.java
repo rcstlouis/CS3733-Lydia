@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import com.amazonaws.lambda.demo.http.ListPlaylistSegmentsRequest;
 import com.amazonaws.lambda.demo.http.ListPlaylistSegmentsResponse;
+import com.amazonaws.lambda.demo.http.ListPlaylistsResponse;
 import com.amazonaws.lambda.demo.http.RemoveSegmentFromPlaylistRequest;
 import com.amazonaws.lambda.demo.http.RemoveSegmentFromPlaylistResponse;
 import com.amazonaws.services.lambda.runtime.Context;
@@ -26,12 +27,13 @@ public class ListPlaylistSegmentsHandlerTest {
 		ListPlaylistSegmentsRequest req = new ListPlaylistSegmentsRequest();
 		ListPlaylistSegmentsResponse res2 = handler.handleRequest(req, createContext("TestingMore"));
 		
+		
+		ListPlaylistSegmentsResponse funky = new ListPlaylistSegmentsResponse(200, "Nothing wrong here");
 
 		
 
 		Assert.assertEquals(200, res.getStatusCode());
 		Assert.assertEquals("AllSegments(0)", res2.toString());
 		Assert.assertEquals("ListPlaylistSegments(null)", req.toString());
-
 	}
 }

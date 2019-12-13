@@ -22,6 +22,8 @@ public class DeleteSegmentHandlerTest {
         DeleteVideoSegmentRequest req = new DeleteVideoSegmentRequest(tyler.getID());
         DeleteVideoSegmentResponse res = new DeleteSegmentHandler().handleRequest(req, createContext("Delete"));
         DeleteVideoSegmentResponse res2 = new DeleteSegmentHandler().handleRequest(req, createContext("Delete"));
+        DeleteVideoSegmentRequest req3 = new DeleteVideoSegmentRequest();
+        req3.setName("Delete the void");
         // now delete
         Assert.assertEquals(200, res.statusCode);
         Assert.assertNotEquals("DeleteSegment(555)", res.toString());

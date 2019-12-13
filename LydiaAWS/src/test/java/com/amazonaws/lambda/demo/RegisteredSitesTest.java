@@ -33,6 +33,7 @@ public class RegisteredSitesTest {
 		ListSitesHandler handler = new ListSitesHandler();
 		ListRegisteredSitesResponse res = handler.handleRequest(null, createContext("GetAllRegisteredSites"));
 
+		ListRegisteredSitesResponse weGood = new ListRegisteredSitesResponse(200, "okeydokey");
 
 
 		//  System.out.println(""+output);
@@ -51,6 +52,8 @@ public class RegisteredSitesTest {
 
 		Assert.assertEquals(200, res.httpCode);
 		Assert.assertEquals(409, res2.httpCode);
+		Assert.assertEquals("RegisterSite(I prefer fruit teas to herbal ones)", req2.toString());
+
 
 	}
 	
@@ -59,12 +62,20 @@ public class RegisteredSitesTest {
 		UnregisterRemoteSiteRequest req = new UnregisterRemoteSiteRequest("Let's not and say we did");
 		UnregisterRemoteSiteResponse res = new UnregisterSiteHandler().handleRequest(req, createContext("DeleteRegisteredSite"));
 		
-		UnregisterRemoteSiteRequest req2 = new UnregisterRemoteSiteRequest("I prefer fruit teas to herbal ones");
+		UnregisterRemoteSiteRequest req2 = new UnregisterRemoteSiteRequest();
+		req2.setUrl("I prefer fruit teas to herbal ones");
+		Assert.assertEquals("RegisterSite(I prefer fruit teas to herbal ones)", req2.toString());
 		UnregisterRemoteSiteResponse res2 = new UnregisterSiteHandler().handleRequest(req, createContext("DeleteRegisteredSite"));
+		UnregisterRemoteSiteResponse res4 = new UnregisterRemoteSiteResponse("Everything okay?");
+
+		RegisterRemoteSiteResponse res3 = new RegisterRemoteSiteResponse("We good");
 
 
 		Assert.assertEquals(200, res.httpCode);
 		Assert.assertEquals(409, res2.httpCode);
+		Assert.assertEquals("Response(We good)", res3.toString());
+		Assert.assertEquals("Response(Everything okay?)", res4.toString());
+		//Assert.assertEquals("", re);
 
 	}
 	
@@ -74,7 +85,7 @@ public class RegisteredSitesTest {
 		ListSitesHandler handler = new ListSitesHandler();
 		ListRegisteredSitesResponse res = handler.handleRequest(null, createContext("GetSites"));
 
-
+		
 
 		//  System.out.println(""+output);
 		// System.out.println(""+CONTENT_TYPE);

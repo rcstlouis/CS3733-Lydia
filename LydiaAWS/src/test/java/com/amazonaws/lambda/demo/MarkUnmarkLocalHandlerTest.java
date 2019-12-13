@@ -22,6 +22,7 @@ public class MarkUnmarkLocalHandlerTest {
 		
 		ChangeMarkSegmentRequest req2 = new ChangeMarkSegmentRequest();
 		ChangeMarkSegmentResponse res2 = new MarkUnmarkLocalHandler().handleRequest(req2, createContext("Mark/Unmark"));
+		ChangeMarkSegmentResponse res3 = new ChangeMarkSegmentResponse("Hi");
 		req2.setAvailable(true);
 		req2.setSegmentID("13");
 		Assert.assertEquals(true, req2.getAvailable());

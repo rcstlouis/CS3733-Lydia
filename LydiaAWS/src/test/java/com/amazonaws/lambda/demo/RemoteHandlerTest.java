@@ -21,6 +21,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import com.amazonaws.lambda.demo.db.SegmentsDAO;
 import com.amazonaws.lambda.demo.http.ListPlaylistsResponse;
 import com.amazonaws.lambda.demo.http.ListSegmentsResponse;
+import com.amazonaws.lambda.demo.http.RegisterRemoteSiteResponse;
 import com.amazonaws.lambda.demo.http.RemoteResponse;
 //import com.amazonaws.lambda.demo.model.PlaylistEntry;
 import com.amazonaws.lambda.demo.model.Segment;
@@ -33,7 +34,7 @@ import com.amazonaws.services.s3.model.S3Object;
 
 public class RemoteHandlerTest {
 
-/*	Context createContext(String apiCall) {
+	Context createContext(String apiCall) {
 		TestContext3 ctx = new TestContext3();
 		ctx.setFunctionName(apiCall);
 		return ctx;
@@ -44,12 +45,11 @@ public class RemoteHandlerTest {
 
 		RemoteHandler handler = new RemoteHandler();
 		RemoteResponse res = handler.handleRequest(null, createContext("GetAllPlaylists"));
-
-
-
-		//  System.out.println(""+output);
-		// System.out.println(""+CONTENT_TYPE);
-		// TODO: validate output here if needed.
+		RemoteResponse res2 = new RemoteResponse(200, "Yessah");
+		
 		Assert.assertEquals(200, res.statusCode);
-	}*/
+		Assert.assertEquals(res.getStatusCode(), res.getHTTPCode());
+		Assert.assertEquals("AllConstants(5)", res.toString());
+	}
+	
 }

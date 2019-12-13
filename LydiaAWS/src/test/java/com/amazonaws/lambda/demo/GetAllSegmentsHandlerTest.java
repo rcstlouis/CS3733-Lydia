@@ -47,6 +47,7 @@ public class GetAllSegmentsHandlerTest {
 
 		ListSegmentsResponse res = handler.handleRequest(req, createContext("GetAllPlaylists"));
 
+		ListSegmentsResponse res2 = new ListSegmentsResponse(200, "Yep");
 
 
 		//  System.out.println(""+output);

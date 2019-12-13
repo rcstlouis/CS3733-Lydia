@@ -35,7 +35,7 @@ public class GetAllPlaylistsHandlerTest {
 		ListPlaylistsResponse res = handler.handleRequest(req, createContext("GetAllPlaylists"));
 
 
-
+		ListPlaylistsResponse funky = new ListPlaylistsResponse(200, "meh");
       //  System.out.println(""+output);
        // System.out.println(""+CONTENT_TYPE);
         // TODO: validate output here if needed.

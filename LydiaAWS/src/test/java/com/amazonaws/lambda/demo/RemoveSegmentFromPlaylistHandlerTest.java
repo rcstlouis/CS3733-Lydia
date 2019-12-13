@@ -33,10 +33,12 @@ public class RemoveSegmentFromPlaylistHandlerTest {
 		req3.setPlaylistEntryNum(123456);
 		
 		Assert.assertEquals(200,  res.statusCode);
+		Assert.assertEquals("RemoveSegment(7fromtest2: Electric Testaloo)", res.toString());
 		Assert.assertEquals(422, res2.statusCode);
 		Assert.assertEquals("5726", req3.getSegmentName());
 		Assert.assertEquals("For legal reasons, this playlist name is a joke", req3.getPlaylistName());
 		Assert.assertEquals(123456, req3.getPlaylistEntryNum());
+		Assert.assertEquals("Error(nullfromnull, statusCode=422, err=Unable to remove segment)", res2.toString());
 	}
 
 }

@@ -51,6 +51,21 @@ public class GetRemoteSegmentsHandlerTest {
 				"https://r07mqx6cr7.execute-api.us-east-2.amazonaws.com/RemoteSite/publicsegments?apikey=KMpeIqfW7v6xWf7IEoBVh862r2wm8kJ73EjSQVHQ"
 		);
 		ReceiveRemoteSegmentsResponse res = handler.handleRequest(req, createContext("GetAllPlaylists"));
-		Assert.assertTrue(res.httpCode == 200);
+		
+		GetRemoteSegmentsHandler handler2 = new GetRemoteSegmentsHandler();
+		ReceiveRemoteSegmentsRequest req2 = new ReceiveRemoteSegmentsRequest();		
+				req2.setUrl("https://b19dramaticexit.s3.us-east-2.amazonaws.com/Videos/2019.12.07.01.05.18.ogg");
+				req2.setCharacter("TRELANE");
+				req2.setText("Remember, you must try not to let me find you too quickly");
+				req2.setOriginSite("https://r07mqx6cr7.execute-api.us-east-2.amazonaws.com/RemoteSite/publicsegments?apikey=KMpeIqfW7v6xWf7IEoBVh862r2wm8kJ73EjSQVHQ");
+		ReceiveRemoteSegmentsResponse res2 = new ReceiveRemoteSegmentsResponse("AOK", 200);
+		ReceiveRemoteSegmentsResponse res3 = new ReceiveRemoteSegmentsResponse("AOK");
+
+
+		
+		Assert.assertEquals(res.httpCode, 200);
+		Assert.assertEquals(res2.httpCode, 200);
+		Assert.assertEquals(res.getCode(), 200);
+		Assert.assertEquals(res.toString(), "Response( Received segment: TRELANE - Remember, you must try not to let me find you too quickly., 200)");
 	}
 }

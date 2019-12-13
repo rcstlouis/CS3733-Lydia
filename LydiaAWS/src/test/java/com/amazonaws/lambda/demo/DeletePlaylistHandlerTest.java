@@ -24,6 +24,8 @@ public class DeletePlaylistHandlerTest {
 
 		DeletePlaylistResponse res2 = new DeletePlaylistHandler().handleRequest(req, createContext("DeletePlaylist"));
 
+		DeletePlaylistRequest res3 = new DeletePlaylistRequest();
+		res3.setName("(-)_(-)");
 		Assert.assertEquals(200, res.statusCode);
 		Assert.assertEquals("DeletePlaylist(test2: Electric Testaloo)", res.toString());
 		Assert.assertEquals(422, res2.statusCode);

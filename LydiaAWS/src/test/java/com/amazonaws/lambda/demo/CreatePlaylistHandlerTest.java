@@ -21,6 +21,9 @@ public class CreatePlaylistHandlerTest {
 		
 		CreatePlaylistResponse res2 = new CreatePlaylistHandler().handleRequest(req, createContext("CreatePlaylist"));
 
+		CreatePlaylistRequest req3 = new CreatePlaylistRequest();
+		req3.setName("(-)_(-)");
+		CreatePlaylistResponse res3 = new CreatePlaylistResponse("What is that?");
 		
 		Assert.assertEquals(200, res.httpCode);
 		Assert.assertEquals(409, res2.httpCode);
