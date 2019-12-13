@@ -19,9 +19,9 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 public class UploadSegmentHandlerTest {
 	
-/*	@Test
+	@Test
     public void uploadVideoSegment() {
-        UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("555", "Tyler", "I want to ride my bicycle", "No idea what goes here");
+        UploadVideoSegmentRequest req = new UploadVideoSegmentRequest("555", "Tyler", "I want to ride my bicycle", "noideawhatgoeshere");
         UploadVideoSegmentResponse res = new UploadSegmentHandler().handleRequest(req, createContext("Upload"));
         // now delete
         Assert.assertEquals(200, res.httpCode);
@@ -31,5 +31,5 @@ public class UploadSegmentHandlerTest {
         TestContext2 ctx = new TestContext2();
         ctx.setFunctionName(apiCall);
         return ctx;
-    }*/
+    }
 }
