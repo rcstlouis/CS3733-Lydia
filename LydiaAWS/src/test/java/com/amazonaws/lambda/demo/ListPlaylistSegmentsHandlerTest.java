@@ -23,12 +23,15 @@ public class ListPlaylistSegmentsHandlerTest {
 		ListPlaylistSegmentsHandler handler = new ListPlaylistSegmentsHandler();
 		ListPlaylistSegmentsResponse res = handler.handleRequest(new ListPlaylistSegmentsRequest("spockFlirting"), createContext("GetAllPlaylistSegments"));
 
+		ListPlaylistSegmentsRequest req = new ListPlaylistSegmentsRequest();
+		ListPlaylistSegmentsResponse res2 = handler.handleRequest(req, createContext("TestingMore"));
+		
 
+		
 
-		//  System.out.println(""+output);
-		// System.out.println(""+CONTENT_TYPE);
-		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
+		Assert.assertEquals("AllSegments(0)", res2.toString());
+		Assert.assertEquals("ListPlaylistSegments(null)", req.toString());
 
 	}
 }
