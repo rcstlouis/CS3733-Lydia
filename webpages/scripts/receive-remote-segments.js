@@ -5,7 +5,7 @@ function processLoadedExternalSegmentResponse(result, originFilePath){
   }
   result = JSON.parse(result);
   console.log("Remote segment registered: " + result["code"]);
-  remoteList = document.getElementById(originFilePath)
+  remoteList = document.getElementById(originFilePath);
   remoteList.innerHTML += `
     <div class="segment" id="segment:${result.name}:entry:${result.segmentID}">
     <span class="playlistEntry">${result.name}</span><br>
