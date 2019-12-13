@@ -18,11 +18,18 @@ public class ReceiveRemoteSegmentsRequest {
 	public String getCharacter() {return character;}
 	public void setCharacter(String character) {this.character = character;}
 	
-	public ReceiveRemoteSegmentsRequest(String url, String character, String text, String site) {
+	public ReceiveRemoteSegmentsRequest() {
+		this.originSite = null;
+		this.url = null;
+		this.text = null;
+		this.character = null;
+	}
+	
+	public ReceiveRemoteSegmentsRequest(String url, String character, String text, String originSite) {
 		this.url = url;
 		this.character = character;
 		this.text = text;
-		this.originSite = site;
+		this.originSite = originSite;
 	}
 	
 	public String toString() {

@@ -42,14 +42,12 @@ function processListSitesResponse(result){
 			table.deleteRow(table.rows.length - 1);
 		}
 	}
-    
+    var output = '';
 	for (var i = 0; i < js.list.length; i++){
 		var registerdSiteJSON = js.list[i];
 		console.log(registerdSiteJSON);
 		var url = registerdSiteJSON["URL"]
 
-		var output = '';
-        
 		if(table !== null){
 			// Create an empty <tr> element and add it to the ith position of the table:
 			var row = table.insertRow(i+1);

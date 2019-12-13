@@ -44,6 +44,28 @@ public class SegmentsDAO {
         }
     }
 	
+	public Segment getSegmentByFilePath(String filePath) throws Exception {
+        
+        try {
+            Segment segment = null;
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE originFilePath=?;");
+            ps.setString(1,  filePath);
+            ResultSet resultSet = ps.executeQuery();
+            
+            while (resultSet.next()) {
+                segment = generateSegment(resultSet);
+            }
+            resultSet.close();
+            ps.close();
+            
+            return segment;
+
+        } catch (Exception e) {
+        	e.printStackTrace();
+            throw new Exception("Failed in getting segment: " + e.getMessage());
+        }
+    }
+	
 	
 	public boolean addSegment(Segment segment) throws Exception {
         try {

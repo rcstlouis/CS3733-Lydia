@@ -2,8 +2,8 @@ package com.amazonaws.lambda.demo;
 
 import java.io.ByteArrayInputStream;
 
-import com.amazonaws.lambda.demo.http.UploadVideoSegmentRequest;
-import com.amazonaws.lambda.demo.http.UploadVideoSegmentResponse;
+import com.amazonaws.lambda.demo.http.ReceiveRemoteSegmentsRequest;
+import com.amazonaws.lambda.demo.http.ReceiveRemoteSegmentsResponse;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
@@ -36,21 +36,23 @@ public class GetRemoteSegmentsHandler implements RequestHandler<ReceiveRemoteSeg
 	public static final String TEST_BUCKET = "testsegments/";
 		
 	/** Store into RDS.
+	 * @return 
 	 * 
 	 * @throws Exception 
 	 */
-	boolean createSegmentEntry(ReceiveRemoteSegmentsRequest req) throws Exception {
+	public Segment createSegmentEntry(ReceiveRemoteSegmentsRequest req) throws Exception {
 		if (logger != null) { logger.log("in createConstant"); }
 		SegmentsDAO dao = new SegmentsDAO();
 		
 		// check if present
 //		Segment exist = dao.getSegment(req.getName());
 		SegmentRemote segment = new SegmentRemote (req.getUrl(), req.getCharacter(), req.getText());
-		if (/*exist == null*/ true) {
-			return dao.addExternalSegment(segment, req.getOriginSite());
-		} else {
-			return false;
+		if(dao.addExternalSegment(segment, req.getOriginSite())) {
+			logger.log("Added!");
+			return dao.getSegmentByFilePath(req.getUrl());
 		}
+		logger.log("It was already there, but handing it over anyway");
+		return dao.getSegmentByFilePath(req.getUrl());
 	}
 	
 	@Override 
@@ -64,10 +66,12 @@ public class GetRemoteSegmentsHandler implements RequestHandler<ReceiveRemoteSeg
 
 		ReceiveRemoteSegmentsResponse response;
 		try {
-			if (createSegmentEntry(req)) {
-				response = new ReceiveRemoteSegmentsResponse("Received segment: " + req.getCharacter() + " - " + req.getText(), 200);
-			} else {
-				response = new ReceiveRemoteSegmentsResponse("Segment already exists in db", 400);
+			Segment uploadedSegment = createSegmentEntry(req);
+			if(uploadedSegment != null) {
+				response = new ReceiveRemoteSegmentsResponse("Received segment: " + req.getCharacter() + " - " + req.getText(), 200, uploadedSegment);
+			}
+			else {
+				response = new ReceiveRemoteSegmentsResponse("Error: not registered in the database: " + req.getUrl(), 400);
 			}
 		} catch (Exception e) {
 			logger.log("Upload failed. Raised excpetion: " + e.getMessage());
