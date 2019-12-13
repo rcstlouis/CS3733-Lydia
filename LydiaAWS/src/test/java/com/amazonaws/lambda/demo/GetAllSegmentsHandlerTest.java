@@ -32,7 +32,7 @@ import com.amazonaws.services.s3.model.S3Object;
 
 public class GetAllSegmentsHandlerTest {
 
-/*	Context createContext(String apiCall) {
+	Context createContext(String apiCall) {
 		TestContext2 ctx = new TestContext2();
 		ctx.setFunctionName(apiCall);
 		return ctx;
@@ -50,5 +50,5 @@ public class GetAllSegmentsHandlerTest {
 		// System.out.println(""+CONTENT_TYPE);
 		// TODO: validate output here if needed.
 		Assert.assertEquals(200, res.statusCode);
-	}*/
+	}
 }
