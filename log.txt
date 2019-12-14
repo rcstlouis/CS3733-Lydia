@@ -1,0 +1,2635 @@
+commit 800cfc4bc57c88fed509cbd9eb1a65cf721525a0
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 13 20:42:26 2019 -0500
+
+    Final tweaks to some lambda functions about order
+
+commit d86b888bfdee0dd9fd69830def42dc467bcb3b20
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 13 19:25:01 2019 -0500
+
+    Viewing remote segments works for users and admin
+
+commit 9d8e6052d434bea272ff578bc6997fd88fd0e103
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 13 15:03:52 2019 -0500
+
+    80.4% coverage
+
+commit 248dbfdfb543c8b7adf2143311ff726d3bbcd498
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 13 01:02:55 2019 -0500
+
+    70.8% coverage
+
+commit 5b6a37cf84bfc81b35d1b6dfa9fbe20342a3a448
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 23:46:06 2019 -0500
+
+    60.5% coverage
+
+commit 2562eddaeddcca5678eae61a8894f8495a9646cd
+Merge: f2fc98e 165f946
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 23:08:44 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit f2fc98eaf68f19873a40c8e8940dbbf07f5f3ce9
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 23:08:37 2019 -0500
+
+    55.5% coverage
+
+commit 165f946cf641d777a49f55f94067333de3db5c07
+Merge: bc6a0c1 d790ff9
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Thu Dec 12 22:45:08 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit bc6a0c187945ce15e747e46205cd786a274574d0
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Thu Dec 12 22:44:52 2019 -0500
+
+    remote and local segments now display separately
+
+commit d790ff9b41e2b2fd626ba487408af10fb611f53e
+Merge: 51c2425 4e9d184
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 22:31:34 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 51c24258f0b4baad814ebabfd7172fa616a6da7e
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 22:31:28 2019 -0500
+
+    43.1% coverage
+
+commit 4e9d184d7911faf44f906a5027c4ea3b9d9f016d
+Merge: 4eb1df3 a73ca2c
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 22:17:38 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 4eb1df38faf54dc90e00682824ec2d2d4505828c
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 22:17:36 2019 -0500
+
+    We can see remote segments, but they're the same
+
+commit a73ca2cabfe2506ab6491ddc7694e3f7248d1593
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 21:23:00 2019 -0500
+
+    39.9% coverage
+
+commit cd3c0b809f23b7710172bf08ce42f2a060e44d96
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 20:53:43 2019 -0500
+
+    32.5% coverage
+
+commit e75a8c776c92df261303e24ff21e9655bb34b1f1
+Merge: a5f303f eb4fd3f
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 20:03:57 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit a5f303fee0836dae3f8886012c349f45a1e6af24
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 20:03:46 2019 -0500
+
+    14.2% coverage
+
+commit eb4fd3f9796b495e11f7375a650885b19f9796c3
+Merge: 7228755 cc58c6d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 19:48:17 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 72287558634b989512d1b5334ef3b1ebfc985e7a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 19:48:15 2019 -0500
+
+    The lambda function for registering external works
+
+commit cc58c6d341b05856b09c83b48732eed7d966b25e
+Merge: 1439218 fe4fb81
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 17:08:00 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1439218282aea61a86a95e593b35b832d81fce65
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 17:07:54 2019 -0500
+
+    12.8% coverage
+
+commit fe4fb8162a51b7aba3da9012586baea07b7c1782
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 16:49:21 2019 -0500
+
+    Receive remote segments should be async
+
+commit 0f2e98290f7ecd92b0e5fdb60df0052ff2bef67a
+Merge: 2bc9800 db53dd0
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 15:56:40 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 2bc98008b141b57ac27e484b7d70955bbef22e8b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 15:56:36 2019 -0500
+
+    More progress on receive remote segments
+
+commit db53dd0a1c1b2d9a7b71bc06eba2bf1708b3bace
+Merge: 45de346 eef1553
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 15:18:42 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 45de34640518992560423555910a995b137b304a
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 15:18:17 2019 -0500
+
+    IT WORKS NOW I PROMISE
+
+commit eef15530f90415f02d153f90423af829a550b164
+Merge: 7ed29c5 5bf791d
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 15:17:07 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 7ed29c5d18d04f118e1d18ff8b11eae566d5a80e
+Merge: 25765a6 32b525e
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 15:17:01 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 5bf791d293e93fae5668846de7875fc7ae14528f
+Merge: 8f99263 32b525e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 15:16:26 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 8f9926356b6484fae17588114bf402bdacdf55a8
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 15:16:23 2019 -0500
+
+    Progress toward receiving remote segments
+
+commit 25765a6aa23ec52bf666cc097f2a46fb709d18fe
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 15:15:54 2019 -0500
+
+    Updated test files to reset coverage
+
+commit 32b525ee95c8e84b420a11dc9aaa6e98ddd53bad
+Merge: 1b21da2 cbe434f
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 12 14:59:01 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 1b21da2ddfd73f1180dbba75c7a4e48df0e2617a
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 12 14:58:03 2019 -0500
+
+    fix GetRemoteSegmentHandler and uploaded to AWS
+
+commit cbe434f0865d4b7971b14ba6dc71c161813a68c0
+Merge: 6654ca6 bb45cc1
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:44:57 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 6654ca6e8df9051efe0b28289121480b16377147
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:44:41 2019 -0500
+
+    tyler im sorry (i hope this fixes it)
+
+commit bb45cc1d6d3bd1e4aa3dd529473567135cb487a3
+Merge: 7beba18 0d92715
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 12 14:37:58 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 7beba1806d90b43c0387a0050a5369585c36776d
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 12 14:37:23 2019 -0500
+
+    receive remote segments request and response objects created
+
+commit 0d927151c7e4e9b0abad15e57e6917cae5e7dfb6
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:31:35 2019 -0500
+
+    I SWEAR TO TYLER IT WORKS NOW
+
+commit b244bb501ba0389c2ec640e5ed2179cf1cef6e22
+Merge: 86631b1 6ab1519
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:29:01 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 86631b19ab633aa2684989656c18f4b52e79c100
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:28:50 2019 -0500
+
+    lol i lied, remove from playlist should work now
+
+commit 6ab15195d0c175801372453697a119592c099623
+Merge: 9d7704a d304211
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 14:24:15 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 9d7704a716b2692f84dae74d77a75a0f9bd56340
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 12 14:23:56 2019 -0500
+
+    Get Remote Segments Handler is ready
+
+commit d304211142da0dc35d43b13176f54315df996b14
+Merge: fd60d99 d169650
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 14:19:24 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit fd60d99a6c325d951959cd3ab6d5806c5219123e
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 14:19:17 2019 -0500
+
+    Added testing files
+
+commit d169650b456f0fd67d2293509473f370109dac65
+Merge: f7604f9 1db4f7c
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:15:21 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit f7604f9ab2ee06542660360fe8536bd311ecb26e
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 12 14:15:08 2019 -0500
+
+    fixed delete segment from playlist bug (i hope)
+
+commit 1db4f7c7406c35e1394187835fccd3b09b90bc0e
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 12 13:46:24 2019 -0500
+
+    RemoveSegmentFromPlaylist functional
+
+commit b0cea368a6c7592df49a96a2ef1ebd9c0de6802c
+Merge: 99dfc80 58d3557
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 11 16:42:09 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 99dfc80bf0f84757e2192c62a538eec351b4b8ac
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 11 16:42:04 2019 -0500
+
+    Currently fixing MarkUnmarkSegment
+
+commit 58d35570abbc13d33326d5b979d9075e126332f2
+Merge: 0345267 b6de54b
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Dec 11 16:08:05 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 0345267c0dd8c1478f0827701b0a3e16d6a504ac
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Dec 11 16:07:53 2019 -0500
+
+    receive remote segments is a thing uwu
+
+commit b6de54bb49b2fd51b566216ba555aabcc954a642
+Merge: 26d69b2 beb126b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 15:35:38 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 26d69b21497f524479d599ed1c2cbe686f4eda6d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 15:35:30 2019 -0500
+
+    Fixes to Upload Segment Handler and available segs
+
+commit beb126bbed8a7c2374da932610b40c33dd67df20
+Merge: 2274c2e 91f9e81
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 11 13:08:51 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 2274c2e4c4cac10e2bfe77519647ac160aabe916
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 11 13:06:26 2019 -0500
+
+    MarkUnmark works
+
+commit 91f9e81ec495d1451877b08511322a057accae1c
+Merge: 1e7d260 b655403
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 12:52:21 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1e7d26013779a4bfcaae8e437632f676fc149d35
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 12:51:45 2019 -0500
+
+    We can give folks our remote site!!
+
+commit b6554030c4a7f71f0531a4ab95705b610cfa6250
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 11 12:46:57 2019 -0500
+
+    Attempted fix for upload segment lambda function
+
+commit 0e92836d4b1ddb675ca2a8505ef6652dad145102
+Merge: b41f72d 6d3eb1c
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 11 12:26:58 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit b41f72d0a8588708f63de7b91870083643d849f8
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 11 12:26:38 2019 -0500
+
+    remove from playlist handler created and uploaded to AWS as a lambda
+    function
+
+commit 6d3eb1c8a69da78c6df37052a0b54555ed8ee625
+Merge: 44eb488 97a874a
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Dec 11 12:10:39 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 44eb48859d451992d6c4a1b0d093034ba57363d3
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Dec 11 12:10:25 2019 -0500
+
+    can now name video files, smol bug fix (-)w(-)
+
+commit 97a874a8554d8f75eafedce9bddd7624b538fe53
+Merge: c94fbcd a0e8a95
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 11 12:08:16 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit c94fbcd3b6b079c922b49bc6cf87cdbbfeeceed0
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 11 12:07:35 2019 -0500
+
+    Untracking pom.properties
+
+commit a0e8a9543492ff5e479f5a9afe6eed9247f48067
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 11 11:24:13 2019 -0500
+
+    Mark/Unmark Handler re-uploaded to AWS
+
+commit 069410ea18e0b6d897d9ae2d2db6e3773febc383
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 03:08:11 2019 -0500
+
+    Theoretically fixed the mark unmark local handler
+    
+    I can't actually tell because we're getting a very annoying class not
+    found exception. It's something with my eclipse. I can't find any reason
+    for it in the files that I'm pushing.
+
+commit 4bd961c0d2443e7a3fc9d8134ad17efc9e8e18a4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 02:27:21 2019 -0500
+
+    Unregister remote site works now
+
+commit 99ba106086fa202f0308b24aeeab78b7dca0a02c
+Merge: 4bec384 e32352f
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 02:09:13 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 4bec3845e9dba1fc0b71fea421825a2344427bfc
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 11 02:09:11 2019 -0500
+
+    We have an API for remote segments now
+
+commit e32352f9f54fbd5d28db2e170f4e82f191236a5e
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Wed Dec 11 01:21:33 2019 -0500
+
+    UWU ! NO MORE CHECK BOXES ! UWU (mark/unmark,site)
+
+commit ebebe7579b81548ef1d080384111d7afcd362e06
+Merge: b53681b 96187a1
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Tue Dec 10 17:12:46 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b53681bbd5f8e0c1c523730dd390efc94f13a727
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Tue Dec 10 17:12:42 2019 -0500
+
+    unregister site is now a thing in the js/html uwu
+
+commit 96187a145a0ff5d381cb59b586387947c3c3d52b
+Merge: b0f3a0f ac791fb
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 10 15:45:12 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b0f3a0fb69fa5f80aeddaf0af4141d2f6329aabf
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 10 15:45:07 2019 -0500
+
+    DAO for give remote segments
+
+commit ac791fba25bc62caf31819601b64dd25656bb6db
+Merge: e2809ad 59ee76c
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Tue Dec 10 14:54:54 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/.settings/com.amazonaws.eclipse.lambda.project.json
+
+commit e2809ad409b14b3649fa6993d1faaf8a9ceaa707
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Tue Dec 10 14:53:43 2019 -0500
+
+    mark/unmark segment availability has been fixed to only take singular
+    input and has been re-uploaded to aws
+
+commit 59ee76c5eb44163fe08e7066c035abebf46d7da7
+Merge: e110f13 4ccf984
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 10 14:35:08 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit e110f13ed22ab5a218f1cdfd88fe10b5e35ff203
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 10 14:35:02 2019 -0500
+
+    Fixed deleteSegment
+
+commit 4ccf984fad99fd07528a1c343ef4c69da0357a3b
+Merge: 24b1a4f d633024
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Tue Dec 10 14:14:45 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 24b1a4ff432c5a2c51514b80b22a1e94dd64c2a1
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Tue Dec 10 14:00:31 2019 -0500
+
+    added js 4 remove from playlist & fixd smol things
+
+commit d6330241244d8b100522a43d39ae9c5d795b8d95
+Merge: 81a2ec1 516bbe7
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 10 13:45:43 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 81a2ec1fa94f4833a0487f6207977fa92fc35ea7
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 10 13:45:37 2019 -0500
+
+    53.7% coverage
+
+commit 516bbe7a23f03816ceda53d5faa8574944e86409
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 10 13:44:25 2019 -0500
+
+    Sorted Playlist Entries
+
+commit d94d1e146b10e81277528daaf48bf6dc72aecbb7
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 10 12:00:23 2019 -0500
+
+    Segments DAO can get just local or just remote
+    
+    It can also still get all of them
+
+commit 25f2607ca964950b0e6b918efafc67575955ebe1
+Merge: 5adb08e bfd142a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 10 11:51:51 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 5adb08ed7346a8ae36aa029eb5b65be9f7559a30
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 10 11:51:49 2019 -0500
+
+    So we can upload segments now
+
+commit bfd142a9b6927d2f5a3e17bb32f71360634e3295
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 10 09:58:47 2019 -0500
+
+    Comment out all calls to Constant, including class, to improve coverage
+
+commit 3a336b041ab238ea6a7def362119689541855fe0
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Sun Dec 8 23:08:01 2019 -0500
+
+    Up to 32.7% test coverage
+
+commit 3a923d60e7db6bff47026ec08e16fea36ca0949b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sat Dec 7 18:35:27 2019 -0500
+
+    A few changes to logs and list-segments table
+
+commit d25b9bd6f0bfa6400e1570458d810c78324f67e1
+Merge: fcc6925 87e6973
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Sat Dec 7 00:57:53 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit fcc69253c8f11d93e72e9c15ec20969ad30e18bc
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Sat Dec 7 00:56:13 2019 -0500
+
+    its not working but here is the current state of trying to get the
+    upload segment test case to work
+
+commit 87e697396e015d71ed42dccea0c95dbadf56b156
+Merge: 453d363 e9baa90
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Sat Dec 7 00:55:39 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 453d363b121c3e48874ff40f8da645379d45fbfd
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Sat Dec 7 00:55:32 2019 -0500
+
+    fixed parameters in json for upload
+
+commit e9baa9039eca55229c52ed1c6af5e7a9858a1ea8
+Merge: 3638521 cdeb128
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sat Dec 7 00:54:42 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 36385212b8cb2411924aec5f5f214c079d977262
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sat Dec 7 00:54:40 2019 -0500
+
+    Working on testing the upload segment handler
+
+commit cdeb12808d4560fa7037d41096be0b8d3446fd41
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Sat Dec 7 00:34:56 2019 -0500
+
+    Bug fix for list-segments.js
+
+commit 0a2484baf90d089bdc9751e81009b60cd9d55728
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Sat Dec 7 00:05:55 2019 -0500
+
+    Fix for list-segment
+
+commit ef897c74d1ded18852d5f17251739f279551edd4
+Merge: 2148c36 bdeb3bb
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 23:57:15 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 2148c363144902ec8a98afa1866adfb08837b293
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 23:57:03 2019 -0500
+
+    base64 works
+
+commit bdeb3bb19e687af39bd92b88641f958f02d7d38f
+Merge: 0b95bf6 f1e40d6
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 23:44:39 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 0b95bf607a3fa066fa4213e0df5587cc30482310
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 23:44:24 2019 -0500
+
+    create playlist basic test case created
+
+commit f1e40d61f17c1f50880a8e78d7a1dd065382e6fb
+Merge: 030c002 1912621
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 23:40:49 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 030c002e5795a3a46082904e86e6c95af4505f43
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 23:40:44 2019 -0500
+
+    AddPlaylistToSegment working
+
+commit 1912621453c2424417474292239fa451bf270e18
+Merge: 6052b68 01d4a82
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 23:26:44 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 6052b6889cc6d3c1484d0ad01d87623f68318e2f
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 23:26:28 2019 -0500
+
+    upload segment handler test case created, not complete, waiting on base
+    64 encoded values
+
+commit 7f4fa0807f93165f71c8da590a7bcdda0bbffbf4
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 23:22:09 2019 -0500
+
+    base 64 encoding should kinda work
+
+commit 01d4a82d1502944b6abeed907ea95bf0e0ee28e6
+Merge: 5d93299 dcb28ba
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 23:20:11 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 5d9329953475fe0d44af72514d83adbd7891b6b6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 23:20:08 2019 -0500
+
+    Fixed asynchronisity issue
+
+commit dcb28ba7b54dc72444aeb158b3aedaceaac16bda
+Merge: b4a1b52 9013000
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 23:17:44 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b4a1b52528c83d2ff5a3d116b76703d92d56d18f
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 23:17:37 2019 -0500
+
+    Deleted search functions that are no longer needed
+
+commit 90130009a8588f8d8beaa83ba99e8c0447392aaa
+Merge: 1a0ec7a 65c79a7
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 23:16:20 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1a0ec7a18d7c16e63b00540243d0135e04d8651d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 23:16:17 2019 -0500
+
+    Adding new segments
+
+commit 65c79a7ee5f426e2c467ba55f6bf7d5a1f6d643a
+Merge: 30854a7 430611f
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 23:01:54 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 30854a7630fb914ee0e1c7d0f0085682530b0ad5
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 23:01:48 2019 -0500
+
+    deleteSegment functional
+
+commit 430611fb779f3de5661cf33d85014ad7dd0e695a
+Merge: 5eee18e 48769a2
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 23:00:50 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 5eee18ee105c5bfe94571e41243d9c69bc03cc34
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 23:00:24 2019 -0500
+
+    Progress on Add Segment to Playlist
+
+commit 48769a2cff33d94d28d85a6fc15583f3dd0e271d
+Merge: d0ffa91 81a2573
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 22:54:52 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit d0ffa910ae734369ec955655b00aac739870cb40
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 22:54:33 2019 -0500
+
+    Add segment to playlist test case created
+
+commit 81a2573d02466b04008f36acdd78f060817a006b
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 22:02:35 2019 -0500
+
+    plz don't die
+
+commit bb464a36897f55c72c0bc1e5d631ca22c7f2f108
+Merge: d6bbedf a4bc29f
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 20:53:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit d6bbedfb4edfcb0e7aa5b1d3d40ecd87542e15c8
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 20:41:23 2019 -0500
+
+    Create Playlist Works in JS!!
+
+commit a4bc29f3e9e16c9391cfa5acdcc4de55f397ce48
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 20:38:03 2019 -0500
+
+    TestContext2 Electric Testaloo
+
+commit 69171b38730ea175f191f6e78b1c99d93a39c098
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 19:29:02 2019 -0500
+
+    let's see
+
+commit fb631811f1b2f1a0dc5edf99616bde4fee3b6f7e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 19:23:46 2019 -0500
+
+    Reuploaded lambda function
+
+commit b1546f492c27eae9c71ad1eaae95f5119bb69d4d
+Merge: 1ac6b27 d5c6124
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 19:12:25 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1ac6b2761e4594374b40423448a50fad4ec3b197
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 19:12:16 2019 -0500
+
+    Many classes
+
+commit d5c61243ac7d27673148ea9a8684786fff56492c
+Merge: dbd6259 5562640
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 19:10:48 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit dbd62592091614d0d0c81eb0dbe8cd89bfc933de
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 19:09:17 2019 -0500
+
+    upload segment exists and the html is gucci bueno
+
+commit 5562640daaaa0cd778cb8b7a8888b4c2a67f4b01
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 18:17:27 2019 -0500
+
+    Delete Playlist Works on Admin.html!!
+
+commit 9a4c303d1d6264cae1072e5fcb0cf9c4d5452896
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 18:04:13 2019 -0500
+
+    Delete Playlists works as a lambda function
+
+commit b796f40a7a504180e9fb76d7121132e4c8c6343e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 17:51:37 2019 -0500
+
+    Create Playlist Handler Debugging
+
+commit 03f405b656f8242d17fe2d15ac66bdec690fde03
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 15:30:18 2019 -0500
+
+    Added ps.execute(); to line 58 of PlaylistsDAO.java
+
+commit 16938f1c69323c18ac891c1b35bea5be9d32b72f
+Merge: 1d6d2c0 6ff4a1b
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 14:43:54 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1d6d2c0ab72450acec1fd33a1c816d94746c8f07
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 14:43:46 2019 -0500
+
+    Working on creating playlist stuff
+
+commit 6ff4a1ba98647ddfbad0804db1f3f4efefd2993e
+Merge: 303e1b9 2952fae
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 13:48:35 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/.settings/com.amazonaws.eclipse.lambda.project.json
+
+commit 303e1b97283879360f00ea622b613e00e9e0e90d
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Fri Dec 6 13:46:28 2019 -0500
+
+    add segment to playlist handler created and uploaded as a lambda
+    function
+
+commit 2952fae47fd5fd7481e72751d6b97fcf7b74e81c
+Merge: 3af80ff 243fc78
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 13:36:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 3af80ff89d22c05dcfdae992431dc2f8fedf50bb
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Fri Dec 6 13:36:15 2019 -0500
+
+    fixed the dropdown
+
+commit 243fc78c987ed89b2d2bda3a512ef6e9180e5f73
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 13:25:39 2019 -0500
+
+    Search woks on admin now
+
+commit c86f9e0607ad1a045abb98a136a0a66664a5c0dc
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 12:13:23 2019 -0500
+
+    Unregister is a submit now
+    
+    It will still only unregister one site at a time...
+
+commit 540b017f72cf78c8c50fb2d41318e652f4d6bc21
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 12:07:59 2019 -0500
+
+    Registering sites works in JS
+
+commit ce9b1ba60eb0a4164d1461ff03639b4399fe5720
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 10:56:09 2019 -0500
+
+    New uploaded segments should be private now
+
+commit f1a36be1a14025826543a720ec1bf5f62de19308
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Dec 6 10:26:37 2019 -0500
+
+    Patched search
+
+commit 116694d065a0f5434721d217395e821e8fbf3c0f
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 09:50:19 2019 -0500
+
+    Update to show error
+
+commit e116a491b82d75ed91075249fb4e6822ba0f7ce1
+Merge: d1a7ce3 9c30e7e
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 08:11:52 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit d1a7ce3ef5d9ee2b56246bce8d1b2ba54793a3fa
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Fri Dec 6 08:11:42 2019 -0500
+
+    Searching is mostly functional
+
+commit 9c30e7e02942cb228926b0c62dc51b65c91421a0
+Merge: 097a436 3ffd320
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 5 18:48:00 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 097a4366dfb9044e991e90c64f8399b3464e8787
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 5 18:47:15 2019 -0500
+
+    Having a time with the mark/unmark lambda
+
+commit 3ffd320014ec26cd2d5a81f93ef7e19a92e4ec82
+Merge: bfde00c 391346f
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 5 15:34:15 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit bfde00c19715b86a9c1b9c626fb5b4984341fd78
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 5 15:34:01 2019 -0500
+
+    add to playlist should work now
+
+commit 391346fe535db710a7571d7dca32eb4d6a048240
+Merge: 4b62c22 7ee25a4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 5 15:21:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 4b62c226d5a403d9a5cf12337782817e91527999
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 5 15:21:54 2019 -0500
+
+    New API
+
+commit 7ee25a439213dbb53e26fda84aaa6384f6c5813c
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 5 15:06:47 2019 -0500
+
+    list sites handler uploaded as a lambda function
+
+commit fe01946b18b14c31250f13909694e681e5307b5f
+Merge: 50655b4 1f00436
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 5 15:02:20 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 50655b49284d707d3ae6ab7d872aa72465320b8b
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 5 15:02:07 2019 -0500
+
+    delete playlist handler created and uploaded as a lambda function
+    minor edit to create playlist handler
+
+commit 1f0043651062bbbb00df47f6aa1257e59d4578f7
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 5 14:23:22 2019 -0500
+
+    got rid of useless text input next to delete playlist
+
+commit f066af3914f65648e76a19df327e18950bd53f46
+Merge: 5ff4f5e a16b9b6
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 5 14:20:40 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit a16b9b6094c380cd0f6074a24aded0d702984f27
+Merge: 4d59738 7f922c7
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 5 14:20:14 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 5ff4f5ef0155c67843e5ada9701dc516abb3f51a
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Dec 5 14:20:04 2019 -0500
+
+    i dont know what i changed, probably nothing
+
+commit 4d59738403f520bbd1fc6bbb5bf0ee094a416dab
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Dec 5 14:19:56 2019 -0500
+
+    create playlist handler created and uploaded as a lambda function
+
+commit 7f922c7162854e12f839f54c7367c9a344c65285
+Merge: ea2dcce e677b86
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 5 14:19:36 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit ea2dcce4636e67c611585133b0d8e2c2cbd63775
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 5 14:19:30 2019 -0500
+
+    Test Registering Sites
+
+commit e677b86981a511050805f9dfde3cd6a64e26e5b6
+Merge: b5a3d29 ca49a62
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 5 13:35:44 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b5a3d29dc85fc7b106a5b358ea9f7e59def10927
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Dec 5 13:35:43 2019 -0500
+
+    getPlaylist(name) in DAO
+
+commit ca49a62ef760da5887b4cfc790bbb66af4d864af
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Thu Dec 5 13:19:13 2019 -0500
+
+    Test addRegisteredSite
+
+commit eea56770f0297ff15c3a24ee433ab09f060557df
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 23:28:10 2019 -0500
+
+    Unregister sites working
+
+commit 0bfa8f0f9603251ef60834f68b9b1e201999263d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 23:04:47 2019 -0500
+
+    Admin webpage now displays registered sites
+
+commit ea694782b5fc7a357a38f809c19daaf3d47fa09f
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 22:27:42 2019 -0500
+
+    Mark/Unmark Local works except not
+
+commit 39120c42c7ea40426af40f9763b48b8d158af231
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 21:59:20 2019 -0500
+
+    Mark Unmark Segment works on the front end
+
+commit d47392c4ba2836b5b2e968d82e862947d8090c95
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 18:12:17 2019 -0500
+
+    New attempt at escape
+
+commit 6f75ec00ef308fe4f4cf7b5ff08f789b187cbe05
+Merge: c465fb0 ab6b8c2
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 17:49:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit c465fb0ce0977663eecf712677ca2461f101c9c2
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 17:49:26 2019 -0500
+
+    Added Unregister Site Handler Lambda
+
+commit ab6b8c2824ad22ed27dfa54910c94f0acd1a0e81
+Merge: 8b3d963 f30015a
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 17:38:40 2019 -0500
+
+    Merge branches 'master' and 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 8b3d9639118e44694626afe9aa22f972a0dd7092
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 17:38:33 2019 -0500
+
+    Testing getAllRegisteredSites
+
+commit f30015ab12101d5295c45ce74c832b93f087445a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 17:37:07 2019 -0500
+
+    Escaped the regular expressions for searching
+
+commit bf1752e61a693c0dbef81bede1c4c9791f27bb2a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 17:07:58 2019 -0500
+
+    Register Site Handler is on AWS
+
+commit e8802e313a459db2b4e7318d5ae09a660c492179
+Merge: 8c43503 a74f45a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 16:37:29 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 8c43503768542531ba0b3b34a6a60b99369abb73
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 16:36:54 2019 -0500
+
+    Mark/Unmark Segment Handler done and uploaded
+
+commit a74f45a5129e6453bafc1cc61f8d33c30c251838
+Merge: 4377d74 ef427eb
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 4 15:55:41 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 4377d742c6f8f630b34feedd9aa6cee891e728ea
+Merge: ff86ffb 8737a2f
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 4 15:55:33 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit ef427eb20bd7e7a758ca321bb81668263dedcf8b
+Merge: 7548764 8737a2f
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Dec 4 15:49:09 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 7548764c7eb4eed449221ae0617b4a25ddd4e122
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Dec 4 15:48:47 2019 -0500
+
+    updating js and html
+
+commit ff86ffb1519e4286374034ad2e50aeb7a8f8d386
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 4 15:47:59 2019 -0500
+
+    list sites uploaded as lambda function
+
+commit 8737a2fa213418f40d94a948c845652b0d9a9847
+Merge: f8dd0b0 a04075a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 15:44:18 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit f8dd0b060e5eb471c798898a7976213c66d89958
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 15:44:16 2019 -0500
+
+    Delete Segment Handler Functional
+
+commit a04075ac586877bbaa93ab4928487f5968b520b8
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 15:40:31 2019 -0500
+
+    Created RegisteredSitesTest
+
+commit 35bc8bffb8f34808e972530cd10fffa6bd205f00
+Merge: c4c3750 0cb0f60
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 15:38:20 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit c4c37503adca6c4baf7c34e8f48fb0bbe994f852
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 15:37:52 2019 -0500
+
+    Added more segment testing
+
+commit 0cb0f60cf06f4f2b0adb8f6d9b40f7439f7a5a4d
+Merge: 7e08aa7 cfc4263
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 4 15:26:37 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 7e08aa7ac4642a9f415b77ace01dfe14b0929d5a
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Wed Dec 4 15:26:16 2019 -0500
+
+    ListRegisteredSites request and response objects created
+    ListSites Lambda function created
+
+commit cfc42631d4154c1833d77bc510ea960dd451883d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 14:24:26 2019 -0500
+
+    Fixed the playlist delete to delete entries
+
+commit 025cb1c3acdea7a58dec07b818891f0397efa5d8
+Merge: c8bdb9a 5aeffb6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 14:11:01 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit c8bdb9a23778aa4ae9d1034e65a63e43432337b1
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 14:10:59 2019 -0500
+
+    Upload Segment Handler First Upload
+
+commit 5aeffb6bf30408c0c65eaf65f9080b8acb71d7e8
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 14:06:59 2019 -0500
+
+    Tests for getting playlist length and entry are functional
+
+commit 6e1c65f8d16cbe1b3dcccc16c5f90bc20f84cfee
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 13:29:14 2019 -0500
+
+    Got rid of ConstantsDAO
+
+commit 5408541900160fba4f71897705c921e7bab42cec
+Merge: 1c1bfc1 259c168
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 13:16:19 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1c1bfc19755ddc06200439283d7287db89b0a8dd
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 13:16:17 2019 -0500
+
+    Playlist Entry Delete can Renumber Now
+
+commit 259c16802a0666f9d9cf953d7d0b318f77309ef5
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Wed Dec 4 13:14:57 2019 -0500
+
+    Removed LambdaFunctionHandler to improve coverage
+
+commit c0c893430684b44a95e772b6add35ea2eb85ce10
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Dec 4 01:38:05 2019 -0500
+
+    SegmentDAO Search should be operational
+
+commit dee1890e4fd1b47ad0a260500cdbe198b9c19056
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 3 19:07:07 2019 -0500
+
+    Created GetAllSegmentsHandlerTest.java
+
+commit e68ab9c0c9dcf1e994ef0bac02088be9f2d1934a
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 3 16:05:07 2019 -0500
+
+    Fixed the jar problem
+
+commit 9ba85c08c4d1eea99d765b53f48af1d1da497bcc
+Merge: b8add4d ed376cb
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 3 13:48:10 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b8add4dc2aac035b209116bb8b41d9db4fd1858b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Dec 3 13:48:08 2019 -0500
+
+    Have some JARs
+
+commit ed376cbc45935d86957a491c9a58e5cb2c6f7064
+Merge: c70ad81 fd7f046
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 3 13:42:03 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/target/classes/META-INF/maven/com.amazonaws.lambda/demo/pom.properties
+
+commit c70ad812be56601d7e9083e756906d415f8d3655
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Tue Dec 3 13:40:25 2019 -0500
+
+    help
+
+commit fd7f0461d8108bca5da4f5ebc399bd500e7818c9
+Merge: ab31a53 3cf2ce2
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Dec 2 16:43:50 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit ab31a53e26272c4a3cf0e39c0fb2843fffa11ee9
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Dec 2 16:32:05 2019 -0500
+
+    wrote add-to-playlist.js and upload-segment.js
+
+commit 63b7ef2e85ee2f5a9c2c4de5e55ef670db60196c
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Dec 2 16:11:53 2019 -0500
+
+    deleted preformatted content from html, wrote create-playlist.js
+
+commit 3cf2ce2943b324a6ead66548c44608791f722258
+Merge: 30c2381 50457ff
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Dec 2 13:58:25 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 30c2381e0effe03757a8eb503d04e4250fdf6434
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Dec 2 13:58:23 2019 -0500
+
+    Updating DAO's
+
+commit 50457ff4aa1ffe34c5e5355c757e4a8024b6cdfb
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Sat Nov 30 18:05:31 2019 -0500
+
+    fixed search
+
+commit 0882e8289c262f25ed8636abb9765745670e58df
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 28 15:40:29 2019 -0500
+
+    Added resource on how to style a checkbox
+
+commit 3ebb8b034c420babcb629f69b391123073249b4d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 28 14:59:10 2019 -0500
+
+    Sleeker Horizontal Rules
+
+commit 3243c6160ea643c3cea61c6348704c48f5027815
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 28 14:54:23 2019 -0500
+
+    Fancier Inputs
+
+commit 5019f99fbc74017a34cb1a1de6c63bc878e1c7ff
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 28 11:45:23 2019 -0500
+
+    Playlist and segment names are in spans
+
+commit 8cef80842c6e6907edbf1eeb3352c0d486d47f52
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 28 11:37:16 2019 -0500
+
+    CSS Modifications
+
+commit 7c37a44e0c0ce99cb4ddabb1f0348b91ade98d60
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 18:55:30 2019 -0500
+
+    Updating Test Values for Iteration 1 Submission
+
+commit d9526ff5015fd0c55cd647c2eb7df503e5bfe581
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 18:18:56 2019 -0500
+
+    Modifying webpages to meet all grading criteria
+
+commit f0660b0380cbceaebd1b05a365ff2759b7341122
+Merge: 02d4cd3 1d08658
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 17:33:50 2019 -0500
+
+    Merge branch 'listPlaylistSegments'
+
+commit 1d08658692f82b0cbcaa274dd3b204e64423f20a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 17:31:34 2019 -0500
+
+    Functional JS for List Playlist Segments
+
+commit 02d4cd3a263b0a8dab88fb258c6021a65e1f9d94
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Tue Nov 26 17:28:40 2019 -0500
+
+    updated mark table
+
+commit 5a7be1bf820140a56070cbad252f73ca7ea76e33
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Tue Nov 26 16:40:40 2019 -0500
+
+    html stuff updated, marking local can happen now
+
+commit e1bd2c81c8bd47c78eab70878e19b03e42b0ef03
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 14:54:49 2019 -0500
+
+    Added Controls in Video Tag for List Playlist Segs
+
+commit f4e8d49661273c920d4573a06908d9e71f0d808f
+Merge: cbf5346 9413134
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 14:50:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit cbf534651a00f31d0aa5748a55f8427270e999e3
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 14:50:54 2019 -0500
+
+    Lambda for ListPlaylistSegments (not in JS)
+
+commit 9413134474a4f2a57a11d605b10188b406340170
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Tue Nov 26 13:24:48 2019 -0500
+
+    RegisterRemoteSite request and response objects created
+
+commit 608718a936f43fbf5515800c5ce8b3d69f577e49
+Merge: 9bf3536 84df32d
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Tue Nov 26 02:28:12 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 9bf35365a89242e5d6d1fd8846c871397332cfa3
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Tue Nov 26 02:27:58 2019 -0500
+
+    ChangeMarkSegment request and response objects created (may need to be
+    reviewed and edited)
+
+commit 84df32d94e013dee1c7ccfe0e45ad0a00e8ba12b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 00:40:35 2019 -0500
+
+    Horizonal Rules for Readability
+
+commit 33266a6889727e8a55046e00a4b38ba483e07c46
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 26 00:35:54 2019 -0500
+
+    Colors on stylesheet for readability
+
+commit dd76316df2b804bb174bf396e4328058080cb4aa
+Merge: 709a9bd c0cdaf0
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:53:27 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 709a9bdc5a24b6f12eaaadef25e27756d9f3596e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:53:25 2019 -0500
+
+    Updating test values in the database
+
+commit c0cdaf086990f1245710cf6478ca10663280a0b2
+Merge: 6c8eac3 30b38ed
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 23:46:50 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 6c8eac3081ca47fcc07aaf39676dcbfd3dc116d8
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 23:46:19 2019 -0500
+
+    add segment to playlist response and request objects created
+
+commit 30b38ed13d41f49aa29b5a22d78369a02edab0ff
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:45:46 2019 -0500
+
+    HTML explanation
+
+commit 7705509cfc2532ee7b35a65bf361ee8eb4244434
+Merge: eac1c3f e1dba09
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:44:10 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit eac1c3ff5b5b01e78868a5a30c54826744bb8f4a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:44:07 2019 -0500
+
+    Retrieves segments; segments do not play
+
+commit e1dba098d80dadda9619620655dcbd138d37d86e
+Merge: e6b99cf 7fa6aba
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 23:27:48 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit e6b99cf3f89861b1489ab9173bd2491b7f92eb24
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 23:27:34 2019 -0500
+
+    fix remove segment from playlist request and response objects
+
+commit 7fa6aba3ee7c604746b38fba8f7623d2ade54689
+Merge: d63e2e3 f37c38a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:12:14 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit d63e2e378285e880fda2a82558b6073623d778e0
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 23:12:11 2019 -0500
+
+    THE PLAYLIST JS WORKS!!!
+
+commit f37c38a82c3ed403fee319c04ce206bd72e1d1c4
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 23:07:45 2019 -0500
+
+    remove segment from playlist request and response objects created
+
+commit d766a3001027d3419cee21981608aad89a448e90
+Merge: ca692f7 9f33308
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 22:50:40 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit ca692f7ed9ae75c3ec76d7ced624e30890427599
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 22:44:49 2019 -0500
+
+    Ignoring all .class files? Will that help?
+
+commit 9f3330840cc850a1c12d14f3aeaba78317e9f2c1
+Merge: 39d020e 88edea1
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 22:40:12 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/target/classes/.gitignore
+            LydiaAWS/target/classes/META-INF/maven/com.amazonaws.lambda/demo/pom.properties
+
+commit 39d020e0918dc2839f3c15783c0501282066e8f0
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 22:39:36 2019 -0500
+
+    .
+
+commit c29dc44b1cb58439745fd6eccef2f1a378ee5708
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 22:39:07 2019 -0500
+
+    Added a segment test for human emotions
+
+commit 88edea1ffed45cadf5722c31e9608f9e7c1e4d8b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 22:36:59 2019 -0500
+
+    Updated some lambda functions
+
+commit 1581d9866d538b1197e63bd0f63585619d14f6a1
+Merge: 60df916 3a619d9
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 21:41:26 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 60df9162843f626049c6bb759bc3fe3f7b7800b5
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 21:40:40 2019 -0500
+
+    Tampering with Git Ignores
+
+commit 343b763b2b9058b68335e24588c88bbffe6e864e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 21:40:13 2019 -0500
+
+    Changed some things
+
+commit cafb6d127cf79c804169a68aba3b158afd13af37
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 21:36:00 2019 -0500
+
+    DB objects have a test case now!
+
+commit 3a619d95f0055cbcd754226abc1afd99536c8bca
+Merge: b2d7409 bd45d3f
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 21:33:44 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit b2d7409d0378a29474348cc174cd6ddd27ac31ed
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 21:33:26 2019 -0500
+
+    list-segments.js updated
+
+commit bd45d3f2812dabaa7f63e9418cd722a7d8844f00
+Merge: 3b5d07f 4680069
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 21:02:06 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 3b5d07f93358c0c66dd5d83157498f70645ad2f9
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 21:00:35 2019 -0500
+
+    updated public.html
+
+commit 4680069fa24c6b39f9d2e336ef3464f850859ed4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 20:21:19 2019 -0500
+
+    Let's see if we can kill the manifest file
+
+commit 1a66ccd6ebd4473152ad4143299df70ea5ff9e40
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 20:20:16 2019 -0500
+
+    Deployed and Exported the API
+
+commit da1e1108dbf100e6080c4ad4c3637aa28b25efa0
+Merge: 5e34fd3 c0cb41b
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 20:07:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 5e34fd3720815d97ef37e7b67bafd09271852764
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 20:07:03 2019 -0500
+
+    Uploaded lambda functions; changing metadata
+
+commit c0cb41baeedb281a923ff8d13e65b84f354e2a2c
+Merge: 1dc85b8 ad7e2c1
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 20:04:45 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 1dc85b89a691c61621496b2ccd08bc5fa35e3ca0
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 20:04:30 2019 -0500
+
+    Beginning of list-segments.js
+
+commit ad7e2c19c5a16318e117d59616f4ad6f57305a92
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 20:01:38 2019 -0500
+
+    Fix All Playlists Lambda function for upload
+
+commit 9d7d87f9ccfc158e8a56943f803aab2809a2b04c
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 19:53:56 2019 -0500
+
+    YAML file doesn't throw errors so far...
+
+commit 3851451dc452f63651a2c4a615328693a6724333
+Merge: 2910556 806bccf
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 19:51:03 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 29105566955d7a826e4a63fa237c648b48a81d07
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 19:51:01 2019 -0500
+
+    Debugging the YAML file
+
+commit 806bccf31af86d76dfbd392da2cfbad988781846
+Merge: 1f03602 ca73f8c
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 19:29:41 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 1f036021f92e0fd96df1043a67f1eeeb586ffe60
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 19:29:27 2019 -0500
+
+    .
+
+commit ca73f8ca05c9565e62a73467473c558797196625
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 19:26:14 2019 -0500
+
+    Fixed some of the DAO and model objects
+
+commit 7ce8992b041ba103786dcef0f6f941fa50cdb3c5
+Merge: 2d41dce 52c0ec4
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 19:04:10 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 2d41dce4ebb24fc24f5c36fcf05f6c8e19f4138d
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 18:23:41 2019 -0500
+
+    trying to fix something
+
+commit b94b677b07ad330313c96fc6a88f0a4b3429a08b
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 18:19:03 2019 -0500
+
+    Testing for maggie
+
+commit 01289d3158f255122f1af5eb2658519798ddf4fa
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 18:09:12 2019 -0500
+
+    Delete playlist request and response objects created
+
+commit 52c0ec49bcf6ce16de5fd9212ecc2ec6f9e89b9e
+Merge: 534662a 7ee58ca
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 18:00:05 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 534662a2e88d02dbf00c251b621904c1592a09f7
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 17:27:34 2019 -0500
+
+    added registered site
+
+commit 7ee58ca250d587d161ff19b6d3de20d486ec19d3
+Merge: caf96a9 b4b9e3f
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 17:25:56 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit caf96a98cebac65c0a558d779b5639f336bd3b61
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 17:24:58 2019 -0500
+
+    create playlist request and response objects created
+    updated/fixed upload video segment request object
+
+commit b4b9e3f4e734ff979e40c5320a45833205d8990e
+Merge: c8559bc 7bd7305
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 15:32:18 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit c8559bcebbd6deba3d3ad9d288b82377ffb2bcc8
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 15:32:09 2019 -0500
+
+    finished playlistEntry, update to playlist
+
+commit 7bd730532fb956b67f0006e213352c28296a35f9
+Merge: 663bc8b bfbd1e9
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 15:29:42 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 663bc8b688c9dde6455b08226883961dce6808de
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 15:29:25 2019 -0500
+
+    delete video segment request and response objects created
+
+commit bfbd1e9ef6f90acc1eebdcdfec95886d74be77c8
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 15:28:31 2019 -0500
+
+    i just want this to work
+
+commit 0f67ed3ddcd168f3355ed8910a0ee37ba24cd3dc
+Merge: a7cc15b df5a308
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 15:27:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit a7cc15b2c53a10fb6d508c5b21518c319f78b092
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 15:27:27 2019 -0500
+
+    Improved Git Ignore
+
+commit df5a30809a6a8dd40b7796675fef007770ca18d3
+Merge: 1d83215 5af45a8
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 15:27:19 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 1d832154b3515a5c3db903a3655bbdbe0b0f2609
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 15:27:07 2019 -0500
+
+    entity updates
+
+commit 5af45a81ea56f7c061293ab39d36efceb9b442ce
+Merge: b906398 c06de49
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 15:22:01 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b9063980c595a2d63cd1a26f461d9b4e2e6159f6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 15:21:55 2019 -0500
+
+    Videos come from the bucket now
+
+commit c06de4962360c88cdeb8dfdd1acd30ac3ca8233e
+Merge: 29030a8 e96513a
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 15:10:09 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 29030a8b0cb3c35ec585d297fcdf3183513c4a2a
+Merge: 0808851 fdd7f56
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 15:09:07 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit e96513a03ad042ca634d3cfb81fad8fcf06e90c6
+Merge: bdf2439 fdd7f56
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 15:08:00 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/target/classes/META-INF/MANIFEST.MF
+
+commit bdf2439ac42d92af5b98ddb3105c38ebb784d1f4
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 15:06:42 2019 -0500
+
+    Upload video segment response object created
+
+commit 08088512297c8668f17e587e41b93df2668997e0
+Merge: 58b31b9 7a1a260
+Author: tsprowl <tsprowl25@hotmail.com>
+Date:   Mon Nov 25 15:06:30 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/target/classes/META-INF/MANIFEST.MF
+
+commit fdd7f569ef5fa4bd5ef89eb62bb9530af2f8ef98
+Merge: cda7cf9 1e1b1a4
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 15:04:24 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit cda7cf954cc5cab4cf8717ab74733634481d3730
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 15:02:37 2019 -0500
+
+    partial entities and a heck ton of random eclipse files
+
+commit 1e1b1a465767b751505bffe9f9a94ed5bd608172
+Merge: b2ac8f5 7a1a260
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:55:03 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit b2ac8f5e2ac0c58f5b179f0e73d52930230d9c01
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:54:47 2019 -0500
+
+    List playlist segments request and response objects created
+
+commit 58b31b904fced5d4dde276131257ff2a0bc17ffe
+Author: Tyler <Tyler@130.215.14.12>
+Date:   Mon Nov 25 14:54:11 2019 -0500
+
+    Finished
+
+commit 7a1a26037d9b24273e3390d6830a559037604fcb
+Merge: b59ec88 811fa95
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 14:50:29 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit b59ec88e62a88d46a0152f2d0ed157551366ce5e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 14:50:27 2019 -0500
+
+    GetAllPlaylistHandler exists!
+
+commit 811fa95f655bfd680eaeb45f5fecb27f69727664
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:48:52 2019 -0500
+
+    List Segments Request and Response objects created
+
+commit c978baa57318d9e553085abe86ed8b6b7b67e0e3
+Merge: 619291d d8a21d7
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:40:48 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 619291d07850f3a22d98a8539504ba81bf8a538b
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:40:34 2019 -0500
+
+    ListPlaylistsResponse object created
+
+commit d8a21d7d5a4a3e59bd345f8a441aa3353fda3bfd
+Author: Tyler <Tyler@130.215.14.12>
+Date:   Mon Nov 25 14:30:26 2019 -0500
+
+    Edited one of my tasks
+
+commit 080818b913eafab0fa57d3200edea2dea471ebb8
+Merge: 2c090d7 0b877f6
+Author: Tyler <Tyler@130.215.14.12>
+Date:   Mon Nov 25 14:27:29 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 2c090d73a7f12a7273a7ec0c714f071f1194b42a
+Author: Tyler <Tyler@130.215.14.12>
+Date:   Mon Nov 25 14:27:17 2019 -0500
+
+    Almost done with GetAllSegmentsHandler
+
+commit 0b877f682c78914eea7a4828c48732548972904f
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:24:16 2019 -0500
+
+    List Playlists Request object created
+
+commit 83171ad46ddbb33d06b5c06c1a7f3a509e1bcefd
+Merge: 97c329a 886c7bb
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:09:17 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+    
+    Conflicts:
+            LydiaAWS/target/classes/META-INF/maven/com.amazonaws.lambda/demo/pom.properties
+
+commit 97c329a222821fa8145aa2601a9238822e7a5cbc
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Mon Nov 25 14:01:49 2019 -0500
+
+    Upload video segment request object created
+
+commit 886c7bb7f59e0df479867fa6a1c686d675566258
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 13:48:24 2019 -0500
+
+    Finished the draft of PlaylistEntryDAO
+
+commit 3cd79284b83fa46d536a2a6054d570f52eb7d3ec
+Merge: dd0c36d e79ab65
+Author: Tyler <Tyler@130.215.14.12>
+Date:   Mon Nov 25 13:37:15 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit dd0c36d0a2e3a947177ccfb767af6bc72d9012e1
+Author: Tyler <Tyler@130.215.14.12>
+Date:   Mon Nov 25 13:37:00 2019 -0500
+
+    Creation of the GetAllSegmentsHandler
+
+commit e79ab65727cedd69c6f3df5df8bda6d07c81b143
+Merge: 44e0a88 74254e5
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 11:28:30 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 44e0a888e60c5c847250a584da5442e95e25d4cb
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Mon Nov 25 11:28:19 2019 -0500
+
+    spock wants what i have (and other minor changes)
+
+commit 74254e54443eee9a4dbac2bd37c21adabb4b17b6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 11:22:15 2019 -0500
+
+    Removing stray workspace file
+
+commit 60ac400acc57c092951b4774839f2f18091bdffb
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Mon Nov 25 10:50:07 2019 -0500
+
+    Changes to Playlist Entries DAO (more to come)
+
+commit 0979d0fd6b098394845c7a04b8fa0858bfd61109
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Sun Nov 24 23:41:18 2019 -0500
+
+    html stuff
+
+commit 36c9ee4dd9e81add943edc83520a9e999f1a4876
+Merge: fec0d75 67f2483
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Sun Nov 24 23:38:43 2019 -0500
+
+    html stuff
+
+commit fec0d75ed44c75412b33c9cddb5c918caf121f03
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Sun Nov 24 23:37:44 2019 -0500
+
+    html pages now exist
+
+commit 67f24835e02cb63634d55d719317db8267dcb92f
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 23:06:20 2019 -0500
+
+    Removing the stray workspace file from the repo
+
+commit 2ce59c5be48366a5a438ae28ebfff8387f664e97
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 23:04:28 2019 -0500
+
+    Adding JavaScript to the webpage
+
+commit 9d8f4074eaa88e972a2549122a55d1e9d873fd0a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 22:45:54 2019 -0500
+
+    Added some lines to the webpage for the scripts
+
+commit e68cd9b59eb8299cbe7570c8b29d8b77a2cc68c7
+Merge: 3b2cdf4 5aa60d4
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Sun Nov 24 22:32:37 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 3b2cdf42be228c9722cc60e198d4e97e42ad3935
+Author: Grace Antedomenico <gmantedomenico@wpi.edu>
+Date:   Sun Nov 24 22:31:40 2019 -0500
+
+    public landing plus video files work
+
+commit 5aa60d4871b209741fac5743ac26e00a76a3c6ae
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 20:34:26 2019 -0500
+
+    Updating job list
+
+commit 1203114da1ab2c95fbc9ebf1a8893d0e8176b2c3
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 20:29:33 2019 -0500
+
+    New JS for listing segments in a playlist
+
+commit 9e6ecfc71d8c2de53b427f3edfd3896df801b9d9
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 20:02:00 2019 -0500
+
+    Added resource on query strings
+
+commit e70cba19b0593343dbc287e1508d5497400c00e1
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 19:52:08 2019 -0500
+
+    Added JSON to resources
+
+commit 4f9fee0c03ac833da842838eb58135d569354ff6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 19:36:29 2019 -0500
+
+    Add API for list playlist segmetns
+    
+    Added an API to list the segments in a given playlist
+
+commit 4c3dc2d34bdcfca10e4faad86c723e96f5aff9be
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 17:12:16 2019 -0500
+
+    Fixed typo on assignments in resources.md
+
+commit 057b63f6c7285f610a5ebeb8e4430e55ae4dabb2
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 17:05:31 2019 -0500
+
+    Wrote prototype of the List-Playlists JS file
+    
+    It'll probably need some tweaking after the accompanying HTML file
+    exists
+
+commit 7af5c5fbdb8ffde6048b6858c6d6fd79171388dc
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 16:49:49 2019 -0500
+
+    Created JS files to execute API requests
+
+commit 6f03f0122bcaca1c1bc1e43f546bc406e159bbea
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 16:35:17 2019 -0500
+
+    Made a DAO for playlist entries
+
+commit 1c8654c289dec2c988ab1409e140c5411ffa4d93
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 15:56:48 2019 -0500
+
+    DB object for registering sites
+
+commit 56eaa7e8c0051ac7b3fd06cb78f5ed6d30a319ba
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sun Nov 24 15:45:49 2019 -0500
+
+    More database objects; clarified schema sql file
+
+commit 6105e7918e6a59c55cdeb4b6111526ca25ed1589
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Sat Nov 23 00:53:04 2019 -0500
+
+    Made some DB objects and updated schema
+
+commit ff0bb2a12fc5c9dcc9af880cf7257f5a96c76bbf
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Nov 22 23:22:59 2019 -0500
+
+    Update resources
+
+commit c2e36cb5008dcf27b72eb2f5796f3aaed0f7df53
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Nov 22 23:13:29 2019 -0500
+
+    Webpage changes
+
+commit 641b745f12c3bee8b63275bb206d0523be443a90
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Nov 22 23:08:35 2019 -0500
+
+    New structure for Web stuff; new DB java objects
+
+commit b03c7d9e6c39d0f447b294369db412567ab8694e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Nov 22 14:24:22 2019 -0500
+
+    Added some resources for .ogg conversion
+
+commit da0139007b03bd4dd220bb944b6bb7edccd5aff5
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Fri Nov 22 14:22:55 2019 -0500
+
+    Assigned jobs and made some notes in Resources.md
+
+commit 4aa0f1a13e3afed872b83406a32d2403b22c55dd
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 22:54:58 2019 -0500
+
+    Added a breakdown of the jobs we need in resources
+
+commit 66068d207cef0f8357f6597b8e2fe3a14d005088
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 22:38:30 2019 -0500
+
+    More video changes
+
+commit 81f9564d2ffd3ef75b5f7da4c6d62d69b202601a
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 22:18:01 2019 -0500
+
+    Slow progress on getting the videos to play
+
+commit 9b6862a410e9b104994e69f7536578370457daf1
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 21:38:27 2019 -0500
+
+    Consolidated API resources into a directory
+
+commit a81ab2720e37bdc4275e499cb5394410a8e0efcb
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 21:33:11 2019 -0500
+
+    Adding Query String in API resource
+
+commit db0526521931f72cc5f83bdf43c464e9dcf85d50
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 21:22:27 2019 -0500
+
+    G.API Submission
+
+commit c97907a4d1bf9922d20901447717c368e8187aa4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 21:15:15 2019 -0500
+
+    Final changes to API before formatting
+
+commit 8a432426f0c8e13041d876af39d049ebea5f7ff1
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 20:41:26 2019 -0500
+
+    Important font changes to index.html
+
+commit c571b65ec2e1ad3b7f0f47e73592b3cdda1a8475
+Merge: 2fb1519 1086878
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 19:25:34 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 2fb151949600212f236e000cf09b4e0dec872839
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 19:25:32 2019 -0500
+
+    Added some yaml explanations to the readme
+
+commit 1086878d912e8f0487fc8851b5f96f1102103045
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 19:23:20 2019 -0500
+
+    typo fix
+
+commit 54be6f3406d343e76580f82edd7961624355e26e
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 19:14:04 2019 -0500
+
+    Made definitions for my things
+
+commit 9d982ce979b302cec019223dcd790513866a373c
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 18:52:43 2019 -0500
+
+    Change UploadVideoSegmentRequest to character and sentence required
+
+commit 7368b38963a50f03e82e3c67db97b38eb4fdfc9d
+Merge: bf42996 7c7412e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 18:27:28 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 7c7412e1a50d2845e0f4de25fbe821a4b5bd80de
+Merge: 31585e5 18eb47e
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Nov 21 18:00:50 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 31585e51668a82d0358f425303f3634fc81fa0e1
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Nov 21 17:55:09 2019 -0500
+
+    fixed paths
+
+commit bf429967aaeba95b0f6d8fc7f5cc9e052295afad
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 17:54:55 2019 -0500
+
+    More YAML changes
+
+commit 18eb47ef04c6647eb753de3abc987aac8b8f18f4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 17:42:26 2019 -0500
+
+    Made some yaml definitions
+
+commit afa7a66055f4a2e255d652472820d7640c8734c1
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 17:19:22 2019 -0500
+
+    Defined DeleteVideoSegment
+
+commit d9e008b11bebd238d53026ee09eb038f5c4dde07
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 17:03:43 2019 -0500
+
+    Defined an UploadVideoSegmentRequest
+
+commit 35a5b4a6e70c6ff6e4798edae605b9393768fe01
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 16:52:06 2019 -0500
+
+    A few skeleton object files
+
+commit 90998a87b08077c0aafac579e53d1de84ae1c462
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 15:42:21 2019 -0500
+
+    G.API question and new java files for db things.
+
+commit 25baff62b3dac19baa4f4bbf5c450a32e058b5af
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 15:20:32 2019 -0500
+
+    Added the snippet to generate UUID's
+
+commit de85fc59ed5728a799f6593a7277c51e09fcc9c5
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 15:17:15 2019 -0500
+
+    Added a readme for G.API and fixed the calc API
+
+commit 9de55faecf8acb4f83f2f20449ee04ff35151c36
+Merge: a6309a8 83d554a
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 15:15:24 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit a6309a83f8efc03bc512352af6ba4951d69f7f24
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 15:15:13 2019 -0500
+
+    1st draft of my API stuff
+
+commit 83d554afc9f3c4e26607d363d7c88c61ab19588c
+Merge: a623d3b 1314028
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 15:11:49 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit a623d3b541f63c83c5ec3864f8f9fb5b8fde29f0
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 15:11:41 2019 -0500
+
+    filled out add segment section to API
+
+commit 13140284ddb55dda23006f0640376eae224fce44
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 14:46:33 2019 -0500
+
+    His .ogg's don't work for us either!
+
+commit debc53128dc4123bc9d53c8e50cceb543e98a5ef
+Merge: d03d78a 1213436
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 14:32:10 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit d03d78afa8dc0c4abedc1063d963e173bae40fe2
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 14:32:08 2019 -0500
+
+    Finished the SQL file for the schema
+
+commit 121343639fcafb281a54785b71cf17a69e00d02e
+Merge: 387e7a5 abda39a
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 13:55:32 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit 387e7a57a8314c0e7a30f700e5fcba98f09c7159
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 13:55:22 2019 -0500
+
+    Test commit
+
+commit abda39ab511df5e0370de1637b985b6c73411566
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 13:53:47 2019 -0500
+
+    Test commit for VS code
+
+commit 47c61a6168bd918c3eaabc32cea47b77beeddafc
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 13:45:37 2019 -0500
+
+    Staged the SQL this time
+
+commit 7ff8ab495daa10ac6a5b52634eb60e92a1558e82
+Merge: c704bc8 6a09b71
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 13:43:18 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit c704bc887cda6fa4368f3ff10828576215c9b1e3
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 13:43:16 2019 -0500
+
+    Adding a sql file and explaining how to fix merge
+
+commit 6a09b71dab9fc8ab7267cb27dbc781e259bdcdba
+Merge: 960b975 2d24a10
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 13:38:29 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 2d24a104cbc6714fc3166a336b5bb69c3d143489
+Merge: ce2f21a b2cd6eb
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 13:35:17 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit 960b975007825d82a3e91e275e462cfd69684cd7
+Merge: 87cf4db b2cd6eb
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 13:34:53 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia.git
+
+commit ce2f21a5fd1e875ecc08146866fbad88c3d7c633
+Author: dood <dood@130.215.174.117>
+Date:   Thu Nov 21 13:34:32 2019 -0500
+
+    1st version of register-site
+
+commit 87cf4dbb558c828d1bf6bbcd90498ca59d319158
+Author: maggiearaque <maraque@wpi.edu>
+Date:   Thu Nov 21 13:33:56 2019 -0500
+
+    Added API stuff for create, delete, show playlists, remove segment
+
+commit b2cd6eb49242dc47b700d41dc636693c572c1af2
+Merge: ce194e3 3431412
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Nov 21 12:56:52 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit ce194e3227068ba4e9fa1842a693331286e8bf78
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Thu Nov 21 12:56:34 2019 -0500
+
+    added video segment paths
+
+commit 343141254b9b079f2da13f14ff8f9e1ed937dcd4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 12:36:37 2019 -0500
+
+    Adding UUID Documentation to resources
+
+commit bf40c5ee7758bd30e56e47502b6072cc568f12bd
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 12:19:38 2019 -0500
+
+    More video file attempts, new resources
+
+commit ee8af767e361d15e17cac4fd55e8fe8e948a2b85
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 11:59:07 2019 -0500
+
+    Added Amazon Project and resources.md explanation
+
+commit d9b9c4abe1f1166951adb12ed3566e76112022e4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Thu Nov 21 10:55:40 2019 -0500
+
+    Added a git ignore and fixed the API url
+    
+    API URLs were previously inconsistent with the YAML file
+
+commit 7589cf1bd7e4ce7657f3b8b09963b75be3e24d55
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 23:25:49 2019 -0500
+
+    Testing file formats for clips
+    
+    Theora Vorbis seems to work the best, not that it works
+
+commit fcac83f086881deb1d299ece965ff83028d8e5f1
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 22:26:15 2019 -0500
+
+    Fixed some URL's in the API stuff
+    
+    Deleted the old API and made a new one because I mapped two lambdas to
+    the wrong places, and changing them back is much harder than I feel it
+    should be
+
+commit 506a2e9f9f41a6e5e855588b7063d787ffb17cd7
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 21:55:05 2019 -0500
+
+    Added some new constants and JS to test lambdas
+
+commit 401b89384eed4c93cdb4679b587c86ab4a067b85
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 21:07:29 2019 -0500
+
+    schema updates
+
+commit 7c89a8ec359adb0368cb1758f26f0d59434df54a
+Merge: e4bd4ec 1c1f757
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 16:37:47 2019 -0500
+
+    Merge branch 'master' of https://github.com/mastlouis/CS3733-Lydia
+
+commit e4bd4ec0e7ac05c03d51c809c55f1d8df7bddee6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 16:37:45 2019 -0500
+
+    Made a schema text file for the database
+
+commit 1c1f757a09a9bd5d9e18b8456ddaf23ec8e7ebe0
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Nov 20 16:33:36 2019 -0500
+
+    created our paths
+
+commit b0a3da267a042a319a3a51626c18e4a016fd939d
+Merge: 8480373 3e238ff
+Author: GAntedomenico <33609939+GAntedomenico@users.noreply.github.com>
+Date:   Wed Nov 20 15:42:55 2019 -0500
+
+    Merge pull request #2 from GAntedomenico/master
+    
+    updated info
+
+commit 3e238ff5f3be9afc93165477aa96f407783b4dd8
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Nov 20 15:36:49 2019 -0500
+
+    updated info
+
+commit 8480373a9ab872587da7cce69b9b5d5b3c363409
+Merge: cb0f957 35320ee
+Author: GAntedomenico <33609939+GAntedomenico@users.noreply.github.com>
+Date:   Wed Nov 20 15:31:57 2019 -0500
+
+    Merge pull request #1 from GAntedomenico/master
+    
+    added api
+
+commit 35320eecd7961961629b1a9ca71f9d56bed66736
+Author: Grace Antedomenico <g.antedomenico@gmail.com>
+Date:   Wed Nov 20 15:30:19 2019 -0500
+
+    added api
+
+commit cb0f957f0a01dceb2ef64b86c798100cbf12f2d6
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 15:22:49 2019 -0500
+
+    Added some calculator constants; changed some things for iteration 1
+
+commit b31f6dc711f9badb2633d9d8c30307cd6bd8bd7d
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 20 12:07:01 2019 -0500
+
+    Copied and modified files from the calculator example
+
+commit 476711893a7c844cbf57c70a18ba800301e1ea62
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 19 23:18:57 2019 -0500
+
+    Added Git Workflow to Resources
+
+commit a1b32ba14f733d513285759a3e90beb77b22d1a4
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 19 23:14:48 2019 -0500
+
+    Added Git cheatsheet to resources
+
+commit d3098154da1df9b77bf2eaac801f450c02950a08
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Tue Nov 19 23:07:10 2019 -0500
+
+    Started index.html file from template, having trouble getting the .ogg files to play
+
+commit 0f9efbcfffc70270b5f0638b3ad9e061f308bf56
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 13 20:25:01 2019 -0500
+
+    Adding storyboard link
+
+commit 06e0a699797781450d8aee1d2aa4186ae6ca1a3e
+Author: mastlouis <mastlouis@wpi.edu>
+Date:   Wed Nov 6 15:02:52 2019 -0500
+
+    Adding a Resources file to share the When2Meet's
+
+commit f774e90e3b18fa29f53d89f5bc4c05a130529b84
+Author: mastlouis <43610843+mastlouis@users.noreply.github.com>
+Date:   Wed Nov 6 14:37:10 2019 -0500
+
+    Initial commit
