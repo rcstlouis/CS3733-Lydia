@@ -166,7 +166,7 @@ public class SegmentsDAO {
         List<Segment> allSegments = new ArrayList<>();
         try {
             Statement statement = conn.createStatement();
-            String query = "SELECT * FROM segments";
+            String query = "SELECT * FROM segments ORDER BY name";
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -249,8 +249,8 @@ public class SegmentsDAO {
         
         List<Segment> allSegments = new ArrayList<>();
         try {
-        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM innodb.segments WHERE id in "
-            		+ "(SELECT segmentID FROM innodb.playlistEntries WHERE playlistName=?)");
+        	PreparedStatement ps = conn.prepareStatement("SELECT * FROM segments WHERE id in "
+            		+ "(SELECT segmentID FROM innodb.playlistEntries WHERE playlistName=? ORDER BY playlistEntryNumber)");
         	ps.setString(1, playlistName);
             ResultSet resultSet = ps.executeQuery();
 
@@ -262,7 +262,7 @@ public class SegmentsDAO {
             return allSegments;
 
         } catch (Exception e) {
-            throw new Exception("Failed in getting books: " + e.getMessage());
+            throw new Exception("Failed in getting segments for playlist "+ playlistName + ": " + e.getMessage());
         }
 	}
 	

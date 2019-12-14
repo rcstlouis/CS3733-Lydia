@@ -34,7 +34,7 @@ import com.amazonaws.services.s3.model.S3Object;
 public class GetAllSegmentsHandlerTest {
 
 	Context createContext(String apiCall) {
-		TestContext2 ctx = new TestContext2();
+		TestContext3 ctx = new TestContext3();
 		ctx.setFunctionName(apiCall);
 		return ctx;
 	}
