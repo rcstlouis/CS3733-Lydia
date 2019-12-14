@@ -55,11 +55,6 @@ function refreshPlaylistSegments(playlistName) {
     var character = playlistEntryJson["character"];
     var sentence = playlistEntryJson["sentence"];
 
-    var isRemotelyAvailable = "false";
-    if(remotelyAvailable){
-      isRemotelyAvailable = "true";
-    }
-
     //Add a check to see if the origin site is our site at some point
     output = output + 
         `<div id="playlist:${playlistName}:entry:${segmentID}" class="segment">
@@ -70,7 +65,7 @@ function refreshPlaylistSegments(playlistName) {
           </video> <br>
           <p> Character: ${character}</p>
           <p> Sentence: ${sentence}</p>
-          <p> Remotely Available: ${isRemotelyAvailable}</p>
+          <p> Origin Site: ${originSite}</p>
           <form name="RemoveFromPlaylistForm">
 					  <input type="button" id="RemoveFromPlaylistButton:${segmentID}" value="Remove From Playlist" onclick="handleRemoveFromPlaylistClick('${segmentID}','${playlistName}',${i})">
 				  </form>

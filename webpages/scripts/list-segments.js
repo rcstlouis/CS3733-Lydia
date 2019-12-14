@@ -44,6 +44,7 @@ function processSegmentListResponse(result){
 			table.deleteRow(table.rows.length - 1);
 		}
 	}
+	var numLocal = 0;
 	for (var i = 0; i < js.list.length; i++){
 		var segmentJSON = js.list[i];
 		console.log(segmentJSON);
@@ -86,8 +87,8 @@ function processSegmentListResponse(result){
 					</div>`;
 			if(table !== null){
 				// Create an empty <tr> element and add it to the ith position of the table:
-				var row = table.insertRow(i+1);
-
+				var row = table.insertRow(numLocal+1);
+				numLocal++;
 				// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
 				var cell1 = row.insertCell(0);
 				var cell2 = row.insertCell(1);
@@ -118,7 +119,7 @@ function processSegmentListResponse(result){
 				</div>
 				<p> Character: ${character}</p>
 				<p> Sentence: ${sentence}</p>
-				<p> Remotely Available: ${isRemotelyAvailable}</p>
+				<p> Origin Site: ${originSite}</p>
 				<form name="DeleteSegmentForm">
 					<input type="button" id="deleteSegmentButton:${segmentID}" value="Delete Segment" onclick="handleDeleteSegmentClick('${segmentID}')">
 				</form>

@@ -50,7 +50,7 @@ function processListSitesResponse(result){
 
 		if(table !== null){
 			// Create an empty <tr> element and add it to the ith position of the table:
-			var row = table.insertRow(i+1);
+			var row = table.insertRow(i+1); //used to be i+1, but it started getting upset
 
 			// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
 			var cell1 = row.insertCell(0);
